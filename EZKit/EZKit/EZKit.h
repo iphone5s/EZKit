@@ -18,6 +18,7 @@
 #import "NSMutableArray+EZKit.h"
 #import "NSDictionary+EZKit.h"
 #import "NSString+EZKit.h"
+#import "UIView+EZKit.h"
 #import "UIViewController+EZKit.h"
 
 #pragma mark ======Foundation======

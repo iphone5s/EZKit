@@ -24,7 +24,7 @@
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn setTitle:@"Dismiss" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(testBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
+
 }
 
 -(void)testBtnClicked:(UIButton *)sender
