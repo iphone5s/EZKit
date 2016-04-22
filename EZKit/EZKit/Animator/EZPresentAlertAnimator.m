@@ -33,19 +33,32 @@
     dimmingView.backgroundColor = [UIColor blackColor];
     dimmingView.layer.opacity = 0.0;
     
-    UIViewController *toViewController = nil;
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    id obj = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+//    id obj = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    if ([obj isKindOfClass:[UIViewController class]])
+    if ([toViewController isKindOfClass:[UIViewController class]])
     {
-        if ([obj isKindOfClass:[UINavigationController class]])
+        if ([toViewController isKindOfClass:[UINavigationController class]])
         {
-            toViewController = ((UINavigationController *)obj).topViewController;
+            UIViewController *vc = ((UINavigationController *)toViewController).topViewController;
+            
+            toViewController.view.frame = vc.view.frame;
+            
+            if ([vc respondsToSelector:@selector(handleSingleTap:)])
+            {
+                UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:vc action:@selector(handleSingleTap:)];
+                [dimmingView addGestureRecognizer:tap];
+            }
         }
         else
         {
-            toViewController = obj;
+            if ([toViewController respondsToSelector:@selector(handleSingleTap:)])
+            {
+                UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:toViewController action:@selector(handleSingleTap:)];
+                [dimmingView addGestureRecognizer:tap];
+            }
+            
         }
     }
     else
@@ -67,11 +80,6 @@
     
     toViewController.view.center = transitionContext.containerView.center;
     toViewController.view.autoresizingMask = UIViewAutoresizingNone;
-    
-    if ([toViewController respondsToSelector:@selector(handleSingleTap:)]) {
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:toViewController action:@selector(handleSingleTap:)];
-        [dimmingView addGestureRecognizer:tap];
-    }
     
     toViewController.view.alpha = 0.0;
     

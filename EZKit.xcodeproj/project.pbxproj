@@ -67,6 +67,7 @@
 		39D80ACB1CCA034F00289133 /* EZDismissAlertAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDismissAlertAnimator.m; sourceTree = "<group>"; };
 		39D80ACD1CCA0A6E00289133 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		39D80ACE1CCA0A6E00289133 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		39D80AD01CCA14E000289133 /* EZKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = EZKit.entitlements; sourceTree = "<group>"; };
 		8281A311CEE058F5F8E78F61 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +104,7 @@
 		39D80A7B1CC9ECE500289133 /* EZKit */ = {
 			isa = PBXGroup;
 			children = (
+				39D80AD01CCA14E000289133 /* EZKit.entitlements */,
 				39D80AA01CC9EEDC00289133 /* EZKit */,
 				39D80A7F1CC9ECE500289133 /* AppDelegate.h */,
 				39D80A801CC9ECE500289133 /* AppDelegate.m */,
@@ -234,6 +236,11 @@
 					39D80A781CC9ECE500289133 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = UPLXHXPX73;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -450,6 +457,7 @@
 			baseConfigurationReference = 8281A311CEE058F5F8E78F61 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EZKit/EZKit.entitlements;
 				INFOPLIST_FILE = EZKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhen-xie.EZKit";
@@ -462,6 +470,7 @@
 			baseConfigurationReference = 0822DFABB99453F08E863D83 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EZKit/EZKit.entitlements;
 				INFOPLIST_FILE = EZKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhen-xie.EZKit";

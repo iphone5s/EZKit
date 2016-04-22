@@ -19,7 +19,6 @@ DEF_SINGLETON_AUTOLOAD(EZDeviceManagement)
     self = [super init];
     if (self) {
         self.strUDID = [FCUUID uuidForDevice];
-        
         self.strDevice = [UIDevice currentDevice].model;
         self.strNetState = @"Unknown";
         

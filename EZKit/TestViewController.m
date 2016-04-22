@@ -15,22 +15,40 @@
 {
     self.view.backgroundColor = [UIColor whiteColor];
     self.view.frame = CGRectMake(0, 0, EZSharedDevice.screenWidth / 2.0, EZSharedDevice.screenHeight / 2.0);
-    UIButton *btn = [UIButton new];
-    [self.view addSubview:btn];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIButton *pushBtn = [UIButton new];
+    [self.view addSubview:pushBtn];
+    [pushBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(80, 30));
-        make.center.mas_equalTo(self.view);
+        make.centerY.mas_equalTo(self.view);
+        make.left.mas_equalTo(self.view).offset(20);
     }];
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btn setTitle:@"push" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(testBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [pushBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [pushBtn setTitle:@"push" forState:UIControlStateNormal];
+    [pushBtn addTarget:self action:@selector(pushBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *dismissBtn = [UIButton new];
+    [self.view addSubview:dismissBtn];
+    [dismissBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(80, 30));
+        make.centerY.mas_equalTo(self.view);
+        make.right.mas_equalTo(self.view).offset(-20);
+    }];
+    [dismissBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [dismissBtn setTitle:@"dismiss" forState:UIControlStateNormal];
+    [dismissBtn addTarget:self action:@selector(dismissBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
--(void)testBtnClicked:(UIButton *)sender
+-(void)pushBtnClicked:(UIButton *)sender
 {
+//    self.navigationController.view.frame = CGRectMake(0, 0, 100, 100);
     TestViewController *vc = [TestViewController new];
-    NSLog(@"%@",self.navigationController);
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)dismissBtnClicked:(UIButton *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)handleSingleTap:(UITapGestureRecognizer *)sender

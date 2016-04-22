@@ -18,25 +18,7 @@
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext
 {
-    UIViewController *toVC = nil;
-    id obj = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-    if ([obj isKindOfClass:[UIViewController class]])
-    {
-        if ([obj isKindOfClass:[UINavigationController class]])
-        {
-            toVC = ((UINavigationController *)obj).topViewController;
-        }
-        else
-        {
-            toVC = obj;
-        }
-    }
-    else
-    {
-        [transitionContext completeTransition:YES];
-        return;
-    }
+    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];;
     
     toVC.view.tintAdjustmentMode = UIViewTintAdjustmentModeNormal;
     toVC.view.userInteractionEnabled = YES;
