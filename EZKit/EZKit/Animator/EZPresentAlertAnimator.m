@@ -9,7 +9,7 @@
 #import "EZPresentAlertAnimator.h"
 #import "EZDeviceManagement.h"
 #import <POP/POP.h>
-#import <Masonry.h>
+#import "Masonry.h"
 
 @implementation EZPresentAlertAnimator
 
@@ -34,8 +34,6 @@
     dimmingView.layer.opacity = 0.0;
     
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-//    id obj = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
     if ([toViewController isKindOfClass:[UIViewController class]])
     {
