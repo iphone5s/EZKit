@@ -1,0 +1,22 @@
+PODS:
+  - FCUUID (1.2.0):
+    - UICKeyChainStore (~> 2.1.0)
+  - Masonry (1.0.0)
+  - MBProgressHUD (0.9.2)
+  - pop (1.0.9)
+  - UICKeyChainStore (2.1.0)
+
+DEPENDENCIES:
+  - FCUUID
+  - Masonry
+  - MBProgressHUD
+  - pop
+
+SPEC CHECKSUMS:
+  FCUUID: 9bfe031d35b7c221a7c66156a0af45d4eb49c3b6
+  Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  UICKeyChainStore: f1cbd42216a113f0165de1e733e62905b8823432
+
+COCOAPODS: 0.39.0
