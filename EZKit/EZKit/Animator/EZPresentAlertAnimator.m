@@ -8,7 +8,7 @@
 
 #import "EZPresentAlertAnimator.h"
 #import "EZDeviceManagement.h"
-#import <POP/POP.h>
+#import "POP/POP.h"
 #import "Masonry.h"
 
 @implementation EZPresentAlertAnimator

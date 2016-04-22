@@ -7,7 +7,7 @@
 //
 
 #import "EZDismissAlertAnimator.h"
-#import <POP/POP.h>
+#import "POP/POP.h"
 
 @implementation EZDismissAlertAnimator
 
