@@ -1,17 +1,17 @@
 //
-//  EZHudManagement.h
+//  EZHudManager.h
 //  EZKit
 //
-//  Created by Caesar on 16/4/22.
+//  Created by Caesar on 16/4/26.
 //  Copyright © 2016年 EZreal. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "EZKitDefine.h"
 
-#define EZSharedHUD [EZHud sharedInstance]
+#define EZSharedHUD [EZHudManager sharedInstance]
 
-@interface EZHudManagement : NSObject
+@interface EZHudManager : NSObject
 
 AS_SINGLETON(EZHudManagement)
 

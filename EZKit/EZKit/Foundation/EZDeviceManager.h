@@ -1,19 +1,19 @@
 //
-//  EZDeviceManagement.h
+//  EZDeviceManager.h
 //  EZKit
 //
-//  Created by Caesar on 16/4/22.
-//  Copyright © 2016年 Caesar. All rights reserved.
+//  Created by Caesar on 16/4/26.
+//  Copyright © 2016年 EZreal. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "EZKitDefine.h"
 
-#define EZSharedDevice [EZDeviceManagement sharedInstance]
+#define EZSharedDevice [EZDeviceManager sharedInstance]
 
-@interface EZDeviceManagement : NSObject
+@interface EZDeviceManager : NSObject
 
-AS_SINGLETON(EZDeviceManagement)
+AS_SINGLETON(EZDeviceManager)
 
 @property (nonatomic,strong)NSString *strUDID;
 

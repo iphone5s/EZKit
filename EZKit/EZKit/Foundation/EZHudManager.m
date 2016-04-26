@@ -1,25 +1,24 @@
 //
-//  EZHudManagement.m
+//  EZHudManager.m
 //  EZKit
 //
-//  Created by Caesar on 16/4/22.
+//  Created by Caesar on 16/4/26.
 //  Copyright © 2016年 EZreal. All rights reserved.
 //
 
-#import "EZHudManagement.h"
+#import "EZHudManager.h"
 #import "MBProgressHUD.h"
 
 #define delay 1.5
 
-@interface EZHudManagement ()
+@interface EZHudManager ()
 {
     MBProgressHUD *hud;
 }
 @end
 
-@implementation EZHudManagement
-
-DEF_SINGLETON(EZHudManagement)
+@implementation EZHudManager
+DEF_SINGLETON(EZHudManager)
 
 - (instancetype)init
 {

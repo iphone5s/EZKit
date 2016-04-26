@@ -16,17 +16,17 @@
 		39D80A8C1CC9ECE500289133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D80A8A1CC9ECE500289133 /* LaunchScreen.storyboard */; };
 		39D80AAA1CC9EF6B00289133 /* NSArray+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AA41CC9EF6B00289133 /* NSArray+EZKit.m */; };
 		39D80AAB1CC9EF6B00289133 /* NSObject+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AA61CC9EF6B00289133 /* NSObject+EZKit.m */; };
-		39D80AAC1CC9EF6B00289133 /* EZDeviceManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AA91CC9EF6B00289133 /* EZDeviceManagement.m */; };
 		39D80AAF1CC9EFBA00289133 /* NSMutableArray+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AAE1CC9EFBA00289133 /* NSMutableArray+EZKit.m */; };
 		39D80AB21CC9F32700289133 /* NSDictionary+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AB11CC9F32700289133 /* NSDictionary+EZKit.m */; };
 		39D80AB61CC9F46C00289133 /* NSString+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AB51CC9F46C00289133 /* NSString+EZKit.m */; };
-		39D80ABF1CC9FAD800289133 /* EZHudManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80ABE1CC9FAD800289133 /* EZHudManagement.m */; };
 		39D80AC21CC9FCBB00289133 /* UIViewController+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AC11CC9FCBB00289133 /* UIViewController+EZKit.m */; };
 		39D80AC61CCA015300289133 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AC51CCA015300289133 /* CustomViewController.m */; };
 		39D80AC91CCA033200289133 /* EZPresentAlertAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AC81CCA033200289133 /* EZPresentAlertAnimator.m */; };
 		39D80ACC1CCA034F00289133 /* EZDismissAlertAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80ACB1CCA034F00289133 /* EZDismissAlertAnimator.m */; };
 		39D80ACF1CCA0A6E00289133 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80ACE1CCA0A6E00289133 /* TestViewController.m */; };
 		39D80AD31CCA16B700289133 /* UIView+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AD21CCA16B700289133 /* UIView+EZKit.m */; };
+		39FBA5031CCF079C009A3552 /* EZDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FBA5021CCF079C009A3552 /* EZDeviceManager.m */; };
+		39FBA5061CCF082A009A3552 /* EZHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FBA5051CCF082A009A3552 /* EZHudManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +47,6 @@
 		39D80AA41CC9EF6B00289133 /* NSArray+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EZKit.m"; sourceTree = "<group>"; };
 		39D80AA51CC9EF6B00289133 /* NSObject+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EZKit.h"; sourceTree = "<group>"; };
 		39D80AA61CC9EF6B00289133 /* NSObject+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EZKit.m"; sourceTree = "<group>"; };
-		39D80AA81CC9EF6B00289133 /* EZDeviceManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDeviceManagement.h; sourceTree = "<group>"; };
-		39D80AA91CC9EF6B00289133 /* EZDeviceManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDeviceManagement.m; sourceTree = "<group>"; };
 		39D80AAD1CC9EFBA00289133 /* NSMutableArray+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+EZKit.h"; sourceTree = "<group>"; };
 		39D80AAE1CC9EFBA00289133 /* NSMutableArray+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+EZKit.m"; sourceTree = "<group>"; };
 		39D80AB01CC9F32700289133 /* NSDictionary+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+EZKit.h"; sourceTree = "<group>"; };
@@ -56,8 +54,6 @@
 		39D80AB41CC9F46C00289133 /* NSString+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EZKit.h"; sourceTree = "<group>"; };
 		39D80AB51CC9F46C00289133 /* NSString+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EZKit.m"; sourceTree = "<group>"; };
 		39D80AB91CC9F9C400289133 /* EZKitDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZKitDefine.h; sourceTree = "<group>"; };
-		39D80ABD1CC9FAD800289133 /* EZHudManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHudManagement.h; sourceTree = "<group>"; };
-		39D80ABE1CC9FAD800289133 /* EZHudManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZHudManagement.m; sourceTree = "<group>"; };
 		39D80AC01CC9FCBB00289133 /* UIViewController+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EZKit.h"; sourceTree = "<group>"; };
 		39D80AC11CC9FCBB00289133 /* UIViewController+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EZKit.m"; sourceTree = "<group>"; };
 		39D80AC41CCA015300289133 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
@@ -71,6 +67,10 @@
 		39D80AD01CCA14E000289133 /* EZKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = EZKit.entitlements; sourceTree = "<group>"; };
 		39D80AD11CCA16B700289133 /* UIView+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EZKit.h"; sourceTree = "<group>"; };
 		39D80AD21CCA16B700289133 /* UIView+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EZKit.m"; sourceTree = "<group>"; };
+		39FBA5011CCF079C009A3552 /* EZDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDeviceManager.h; sourceTree = "<group>"; };
+		39FBA5021CCF079C009A3552 /* EZDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDeviceManager.m; sourceTree = "<group>"; };
+		39FBA5041CCF082A009A3552 /* EZHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHudManager.h; sourceTree = "<group>"; };
+		39FBA5051CCF082A009A3552 /* EZHudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZHudManager.m; sourceTree = "<group>"; };
 		8281A311CEE058F5F8E78F61 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,10 +170,10 @@
 		39D80AA71CC9EF6B00289133 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				39D80AA81CC9EF6B00289133 /* EZDeviceManagement.h */,
-				39D80AA91CC9EF6B00289133 /* EZDeviceManagement.m */,
-				39D80ABD1CC9FAD800289133 /* EZHudManagement.h */,
-				39D80ABE1CC9FAD800289133 /* EZHudManagement.m */,
+				39FBA5011CCF079C009A3552 /* EZDeviceManager.h */,
+				39FBA5021CCF079C009A3552 /* EZDeviceManager.m */,
+				39FBA5041CCF082A009A3552 /* EZHudManager.h */,
+				39FBA5051CCF082A009A3552 /* EZHudManager.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -335,8 +335,6 @@
 			files = (
 				39D80AB21CC9F32700289133 /* NSDictionary+EZKit.m in Sources */,
 				39D80AAA1CC9EF6B00289133 /* NSArray+EZKit.m in Sources */,
-				39D80AAC1CC9EF6B00289133 /* EZDeviceManagement.m in Sources */,
-				39D80ABF1CC9FAD800289133 /* EZHudManagement.m in Sources */,
 				39D80AD31CCA16B700289133 /* UIView+EZKit.m in Sources */,
 				39D80AC21CC9FCBB00289133 /* UIViewController+EZKit.m in Sources */,
 				39D80AB61CC9F46C00289133 /* NSString+EZKit.m in Sources */,
@@ -347,8 +345,10 @@
 				39D80AAB1CC9EF6B00289133 /* NSObject+EZKit.m in Sources */,
 				39D80AAF1CC9EFBA00289133 /* NSMutableArray+EZKit.m in Sources */,
 				39D80A811CC9ECE500289133 /* AppDelegate.m in Sources */,
+				39FBA5061CCF082A009A3552 /* EZHudManager.m in Sources */,
 				39D80AC91CCA033200289133 /* EZPresentAlertAnimator.m in Sources */,
 				39D80A7E1CC9ECE500289133 /* main.m in Sources */,
+				39FBA5031CCF079C009A3552 /* EZDeviceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

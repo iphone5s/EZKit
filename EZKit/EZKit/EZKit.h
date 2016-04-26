@@ -23,7 +23,7 @@
 
 #pragma mark ======Foundation======
 
-#import "EZDeviceManagement.h"
-#import "EZHudManagement.h"
+#import "EZDeviceManager.h"
+#import "EZHudManager.h"
 
 #endif /* EZKit_h */

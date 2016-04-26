@@ -7,7 +7,7 @@
 //
 
 #import "EZPresentAlertAnimator.h"
-#import "EZDeviceManagement.h"
+#import "EZDeviceManager.h"
 #import "POP/POP.h"
 #import "Masonry.h"
 

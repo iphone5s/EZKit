@@ -1,18 +1,16 @@
 //
-//  EZDeviceManagement.m
+//  EZDeviceManager.m
 //  EZKit
 //
-//  Created by Caesar on 16/4/22.
-//  Copyright © 2016年 Caesar. All rights reserved.
+//  Created by Caesar on 16/4/26.
+//  Copyright © 2016年 EZreal. All rights reserved.
 //
 
-#import "EZDeviceManagement.h"
-
+#import "EZDeviceManager.h"
 #import "FCUUID.h"
 
-@implementation EZDeviceManagement
-
-DEF_SINGLETON_AUTOLOAD(EZDeviceManagement)
+@implementation EZDeviceManager
+DEF_SINGLETON_AUTOLOAD(EZDeviceManager)
 
 - (instancetype)init
 {
