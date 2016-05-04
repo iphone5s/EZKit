@@ -60,6 +60,18 @@
     [navbtn setTitle:@"Present Nav" forState:UIControlStateNormal];
     [navbtn addTarget:self action:@selector(navBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    UIButton *hudbtn = [UIButton new];
+    
+    [self.view addSubview:hudbtn];
+    [hudbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(100, 30));
+        make.centerX.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view).offset(80);
+    }];
+    hudbtn.backgroundColor = [UIColor grayColor];
+    [hudbtn setTitle:@"hudTest" forState:UIControlStateNormal];
+    [hudbtn addTarget:self action:@selector(hudBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +91,11 @@
     TestViewController *vc = [TestViewController new];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
     [self ez_presentViewController:nav animatedType:EZPresentAnimationAlert completion:nil];
+}
+
+-(void)hudBtnClicked:(UIButton *)sender
+{
+    [EZSharedHUD showMsg:@"测试"];
 }
 
 @end
