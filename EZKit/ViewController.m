@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     self.view.backgroundColor = [UIColor grayColor];
     NSArray *arr = [NSArray arrayWithObjects:@"1",@"2",@"3", nil];
     NSLog([arr objectAtIndex:0]);

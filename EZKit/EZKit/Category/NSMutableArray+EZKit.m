@@ -49,6 +49,7 @@
     
     return [self ez_removeObjectAtIndex:index];
 }
+
 - (void)ez_replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject
 {
     if (index >= [self count])
@@ -62,6 +63,7 @@
 }
 
 + (void)load {
+    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self ez_hookMethod:@selector(ez_objectAtIndex:) tarClass:@"__NSArrayM" tarSel:@selector(objectAtIndex:)];
