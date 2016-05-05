@@ -26,4 +26,8 @@
 #import "EZDeviceManager.h"
 #import "EZHudManager.h"
 
+#pragma mark ======Network======
+
+#import "EZRequest.h"
+
 #endif /* EZKit_h */

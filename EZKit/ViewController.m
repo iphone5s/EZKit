@@ -11,6 +11,8 @@
 #import "EZKit.h"
 #import "Masonry.h"
 #import "TestViewController.h"
+#import "YTKNetworkConfig.h"
+#import "TestApi.h"
 
 @interface ViewController ()
 
@@ -72,6 +74,28 @@
     [hudbtn setTitle:@"hudTest" forState:UIControlStateNormal];
     [hudbtn addTarget:self action:@selector(hudBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedInstance];
+    config.baseUrl = @"http://sportsipad.qq.com";
+    
+    TestApi *api = [[TestApi alloc]init];
+    [api startWithCompletionBlockWithSuccess:^(__kindof EZRequest *request) {
+        id objstr = request.responseString;
+        id objData = request.responseData;
+        id objjson = request.responseJSONObject;
+        id model = request.responseModel;
+        NSLog(@"success");
+    } failure:^(__kindof EZRequest *request) {
+        
+    }];
+//    [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest *request) {
+//        id objstr = request.responseString;
+//        id objData = request.responseData;
+//        id objjson = request.responseJSONObject;
+//        NSLog(@"success");
+//    } failure:^(__kindof YTKBaseRequest *request) {
+//        
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'EZKit'
-  spec.version      = '0.0.2'
+  spec.version      = '0.0.3'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/iphone5s/EZKit'
   spec.authors      = { 'Ezreal' => '453742103@qq.com' }

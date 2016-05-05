@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F971765302F57ACA0EE4CD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 105D03ED4008E72AAE90E796 /* libPods.a */; };
+		39D5D9871CD9F7AE00A0DE4B /* EZRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D5D9861CD9F7AE00A0DE4B /* EZRequest.m */; };
+		39D5D98A1CD9F8D200A0DE4B /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D5D9891CD9F8D200A0DE4B /* TestApi.m */; };
 		39D80A7E1CC9ECE500289133 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80A7D1CC9ECE500289133 /* main.m */; };
 		39D80A811CC9ECE500289133 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80A801CC9ECE500289133 /* AppDelegate.m */; };
 		39D80A841CC9ECE500289133 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80A831CC9ECE500289133 /* ViewController.m */; };
@@ -32,6 +34,10 @@
 /* Begin PBXFileReference section */
 		0822DFABB99453F08E863D83 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		105D03ED4008E72AAE90E796 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		39D5D9851CD9F7AE00A0DE4B /* EZRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRequest.h; sourceTree = "<group>"; };
+		39D5D9861CD9F7AE00A0DE4B /* EZRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRequest.m; sourceTree = "<group>"; };
+		39D5D9881CD9F8D200A0DE4B /* TestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
+		39D5D9891CD9F8D200A0DE4B /* TestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestApi.m; sourceTree = "<group>"; };
 		39D80A791CC9ECE500289133 /* EZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D80A7D1CC9ECE500289133 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39D80A7F1CC9ECE500289133 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39D5D9841CD9F79500A0DE4B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				39D5D9851CD9F7AE00A0DE4B /* EZRequest.h */,
+				39D5D9861CD9F7AE00A0DE4B /* EZRequest.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		39D80A701CC9ECE500289133 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +128,8 @@
 				39D80A801CC9ECE500289133 /* AppDelegate.m */,
 				39D80A821CC9ECE500289133 /* ViewController.h */,
 				39D80A831CC9ECE500289133 /* ViewController.m */,
+				39D5D9881CD9F8D200A0DE4B /* TestApi.h */,
+				39D5D9891CD9F8D200A0DE4B /* TestApi.m */,
 				39D80AC41CCA015300289133 /* CustomViewController.h */,
 				39D80AC51CCA015300289133 /* CustomViewController.m */,
 				39D80ACD1CCA0A6E00289133 /* TestViewController.h */,
@@ -139,6 +156,7 @@
 			children = (
 				39D80AA11CC9EF2D00289133 /* EZKit.h */,
 				39D80AB91CC9F9C400289133 /* EZKitDefine.h */,
+				39D5D9841CD9F79500A0DE4B /* Network */,
 				39D80AC31CC9FCC800289133 /* Animator */,
 				39D80AA21CC9EF6B00289133 /* Category */,
 				39D80AA71CC9EF6B00289133 /* Foundation */,
@@ -339,6 +357,7 @@
 				39D80AC21CC9FCBB00289133 /* UIViewController+EZKit.m in Sources */,
 				39D80AB61CC9F46C00289133 /* NSString+EZKit.m in Sources */,
 				39D80A841CC9ECE500289133 /* ViewController.m in Sources */,
+				39D5D98A1CD9F8D200A0DE4B /* TestApi.m in Sources */,
 				39D80ACC1CCA034F00289133 /* EZDismissAlertAnimator.m in Sources */,
 				39D80AC61CCA015300289133 /* CustomViewController.m in Sources */,
 				39D80ACF1CCA0A6E00289133 /* TestViewController.m in Sources */,
@@ -346,6 +365,7 @@
 				39D80AAF1CC9EFBA00289133 /* NSMutableArray+EZKit.m in Sources */,
 				39D80A811CC9ECE500289133 /* AppDelegate.m in Sources */,
 				39FBA5061CCF082A009A3552 /* EZHudManager.m in Sources */,
+				39D5D9871CD9F7AE00A0DE4B /* EZRequest.m in Sources */,
 				39D80AC91CCA033200289133 /* EZPresentAlertAnimator.m in Sources */,
 				39D80A7E1CC9ECE500289133 /* main.m in Sources */,
 				39FBA5031CCF079C009A3552 /* EZDeviceManager.m in Sources */,
