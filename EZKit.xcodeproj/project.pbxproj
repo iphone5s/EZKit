@@ -29,6 +29,7 @@
 		39D80AD31CCA16B700289133 /* UIView+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AD21CCA16B700289133 /* UIView+EZKit.m */; };
 		39FBA5031CCF079C009A3552 /* EZDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FBA5021CCF079C009A3552 /* EZDeviceManager.m */; };
 		39FBA5061CCF082A009A3552 /* EZHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FBA5051CCF082A009A3552 /* EZHudManager.m */; };
+		77FF55F31CDC83A800E8D085 /* UIColor+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FF55F21CDC83A800E8D085 /* UIColor+EZKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		39FBA5021CCF079C009A3552 /* EZDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDeviceManager.m; sourceTree = "<group>"; };
 		39FBA5041CCF082A009A3552 /* EZHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHudManager.h; sourceTree = "<group>"; };
 		39FBA5051CCF082A009A3552 /* EZHudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZHudManager.m; sourceTree = "<group>"; };
+		77FF55F11CDC83A800E8D085 /* UIColor+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EZKit.h"; sourceTree = "<group>"; };
+		77FF55F21CDC83A800E8D085 /* UIColor+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EZKit.m"; sourceTree = "<group>"; };
 		8281A311CEE058F5F8E78F61 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +184,8 @@
 				39D80AD21CCA16B700289133 /* UIView+EZKit.m */,
 				39D80AC01CC9FCBB00289133 /* UIViewController+EZKit.h */,
 				39D80AC11CC9FCBB00289133 /* UIViewController+EZKit.m */,
+				77FF55F11CDC83A800E8D085 /* UIColor+EZKit.h */,
+				77FF55F21CDC83A800E8D085 /* UIColor+EZKit.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				39D80AB21CC9F32700289133 /* NSDictionary+EZKit.m in Sources */,
 				39D80AAA1CC9EF6B00289133 /* NSArray+EZKit.m in Sources */,
 				39D80AD31CCA16B700289133 /* UIView+EZKit.m in Sources */,
+				77FF55F31CDC83A800E8D085 /* UIColor+EZKit.m in Sources */,
 				39D80AC21CC9FCBB00289133 /* UIViewController+EZKit.m in Sources */,
 				39D80AB61CC9F46C00289133 /* NSString+EZKit.m in Sources */,
 				39D80A841CC9ECE500289133 /* ViewController.m in Sources */,

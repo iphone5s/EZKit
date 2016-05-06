@@ -73,7 +73,7 @@
     hudbtn.backgroundColor = [UIColor grayColor];
     [hudbtn setTitle:@"hudTest" forState:UIControlStateNormal];
     [hudbtn addTarget:self action:@selector(hudBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
+    self.view.backgroundColor = HEX_RGB(0x000000);
     
     YTKNetworkConfig *config = [YTKNetworkConfig sharedInstance];
     config.baseUrl = @"http://sportsipad.qq.com";

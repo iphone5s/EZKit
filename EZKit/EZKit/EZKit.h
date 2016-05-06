@@ -20,7 +20,7 @@
 #import "NSString+EZKit.h"
 #import "UIView+EZKit.h"
 #import "UIViewController+EZKit.h"
-
+#import "UIColor+EZKit.h"
 #pragma mark ======Foundation======
 
 #import "EZDeviceManager.h"
