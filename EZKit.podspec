@@ -13,5 +13,5 @@ Pod::Spec.new do |spec|
   spec.dependency 'FCUUID'
   spec.dependency 'pop'
   spec.dependency 'MBProgressHUD'
-
+  spec.dependency 'YTKNetwork'
 end
