@@ -28,6 +28,7 @@
 
 #pragma mark ======Network======
 
+#import "YTKNetworkConfig.h"
 #import "EZRequest.h"
 
 #endif /* EZKit_h */

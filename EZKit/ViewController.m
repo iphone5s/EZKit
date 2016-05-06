@@ -77,7 +77,7 @@
     
     YTKNetworkConfig *config = [YTKNetworkConfig sharedInstance];
     config.baseUrl = @"http://sportsipad.qq.com";
-    
+
     TestApi *api = [[TestApi alloc]init];
     [api startWithCompletionBlockWithSuccess:^(__kindof EZRequest *request) {
         id objstr = request.responseString;
