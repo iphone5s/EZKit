@@ -25,10 +25,11 @@
 
 #import "EZDeviceManager.h"
 #import "EZHudManager.h"
+#import "EZCacheManager.h"
 
 #pragma mark ======Network======
 
-#import "YTKNetworkConfig.h"
-#import "EZRequest.h"
+//#import "YTKNetworkConfig.h"
+//#import "EZRequest.h"
 
 #endif /* EZKit_h */

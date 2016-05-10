@@ -19,7 +19,7 @@ DEF_SINGLETON_AUTOLOAD(EZDeviceManager)
         self.strUDID = [FCUUID uuidForDevice];
         self.strDevice = [UIDevice currentDevice].model;
         self.strNetState = @"Unknown";
-        
+        self.strPathDoc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0];
     }
     return self;
 }
@@ -71,4 +71,13 @@ DEF_SINGLETON_AUTOLOAD(EZDeviceManager)
     return screenSize.height;
 }
 
+-(NSString *)strCurrentDate
+{
+    NSDate *currentDate = [NSDate date];//获取当前时间，日期
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS"];
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+
+    return dateString;
+}
 @end

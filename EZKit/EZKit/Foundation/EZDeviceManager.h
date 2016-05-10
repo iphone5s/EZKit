@@ -29,6 +29,10 @@ AS_SINGLETON(EZDeviceManager)
 
 @property (nonatomic,strong)NSString *strTimeZone;
 
+@property (nonatomic,strong)NSString *strCurrentDate;
+
+@property (nonatomic,strong)NSString *strPathDoc;
+
 @property (nonatomic,strong)NSString *strNetState;
 
 @property (nonatomic,assign)CGFloat  screenWidth;
