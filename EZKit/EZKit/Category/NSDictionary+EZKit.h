@@ -10,4 +10,6 @@
 
 @interface NSDictionary (EZKit)
 
+-(NSString *)ez_stringForKey:(NSString *)key;
+
 @end

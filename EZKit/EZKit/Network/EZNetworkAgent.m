@@ -11,7 +11,7 @@
 #import "EZCacheManager.h"
 #import "AFNetworking.h"
 #import "EZNetworkArgument.h"
-
+#import "NSDictionary+EZKit.h"
 @implementation EZNetworkAgent
 {
     AFHTTPSessionManager *_manager;
@@ -117,16 +117,52 @@ DEF_SINGLETON(EZNetworkAgent);
 {
     NSString *strTaskID = [self requestTaskID:task];
     EZRequest *request = _requestsRecord[strTaskID];
-    if (request.successCompletionBlock != nil)
+    
+    if (request)
     {
-        //block返回
-        request.successCompletionBlock(request);
+        BOOL succeed = [self checkResult:request];
+        
+        if (succeed)
+        {
+            if ([request responseMethod] != EZResponseMethodDefault)
+            {
+                //保存缓存数据
+                NSString *strURL = [request requestUrl];
+                [EZSharedCache ez_saveCacheByKey:request.responseString value:strURL];
+            }
+            
+            if (request.successCompletionBlock)
+            {
+                //接口成功回调
+                request.successCompletionBlock(request);
+            }
+        }
+        else
+        {
+            if (request.failureCompletionBlock)
+            {
+                //接口失败回调
+                request.failureCompletionBlock(request);
+            }
+        }
     }
-    else
-    {
-        //代理返回
-    }
+
     [self removeSessionDataTask:task];
+}
+
+- (BOOL)checkResult:(EZRequest *)request {
+    
+    return YES;
+//    BOOL result = [request statusCodeValidator];
+//    if (!result) {
+//        return result;
+//    }
+//    id validator = [request jsonValidator];
+//    if (validator != nil) {
+//        id json = [request responseJSONObject];
+//        result = [YTKNetworkPrivate checkJson:json withValidator:validator];
+//    }
+//    return result;
 }
 
 - (NSString *)buildRequestUrl:(EZRequest *)request {
@@ -136,6 +172,16 @@ DEF_SINGLETON(EZNetworkAgent);
         return detailUrl;
     }
     
+    NSArray *filters = [_config urlFilters];
+    for (id<EZNetworkArgumentProtocol> f in filters)
+    {
+        NSDictionary *dict = [f requestArgument];
+        for (NSString *key in dict.allKeys)
+        {
+            detailUrl = [NSString stringWithFormat:@"%@%@",detailUrl,[dict ez_stringForKey:key]];
+        }
+//        detailUrl = [f filterUrl:detailUrl withRequest:request];
+    }
     NSString *baseUrl;
     if ([request baseUrl].length > 0) {
         baseUrl = [request baseUrl];

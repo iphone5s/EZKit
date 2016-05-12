@@ -12,6 +12,7 @@
 #import "Masonry.h"
 #import "TestViewController.h"
 #import "TestApi.h"
+#import "EZNetworkArgument.h"
 
 @interface ViewController ()
 
@@ -111,6 +112,8 @@
     //    EZSharedCache.enableAutoClear = YES;
     EZNetworkConfig *config = [EZNetworkConfig sharedInstance];
     config.baseUrl = @"http://sportsipad.qq.com";
+    EZNetworkArgument *argument = [EZNetworkArgument alloc];
+    [config addUrlFilter:argument];
 }
 
 - (void)didReceiveMemoryWarning {

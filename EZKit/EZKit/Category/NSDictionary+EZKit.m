@@ -10,4 +10,21 @@
 
 @implementation NSDictionary (EZKit)
 
+-(NSString *)ez_stringForKey:(NSString *)key
+{
+    id obj = [self objectForKey:key];
+    if ([obj isKindOfClass:[NSString class]])
+    {
+        return obj;
+    }
+    else if([obj isKindOfClass:[NSNumber class]])
+    {
+        return [obj stringFromNumber:obj];
+    }
+    else
+    {
+        return obj;
+    }
+}
+
 @end
