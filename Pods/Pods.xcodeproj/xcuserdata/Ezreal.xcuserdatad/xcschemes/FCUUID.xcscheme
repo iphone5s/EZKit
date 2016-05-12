@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B12862594B1493E6ABCED75A'
+               BlueprintIdentifier = '9B412E0D1AA7CFCC3B6CBEC582819D45'
                BlueprintName = 'FCUUID'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libFCUUID.a'>

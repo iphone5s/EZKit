@@ -29,7 +29,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-EZKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,12 +47,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<key>06458B7742FD11D41DF230D3146206EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>78EAA9B439B0FDB694E80663A02E2652</key>
+		<key>2177D7BB243704C30C58ADBD94849B66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -73,11 +78,6 @@
 			<true/>
 		</dict>
 		<key>B2B0F87BC788FA547E5356A9006F455A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B8DE2A4B70221AE958C2EB0214E643D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

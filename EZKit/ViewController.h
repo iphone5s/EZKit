@@ -2,8 +2,8 @@
 //  ViewController.h
 //  EZKit
 //
-//  Created by Caesar on 16/4/22.
-//  Copyright © 2016年 EZreal. All rights reserved.
+//  Created by Ezreal on 16/5/12.
+//  Copyright © 2016年 Ezreal. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

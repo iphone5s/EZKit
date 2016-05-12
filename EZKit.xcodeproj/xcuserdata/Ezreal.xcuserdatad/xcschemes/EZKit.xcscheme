@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39D80A781CC9ECE500289133"
+               BlueprintIdentifier = "7778B6D41CE491DB006534A9"
                BuildableName = "EZKit.app"
                BlueprintName = "EZKit"
                ReferencedContainer = "container:EZKit.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39D80A781CC9ECE500289133"
+            BlueprintIdentifier = "7778B6D41CE491DB006534A9"
             BuildableName = "EZKit.app"
             BlueprintName = "EZKit"
             ReferencedContainer = "container:EZKit.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39D80A781CC9ECE500289133"
+            BlueprintIdentifier = "7778B6D41CE491DB006534A9"
             BuildableName = "EZKit.app"
             BlueprintName = "EZKit"
             ReferencedContainer = "container:EZKit.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39D80A781CC9ECE500289133"
+            BlueprintIdentifier = "7778B6D41CE491DB006534A9"
             BuildableName = "EZKit.app"
             BlueprintName = "EZKit"
             ReferencedContainer = "container:EZKit.xcodeproj">

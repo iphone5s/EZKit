@@ -7,261 +7,259 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F971765302F57ACA0EE4CD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 105D03ED4008E72AAE90E796 /* libPods.a */; };
-		39D80A7E1CC9ECE500289133 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80A7D1CC9ECE500289133 /* main.m */; };
-		39D80A811CC9ECE500289133 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80A801CC9ECE500289133 /* AppDelegate.m */; };
-		39D80A841CC9ECE500289133 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80A831CC9ECE500289133 /* ViewController.m */; };
-		39D80A871CC9ECE500289133 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D80A851CC9ECE500289133 /* Main.storyboard */; };
-		39D80A891CC9ECE500289133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D80A881CC9ECE500289133 /* Assets.xcassets */; };
-		39D80A8C1CC9ECE500289133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D80A8A1CC9ECE500289133 /* LaunchScreen.storyboard */; };
-		39D80AAA1CC9EF6B00289133 /* NSArray+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AA41CC9EF6B00289133 /* NSArray+EZKit.m */; };
-		39D80AAB1CC9EF6B00289133 /* NSObject+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AA61CC9EF6B00289133 /* NSObject+EZKit.m */; };
-		39D80AAF1CC9EFBA00289133 /* NSMutableArray+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AAE1CC9EFBA00289133 /* NSMutableArray+EZKit.m */; };
-		39D80AB21CC9F32700289133 /* NSDictionary+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AB11CC9F32700289133 /* NSDictionary+EZKit.m */; };
-		39D80AB61CC9F46C00289133 /* NSString+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AB51CC9F46C00289133 /* NSString+EZKit.m */; };
-		39D80AC21CC9FCBB00289133 /* UIViewController+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AC11CC9FCBB00289133 /* UIViewController+EZKit.m */; };
-		39D80AC61CCA015300289133 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AC51CCA015300289133 /* CustomViewController.m */; };
-		39D80AC91CCA033200289133 /* EZPresentAlertAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AC81CCA033200289133 /* EZPresentAlertAnimator.m */; };
-		39D80ACC1CCA034F00289133 /* EZDismissAlertAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80ACB1CCA034F00289133 /* EZDismissAlertAnimator.m */; };
-		39D80ACF1CCA0A6E00289133 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80ACE1CCA0A6E00289133 /* TestViewController.m */; };
-		39D80AD31CCA16B700289133 /* UIView+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D80AD21CCA16B700289133 /* UIView+EZKit.m */; };
-		39FBA5031CCF079C009A3552 /* EZDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FBA5021CCF079C009A3552 /* EZDeviceManager.m */; };
-		39FBA5061CCF082A009A3552 /* EZHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FBA5051CCF082A009A3552 /* EZHudManager.m */; };
-		774275981CE1A480003CD11C /* EZNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 774275971CE1A480003CD11C /* EZNetworkConfig.m */; };
-		774275A11CE1A898003CD11C /* EZNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 774275A01CE1A898003CD11C /* EZNetworkAgent.m */; };
-		774275A41CE1B275003CD11C /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 774275A31CE1B275003CD11C /* TestApi.m */; };
-		77D5F93C1CE2D64C00CF2B69 /* EZNetworkArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5F93B1CE2D64C00CF2B69 /* EZNetworkArgument.m */; };
-		77E6BF281CDE64C0006FEF6E /* EZCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E6BF271CDE64C0006FEF6E /* EZCacheManager.m */; };
-		77EA62FD1CE2471300A24AE7 /* EZRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EA62FC1CE2471300A24AE7 /* EZRequest.m */; };
-		77FF55F31CDC83A800E8D085 /* UIColor+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FF55F21CDC83A800E8D085 /* UIColor+EZKit.m */; };
+		6A400CFFD8C7D887A9C4E9D5 /* libPods-EZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3535134BD77354B1D64817 /* libPods-EZKit.a */; };
+		7778B6DA1CE491DB006534A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6D91CE491DB006534A9 /* main.m */; };
+		7778B6DD1CE491DB006534A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6DC1CE491DB006534A9 /* AppDelegate.m */; };
+		7778B6E01CE491DB006534A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6DF1CE491DB006534A9 /* ViewController.m */; };
+		7778B6E31CE491DB006534A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7778B6E11CE491DB006534A9 /* Main.storyboard */; };
+		7778B6E51CE491DB006534A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7778B6E41CE491DB006534A9 /* Assets.xcassets */; };
+		7778B6E81CE491DB006534A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7778B6E61CE491DB006534A9 /* LaunchScreen.storyboard */; };
+		7778B7181CE4922C006534A9 /* EZDismissAlertAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6F21CE4922C006534A9 /* EZDismissAlertAnimator.m */; };
+		7778B7191CE4922C006534A9 /* EZPresentAlertAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6F41CE4922C006534A9 /* EZPresentAlertAnimator.m */; };
+		7778B71A1CE4922C006534A9 /* NSArray+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6F71CE4922C006534A9 /* NSArray+EZKit.m */; };
+		7778B71B1CE4922C006534A9 /* NSDictionary+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6F91CE4922C006534A9 /* NSDictionary+EZKit.m */; };
+		7778B71C1CE4922C006534A9 /* NSMutableArray+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6FB1CE4922C006534A9 /* NSMutableArray+EZKit.m */; };
+		7778B71D1CE4922C006534A9 /* NSObject+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6FD1CE4922C006534A9 /* NSObject+EZKit.m */; };
+		7778B71E1CE4922C006534A9 /* NSString+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6FF1CE4922C006534A9 /* NSString+EZKit.m */; };
+		7778B71F1CE4922C006534A9 /* UIColor+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7011CE4922C006534A9 /* UIColor+EZKit.m */; };
+		7778B7201CE4922C006534A9 /* UIView+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7031CE4922C006534A9 /* UIView+EZKit.m */; };
+		7778B7211CE4922C006534A9 /* UIViewController+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7051CE4922C006534A9 /* UIViewController+EZKit.m */; };
+		7778B7221CE4922C006534A9 /* EZCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B70A1CE4922C006534A9 /* EZCacheManager.m */; };
+		7778B7231CE4922C006534A9 /* EZDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B70C1CE4922C006534A9 /* EZDeviceManager.m */; };
+		7778B7241CE4922C006534A9 /* EZHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B70E1CE4922C006534A9 /* EZHudManager.m */; };
+		7778B7251CE4922C006534A9 /* EZNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7111CE4922C006534A9 /* EZNetworkAgent.m */; };
+		7778B7261CE4922C006534A9 /* EZNetworkArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7131CE4922C006534A9 /* EZNetworkArgument.m */; };
+		7778B7271CE4922C006534A9 /* EZNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7151CE4922C006534A9 /* EZNetworkConfig.m */; };
+		7778B7281CE4922C006534A9 /* EZRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7171CE4922C006534A9 /* EZRequest.m */; };
+		7778B72B1CE492EF006534A9 /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B72A1CE492EF006534A9 /* TestApi.m */; };
+		7778B7301CE492FD006534A9 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B72D1CE492FD006534A9 /* CustomViewController.m */; };
+		7778B7311CE492FD006534A9 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B72F1CE492FD006534A9 /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0822DFABB99453F08E863D83 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		105D03ED4008E72AAE90E796 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		39D80A791CC9ECE500289133 /* EZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		39D80A7D1CC9ECE500289133 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		39D80A7F1CC9ECE500289133 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		39D80A801CC9ECE500289133 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		39D80A821CC9ECE500289133 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		39D80A831CC9ECE500289133 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		39D80A861CC9ECE500289133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		39D80A881CC9ECE500289133 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		39D80A8B1CC9ECE500289133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		39D80A8D1CC9ECE500289133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39D80AA11CC9EF2D00289133 /* EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZKit.h; sourceTree = "<group>"; };
-		39D80AA31CC9EF6B00289133 /* NSArray+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EZKit.h"; sourceTree = "<group>"; };
-		39D80AA41CC9EF6B00289133 /* NSArray+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EZKit.m"; sourceTree = "<group>"; };
-		39D80AA51CC9EF6B00289133 /* NSObject+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EZKit.h"; sourceTree = "<group>"; };
-		39D80AA61CC9EF6B00289133 /* NSObject+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EZKit.m"; sourceTree = "<group>"; };
-		39D80AAD1CC9EFBA00289133 /* NSMutableArray+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+EZKit.h"; sourceTree = "<group>"; };
-		39D80AAE1CC9EFBA00289133 /* NSMutableArray+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+EZKit.m"; sourceTree = "<group>"; };
-		39D80AB01CC9F32700289133 /* NSDictionary+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+EZKit.h"; sourceTree = "<group>"; };
-		39D80AB11CC9F32700289133 /* NSDictionary+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+EZKit.m"; sourceTree = "<group>"; };
-		39D80AB41CC9F46C00289133 /* NSString+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EZKit.h"; sourceTree = "<group>"; };
-		39D80AB51CC9F46C00289133 /* NSString+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EZKit.m"; sourceTree = "<group>"; };
-		39D80AB91CC9F9C400289133 /* EZKitDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZKitDefine.h; sourceTree = "<group>"; };
-		39D80AC01CC9FCBB00289133 /* UIViewController+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EZKit.h"; sourceTree = "<group>"; };
-		39D80AC11CC9FCBB00289133 /* UIViewController+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EZKit.m"; sourceTree = "<group>"; };
-		39D80AC41CCA015300289133 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
-		39D80AC51CCA015300289133 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
-		39D80AC71CCA033200289133 /* EZPresentAlertAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZPresentAlertAnimator.h; sourceTree = "<group>"; };
-		39D80AC81CCA033200289133 /* EZPresentAlertAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZPresentAlertAnimator.m; sourceTree = "<group>"; };
-		39D80ACA1CCA034F00289133 /* EZDismissAlertAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDismissAlertAnimator.h; sourceTree = "<group>"; };
-		39D80ACB1CCA034F00289133 /* EZDismissAlertAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDismissAlertAnimator.m; sourceTree = "<group>"; };
-		39D80ACD1CCA0A6E00289133 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		39D80ACE1CCA0A6E00289133 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		39D80AD01CCA14E000289133 /* EZKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = EZKit.entitlements; sourceTree = "<group>"; };
-		39D80AD11CCA16B700289133 /* UIView+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EZKit.h"; sourceTree = "<group>"; };
-		39D80AD21CCA16B700289133 /* UIView+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EZKit.m"; sourceTree = "<group>"; };
-		39FBA5011CCF079C009A3552 /* EZDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDeviceManager.h; sourceTree = "<group>"; };
-		39FBA5021CCF079C009A3552 /* EZDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDeviceManager.m; sourceTree = "<group>"; };
-		39FBA5041CCF082A009A3552 /* EZHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHudManager.h; sourceTree = "<group>"; };
-		39FBA5051CCF082A009A3552 /* EZHudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZHudManager.m; sourceTree = "<group>"; };
-		774275961CE1A480003CD11C /* EZNetworkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkConfig.h; sourceTree = "<group>"; };
-		774275971CE1A480003CD11C /* EZNetworkConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkConfig.m; sourceTree = "<group>"; };
-		7742759F1CE1A898003CD11C /* EZNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkAgent.h; sourceTree = "<group>"; };
-		774275A01CE1A898003CD11C /* EZNetworkAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkAgent.m; sourceTree = "<group>"; };
-		774275A21CE1B275003CD11C /* TestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
-		774275A31CE1B275003CD11C /* TestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestApi.m; sourceTree = "<group>"; };
-		77D5F93A1CE2D64C00CF2B69 /* EZNetworkArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkArgument.h; sourceTree = "<group>"; };
-		77D5F93B1CE2D64C00CF2B69 /* EZNetworkArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkArgument.m; sourceTree = "<group>"; };
-		77E6BF261CDE64C0006FEF6E /* EZCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZCacheManager.h; sourceTree = "<group>"; };
-		77E6BF271CDE64C0006FEF6E /* EZCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZCacheManager.m; sourceTree = "<group>"; };
-		77EA62FB1CE2471300A24AE7 /* EZRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRequest.h; sourceTree = "<group>"; };
-		77EA62FC1CE2471300A24AE7 /* EZRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRequest.m; sourceTree = "<group>"; };
-		77FF55F11CDC83A800E8D085 /* UIColor+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EZKit.h"; sourceTree = "<group>"; };
-		77FF55F21CDC83A800E8D085 /* UIColor+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EZKit.m"; sourceTree = "<group>"; };
-		8281A311CEE058F5F8E78F61 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		19FFF69EEB938D789E57B60E /* Pods-EZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-EZKit/Pods-EZKit.release.xcconfig"; sourceTree = "<group>"; };
+		5F3535134BD77354B1D64817 /* libPods-EZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7778B6D51CE491DB006534A9 /* EZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7778B6D91CE491DB006534A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7778B6DB1CE491DB006534A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7778B6DC1CE491DB006534A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7778B6DE1CE491DB006534A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7778B6DF1CE491DB006534A9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7778B6E21CE491DB006534A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7778B6E41CE491DB006534A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7778B6E71CE491DB006534A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7778B6E91CE491DB006534A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7778B6F11CE4922C006534A9 /* EZDismissAlertAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDismissAlertAnimator.h; sourceTree = "<group>"; };
+		7778B6F21CE4922C006534A9 /* EZDismissAlertAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDismissAlertAnimator.m; sourceTree = "<group>"; };
+		7778B6F31CE4922C006534A9 /* EZPresentAlertAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZPresentAlertAnimator.h; sourceTree = "<group>"; };
+		7778B6F41CE4922C006534A9 /* EZPresentAlertAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZPresentAlertAnimator.m; sourceTree = "<group>"; };
+		7778B6F61CE4922C006534A9 /* NSArray+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EZKit.h"; sourceTree = "<group>"; };
+		7778B6F71CE4922C006534A9 /* NSArray+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EZKit.m"; sourceTree = "<group>"; };
+		7778B6F81CE4922C006534A9 /* NSDictionary+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+EZKit.h"; sourceTree = "<group>"; };
+		7778B6F91CE4922C006534A9 /* NSDictionary+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+EZKit.m"; sourceTree = "<group>"; };
+		7778B6FA1CE4922C006534A9 /* NSMutableArray+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+EZKit.h"; sourceTree = "<group>"; };
+		7778B6FB1CE4922C006534A9 /* NSMutableArray+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+EZKit.m"; sourceTree = "<group>"; };
+		7778B6FC1CE4922C006534A9 /* NSObject+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EZKit.h"; sourceTree = "<group>"; };
+		7778B6FD1CE4922C006534A9 /* NSObject+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EZKit.m"; sourceTree = "<group>"; };
+		7778B6FE1CE4922C006534A9 /* NSString+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EZKit.h"; sourceTree = "<group>"; };
+		7778B6FF1CE4922C006534A9 /* NSString+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EZKit.m"; sourceTree = "<group>"; };
+		7778B7001CE4922C006534A9 /* UIColor+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EZKit.h"; sourceTree = "<group>"; };
+		7778B7011CE4922C006534A9 /* UIColor+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EZKit.m"; sourceTree = "<group>"; };
+		7778B7021CE4922C006534A9 /* UIView+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EZKit.h"; sourceTree = "<group>"; };
+		7778B7031CE4922C006534A9 /* UIView+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EZKit.m"; sourceTree = "<group>"; };
+		7778B7041CE4922C006534A9 /* UIViewController+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EZKit.h"; sourceTree = "<group>"; };
+		7778B7051CE4922C006534A9 /* UIViewController+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EZKit.m"; sourceTree = "<group>"; };
+		7778B7061CE4922C006534A9 /* EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZKit.h; sourceTree = "<group>"; };
+		7778B7071CE4922C006534A9 /* EZKitDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZKitDefine.h; sourceTree = "<group>"; };
+		7778B7091CE4922C006534A9 /* EZCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZCacheManager.h; sourceTree = "<group>"; };
+		7778B70A1CE4922C006534A9 /* EZCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZCacheManager.m; sourceTree = "<group>"; };
+		7778B70B1CE4922C006534A9 /* EZDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDeviceManager.h; sourceTree = "<group>"; };
+		7778B70C1CE4922C006534A9 /* EZDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDeviceManager.m; sourceTree = "<group>"; };
+		7778B70D1CE4922C006534A9 /* EZHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHudManager.h; sourceTree = "<group>"; };
+		7778B70E1CE4922C006534A9 /* EZHudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZHudManager.m; sourceTree = "<group>"; };
+		7778B7101CE4922C006534A9 /* EZNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkAgent.h; sourceTree = "<group>"; };
+		7778B7111CE4922C006534A9 /* EZNetworkAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkAgent.m; sourceTree = "<group>"; };
+		7778B7121CE4922C006534A9 /* EZNetworkArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkArgument.h; sourceTree = "<group>"; };
+		7778B7131CE4922C006534A9 /* EZNetworkArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkArgument.m; sourceTree = "<group>"; };
+		7778B7141CE4922C006534A9 /* EZNetworkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkConfig.h; sourceTree = "<group>"; };
+		7778B7151CE4922C006534A9 /* EZNetworkConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkConfig.m; sourceTree = "<group>"; };
+		7778B7161CE4922C006534A9 /* EZRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRequest.h; sourceTree = "<group>"; };
+		7778B7171CE4922C006534A9 /* EZRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRequest.m; sourceTree = "<group>"; };
+		7778B7291CE492EF006534A9 /* TestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
+		7778B72A1CE492EF006534A9 /* TestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestApi.m; sourceTree = "<group>"; };
+		7778B72C1CE492FD006534A9 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
+		7778B72D1CE492FD006534A9 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
+		7778B72E1CE492FD006534A9 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		7778B72F1CE492FD006534A9 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		AF375DA0B7BDA81FD8DAAC54 /* Pods-EZKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EZKit/Pods-EZKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		39D80A761CC9ECE500289133 /* Frameworks */ = {
+		7778B6D21CE491DB006534A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F971765302F57ACA0EE4CD6 /* libPods.a in Frameworks */,
+				6A400CFFD8C7D887A9C4E9D5 /* libPods-EZKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39D5D9841CD9F79500A0DE4B /* Network */ = {
+		5463A11170E498395BA29E4D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				774275961CE1A480003CD11C /* EZNetworkConfig.h */,
-				774275971CE1A480003CD11C /* EZNetworkConfig.m */,
-				77EA62FB1CE2471300A24AE7 /* EZRequest.h */,
-				77EA62FC1CE2471300A24AE7 /* EZRequest.m */,
-				7742759F1CE1A898003CD11C /* EZNetworkAgent.h */,
-				774275A01CE1A898003CD11C /* EZNetworkAgent.m */,
-				77D5F93A1CE2D64C00CF2B69 /* EZNetworkArgument.h */,
-				77D5F93B1CE2D64C00CF2B69 /* EZNetworkArgument.m */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		39D80A701CC9ECE500289133 = {
-			isa = PBXGroup;
-			children = (
-				39D80A7B1CC9ECE500289133 /* EZKit */,
-				39D80A7A1CC9ECE500289133 /* Products */,
-				BD51CC5A39063DED7E301A54 /* Pods */,
-				DC06DFDEAF266DBEB87FD00D /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		39D80A7A1CC9ECE500289133 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				39D80A791CC9ECE500289133 /* EZKit.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		39D80A7B1CC9ECE500289133 /* EZKit */ = {
-			isa = PBXGroup;
-			children = (
-				39D80AD01CCA14E000289133 /* EZKit.entitlements */,
-				39D80AA01CC9EEDC00289133 /* EZKit */,
-				39D80A7F1CC9ECE500289133 /* AppDelegate.h */,
-				39D80A801CC9ECE500289133 /* AppDelegate.m */,
-				39D80A821CC9ECE500289133 /* ViewController.h */,
-				39D80A831CC9ECE500289133 /* ViewController.m */,
-				774275A21CE1B275003CD11C /* TestApi.h */,
-				774275A31CE1B275003CD11C /* TestApi.m */,
-				39D80AC41CCA015300289133 /* CustomViewController.h */,
-				39D80AC51CCA015300289133 /* CustomViewController.m */,
-				39D80ACD1CCA0A6E00289133 /* TestViewController.h */,
-				39D80ACE1CCA0A6E00289133 /* TestViewController.m */,
-				39D80A851CC9ECE500289133 /* Main.storyboard */,
-				39D80A881CC9ECE500289133 /* Assets.xcassets */,
-				39D80A8A1CC9ECE500289133 /* LaunchScreen.storyboard */,
-				39D80A8D1CC9ECE500289133 /* Info.plist */,
-				39D80A7C1CC9ECE500289133 /* Supporting Files */,
-			);
-			path = EZKit;
-			sourceTree = "<group>";
-		};
-		39D80A7C1CC9ECE500289133 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				39D80A7D1CC9ECE500289133 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		39D80AA01CC9EEDC00289133 /* EZKit */ = {
-			isa = PBXGroup;
-			children = (
-				39D80AA11CC9EF2D00289133 /* EZKit.h */,
-				39D80AB91CC9F9C400289133 /* EZKitDefine.h */,
-				39D5D9841CD9F79500A0DE4B /* Network */,
-				39D80AC31CC9FCC800289133 /* Animator */,
-				39D80AA21CC9EF6B00289133 /* Category */,
-				39D80AA71CC9EF6B00289133 /* Foundation */,
-			);
-			path = EZKit;
-			sourceTree = "<group>";
-		};
-		39D80AA21CC9EF6B00289133 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				39D80AA51CC9EF6B00289133 /* NSObject+EZKit.h */,
-				39D80AA61CC9EF6B00289133 /* NSObject+EZKit.m */,
-				39D80AA31CC9EF6B00289133 /* NSArray+EZKit.h */,
-				39D80AA41CC9EF6B00289133 /* NSArray+EZKit.m */,
-				39D80AAD1CC9EFBA00289133 /* NSMutableArray+EZKit.h */,
-				39D80AAE1CC9EFBA00289133 /* NSMutableArray+EZKit.m */,
-				39D80AB01CC9F32700289133 /* NSDictionary+EZKit.h */,
-				39D80AB11CC9F32700289133 /* NSDictionary+EZKit.m */,
-				39D80AB41CC9F46C00289133 /* NSString+EZKit.h */,
-				39D80AB51CC9F46C00289133 /* NSString+EZKit.m */,
-				39D80AD11CCA16B700289133 /* UIView+EZKit.h */,
-				39D80AD21CCA16B700289133 /* UIView+EZKit.m */,
-				39D80AC01CC9FCBB00289133 /* UIViewController+EZKit.h */,
-				39D80AC11CC9FCBB00289133 /* UIViewController+EZKit.m */,
-				77FF55F11CDC83A800E8D085 /* UIColor+EZKit.h */,
-				77FF55F21CDC83A800E8D085 /* UIColor+EZKit.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		39D80AA71CC9EF6B00289133 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				39FBA5011CCF079C009A3552 /* EZDeviceManager.h */,
-				39FBA5021CCF079C009A3552 /* EZDeviceManager.m */,
-				39FBA5041CCF082A009A3552 /* EZHudManager.h */,
-				39FBA5051CCF082A009A3552 /* EZHudManager.m */,
-				77E6BF261CDE64C0006FEF6E /* EZCacheManager.h */,
-				77E6BF271CDE64C0006FEF6E /* EZCacheManager.m */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		39D80AC31CC9FCC800289133 /* Animator */ = {
-			isa = PBXGroup;
-			children = (
-				39D80AC71CCA033200289133 /* EZPresentAlertAnimator.h */,
-				39D80AC81CCA033200289133 /* EZPresentAlertAnimator.m */,
-				39D80ACA1CCA034F00289133 /* EZDismissAlertAnimator.h */,
-				39D80ACB1CCA034F00289133 /* EZDismissAlertAnimator.m */,
-			);
-			path = Animator;
-			sourceTree = "<group>";
-		};
-		BD51CC5A39063DED7E301A54 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8281A311CEE058F5F8E78F61 /* Pods.debug.xcconfig */,
-				0822DFABB99453F08E863D83 /* Pods.release.xcconfig */,
+				AF375DA0B7BDA81FD8DAAC54 /* Pods-EZKit.debug.xcconfig */,
+				19FFF69EEB938D789E57B60E /* Pods-EZKit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		DC06DFDEAF266DBEB87FD00D /* Frameworks */ = {
+		5F949CB7D834448814EC112D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				105D03ED4008E72AAE90E796 /* libPods.a */,
+				5F3535134BD77354B1D64817 /* libPods-EZKit.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7778B6CC1CE491DB006534A9 = {
+			isa = PBXGroup;
+			children = (
+				7778B6D71CE491DB006534A9 /* EZKit */,
+				7778B6D61CE491DB006534A9 /* Products */,
+				5463A11170E498395BA29E4D /* Pods */,
+				5F949CB7D834448814EC112D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7778B6D61CE491DB006534A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7778B6D51CE491DB006534A9 /* EZKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7778B6D71CE491DB006534A9 /* EZKit */ = {
+			isa = PBXGroup;
+			children = (
+				7778B6EF1CE4922C006534A9 /* EZKit */,
+				7778B6DB1CE491DB006534A9 /* AppDelegate.h */,
+				7778B6DC1CE491DB006534A9 /* AppDelegate.m */,
+				7778B6DE1CE491DB006534A9 /* ViewController.h */,
+				7778B6DF1CE491DB006534A9 /* ViewController.m */,
+				7778B7291CE492EF006534A9 /* TestApi.h */,
+				7778B72A1CE492EF006534A9 /* TestApi.m */,
+				7778B72C1CE492FD006534A9 /* CustomViewController.h */,
+				7778B72D1CE492FD006534A9 /* CustomViewController.m */,
+				7778B72E1CE492FD006534A9 /* TestViewController.h */,
+				7778B72F1CE492FD006534A9 /* TestViewController.m */,
+				7778B6E11CE491DB006534A9 /* Main.storyboard */,
+				7778B6E41CE491DB006534A9 /* Assets.xcassets */,
+				7778B6E61CE491DB006534A9 /* LaunchScreen.storyboard */,
+				7778B6E91CE491DB006534A9 /* Info.plist */,
+				7778B6D81CE491DB006534A9 /* Supporting Files */,
+			);
+			path = EZKit;
+			sourceTree = "<group>";
+		};
+		7778B6D81CE491DB006534A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7778B6D91CE491DB006534A9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7778B6EF1CE4922C006534A9 /* EZKit */ = {
+			isa = PBXGroup;
+			children = (
+				7778B6F01CE4922C006534A9 /* Animator */,
+				7778B6F51CE4922C006534A9 /* Category */,
+				7778B7061CE4922C006534A9 /* EZKit.h */,
+				7778B7071CE4922C006534A9 /* EZKitDefine.h */,
+				7778B7081CE4922C006534A9 /* Foundation */,
+				7778B70F1CE4922C006534A9 /* Network */,
+			);
+			path = EZKit;
+			sourceTree = "<group>";
+		};
+		7778B6F01CE4922C006534A9 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				7778B6F11CE4922C006534A9 /* EZDismissAlertAnimator.h */,
+				7778B6F21CE4922C006534A9 /* EZDismissAlertAnimator.m */,
+				7778B6F31CE4922C006534A9 /* EZPresentAlertAnimator.h */,
+				7778B6F41CE4922C006534A9 /* EZPresentAlertAnimator.m */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		7778B6F51CE4922C006534A9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7778B6F61CE4922C006534A9 /* NSArray+EZKit.h */,
+				7778B6F71CE4922C006534A9 /* NSArray+EZKit.m */,
+				7778B6F81CE4922C006534A9 /* NSDictionary+EZKit.h */,
+				7778B6F91CE4922C006534A9 /* NSDictionary+EZKit.m */,
+				7778B6FA1CE4922C006534A9 /* NSMutableArray+EZKit.h */,
+				7778B6FB1CE4922C006534A9 /* NSMutableArray+EZKit.m */,
+				7778B6FC1CE4922C006534A9 /* NSObject+EZKit.h */,
+				7778B6FD1CE4922C006534A9 /* NSObject+EZKit.m */,
+				7778B6FE1CE4922C006534A9 /* NSString+EZKit.h */,
+				7778B6FF1CE4922C006534A9 /* NSString+EZKit.m */,
+				7778B7001CE4922C006534A9 /* UIColor+EZKit.h */,
+				7778B7011CE4922C006534A9 /* UIColor+EZKit.m */,
+				7778B7021CE4922C006534A9 /* UIView+EZKit.h */,
+				7778B7031CE4922C006534A9 /* UIView+EZKit.m */,
+				7778B7041CE4922C006534A9 /* UIViewController+EZKit.h */,
+				7778B7051CE4922C006534A9 /* UIViewController+EZKit.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		7778B7081CE4922C006534A9 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				7778B7091CE4922C006534A9 /* EZCacheManager.h */,
+				7778B70A1CE4922C006534A9 /* EZCacheManager.m */,
+				7778B70B1CE4922C006534A9 /* EZDeviceManager.h */,
+				7778B70C1CE4922C006534A9 /* EZDeviceManager.m */,
+				7778B70D1CE4922C006534A9 /* EZHudManager.h */,
+				7778B70E1CE4922C006534A9 /* EZHudManager.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		7778B70F1CE4922C006534A9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7778B7101CE4922C006534A9 /* EZNetworkAgent.h */,
+				7778B7111CE4922C006534A9 /* EZNetworkAgent.m */,
+				7778B7121CE4922C006534A9 /* EZNetworkArgument.h */,
+				7778B7131CE4922C006534A9 /* EZNetworkArgument.m */,
+				7778B7141CE4922C006534A9 /* EZNetworkConfig.h */,
+				7778B7151CE4922C006534A9 /* EZNetworkConfig.m */,
+				7778B7161CE4922C006534A9 /* EZRequest.h */,
+				7778B7171CE4922C006534A9 /* EZRequest.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		39D80A781CC9ECE500289133 /* EZKit */ = {
+		7778B6D41CE491DB006534A9 /* EZKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39D80A901CC9ECE500289133 /* Build configuration list for PBXNativeTarget "EZKit" */;
+			buildConfigurationList = 7778B6EC1CE491DB006534A9 /* Build configuration list for PBXNativeTarget "EZKit" */;
 			buildPhases = (
-				C74214DBCCEF1151F11B1452 /* Check Pods Manifest.lock */,
-				39D80A751CC9ECE500289133 /* Sources */,
-				39D80A761CC9ECE500289133 /* Frameworks */,
-				39D80A771CC9ECE500289133 /* Resources */,
-				73ADC17E231F6E01B3E17541 /* Embed Pods Frameworks */,
-				D99B561A3AAD8537BA62A72A /* Copy Pods Resources */,
+				788D604B2ACBFE56EAA00EA2 /* 📦 Check Pods Manifest.lock */,
+				7778B6D11CE491DB006534A9 /* Sources */,
+				7778B6D21CE491DB006534A9 /* Frameworks */,
+				7778B6D31CE491DB006534A9 /* Resources */,
+				7DE174CC0FB8969A74EE31D7 /* 📦 Embed Pods Frameworks */,
+				66E32AB3B11D2C0E1CB72BFA /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,30 +267,24 @@
 			);
 			name = EZKit;
 			productName = EZKit;
-			productReference = 39D80A791CC9ECE500289133 /* EZKit.app */;
+			productReference = 7778B6D51CE491DB006534A9 /* EZKit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		39D80A711CC9ECE500289133 /* Project object */ = {
+		7778B6CD1CE491DB006534A9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = EZreal;
+				ORGANIZATIONNAME = Ezreal;
 				TargetAttributes = {
-					39D80A781CC9ECE500289133 = {
-						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = UPLXHXPX73;
-						SystemCapabilities = {
-							com.apple.Keychain = {
-								enabled = 1;
-							};
-						};
+					7778B6D41CE491DB006534A9 = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 39D80A741CC9ECE500289133 /* Build configuration list for PBXProject "EZKit" */;
+			buildConfigurationList = 7778B6D01CE491DB006534A9 /* Build configuration list for PBXProject "EZKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -300,53 +292,53 @@
 				en,
 				Base,
 			);
-			mainGroup = 39D80A701CC9ECE500289133;
-			productRefGroup = 39D80A7A1CC9ECE500289133 /* Products */;
+			mainGroup = 7778B6CC1CE491DB006534A9;
+			productRefGroup = 7778B6D61CE491DB006534A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				39D80A781CC9ECE500289133 /* EZKit */,
+				7778B6D41CE491DB006534A9 /* EZKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		39D80A771CC9ECE500289133 /* Resources */ = {
+		7778B6D31CE491DB006534A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39D80A8C1CC9ECE500289133 /* LaunchScreen.storyboard in Resources */,
-				39D80A891CC9ECE500289133 /* Assets.xcassets in Resources */,
-				39D80A871CC9ECE500289133 /* Main.storyboard in Resources */,
+				7778B6E81CE491DB006534A9 /* LaunchScreen.storyboard in Resources */,
+				7778B6E51CE491DB006534A9 /* Assets.xcassets in Resources */,
+				7778B6E31CE491DB006534A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		73ADC17E231F6E01B3E17541 /* Embed Pods Frameworks */ = {
+		66E32AB3B11D2C0E1CB72BFA /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EZKit/Pods-EZKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C74214DBCCEF1151F11B1452 /* Check Pods Manifest.lock */ = {
+		788D604B2ACBFE56EAA00EA2 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,69 +346,69 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D99B561A3AAD8537BA62A72A /* Copy Pods Resources */ = {
+		7DE174CC0FB8969A74EE31D7 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EZKit/Pods-EZKit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		39D80A751CC9ECE500289133 /* Sources */ = {
+		7778B6D11CE491DB006534A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39D80AB21CC9F32700289133 /* NSDictionary+EZKit.m in Sources */,
-				39D80AAA1CC9EF6B00289133 /* NSArray+EZKit.m in Sources */,
-				77D5F93C1CE2D64C00CF2B69 /* EZNetworkArgument.m in Sources */,
-				39D80AD31CCA16B700289133 /* UIView+EZKit.m in Sources */,
-				774275A11CE1A898003CD11C /* EZNetworkAgent.m in Sources */,
-				77FF55F31CDC83A800E8D085 /* UIColor+EZKit.m in Sources */,
-				774275A41CE1B275003CD11C /* TestApi.m in Sources */,
-				39D80AC21CC9FCBB00289133 /* UIViewController+EZKit.m in Sources */,
-				39D80AB61CC9F46C00289133 /* NSString+EZKit.m in Sources */,
-				39D80A841CC9ECE500289133 /* ViewController.m in Sources */,
-				39D80ACC1CCA034F00289133 /* EZDismissAlertAnimator.m in Sources */,
-				39D80AC61CCA015300289133 /* CustomViewController.m in Sources */,
-				774275981CE1A480003CD11C /* EZNetworkConfig.m in Sources */,
-				77EA62FD1CE2471300A24AE7 /* EZRequest.m in Sources */,
-				39D80ACF1CCA0A6E00289133 /* TestViewController.m in Sources */,
-				39D80AAB1CC9EF6B00289133 /* NSObject+EZKit.m in Sources */,
-				39D80AAF1CC9EFBA00289133 /* NSMutableArray+EZKit.m in Sources */,
-				39D80A811CC9ECE500289133 /* AppDelegate.m in Sources */,
-				39FBA5061CCF082A009A3552 /* EZHudManager.m in Sources */,
-				39D80AC91CCA033200289133 /* EZPresentAlertAnimator.m in Sources */,
-				77E6BF281CDE64C0006FEF6E /* EZCacheManager.m in Sources */,
-				39D80A7E1CC9ECE500289133 /* main.m in Sources */,
-				39FBA5031CCF079C009A3552 /* EZDeviceManager.m in Sources */,
+				7778B7201CE4922C006534A9 /* UIView+EZKit.m in Sources */,
+				7778B7221CE4922C006534A9 /* EZCacheManager.m in Sources */,
+				7778B71A1CE4922C006534A9 /* NSArray+EZKit.m in Sources */,
+				7778B7301CE492FD006534A9 /* CustomViewController.m in Sources */,
+				7778B71B1CE4922C006534A9 /* NSDictionary+EZKit.m in Sources */,
+				7778B7261CE4922C006534A9 /* EZNetworkArgument.m in Sources */,
+				7778B7241CE4922C006534A9 /* EZHudManager.m in Sources */,
+				7778B6E01CE491DB006534A9 /* ViewController.m in Sources */,
+				7778B7181CE4922C006534A9 /* EZDismissAlertAnimator.m in Sources */,
+				7778B71F1CE4922C006534A9 /* UIColor+EZKit.m in Sources */,
+				7778B7271CE4922C006534A9 /* EZNetworkConfig.m in Sources */,
+				7778B6DD1CE491DB006534A9 /* AppDelegate.m in Sources */,
+				7778B71C1CE4922C006534A9 /* NSMutableArray+EZKit.m in Sources */,
+				7778B72B1CE492EF006534A9 /* TestApi.m in Sources */,
+				7778B7211CE4922C006534A9 /* UIViewController+EZKit.m in Sources */,
+				7778B6DA1CE491DB006534A9 /* main.m in Sources */,
+				7778B7231CE4922C006534A9 /* EZDeviceManager.m in Sources */,
+				7778B71E1CE4922C006534A9 /* NSString+EZKit.m in Sources */,
+				7778B7251CE4922C006534A9 /* EZNetworkAgent.m in Sources */,
+				7778B7191CE4922C006534A9 /* EZPresentAlertAnimator.m in Sources */,
+				7778B7281CE4922C006534A9 /* EZRequest.m in Sources */,
+				7778B71D1CE4922C006534A9 /* NSObject+EZKit.m in Sources */,
+				7778B7311CE492FD006534A9 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		39D80A851CC9ECE500289133 /* Main.storyboard */ = {
+		7778B6E11CE491DB006534A9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				39D80A861CC9ECE500289133 /* Base */,
+				7778B6E21CE491DB006534A9 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		39D80A8A1CC9ECE500289133 /* LaunchScreen.storyboard */ = {
+		7778B6E61CE491DB006534A9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				39D80A8B1CC9ECE500289133 /* Base */,
+				7778B6E71CE491DB006534A9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -424,7 +416,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		39D80A8E1CC9ECE500289133 /* Debug */ = {
+		7778B6EA1CE491DB006534A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -469,7 +461,7 @@
 			};
 			name = Debug;
 		};
-		39D80A8F1CC9ECE500289133 /* Release */ = {
+		7778B6EB1CE491DB006534A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -508,12 +500,11 @@
 			};
 			name = Release;
 		};
-		39D80A911CC9ECE500289133 /* Debug */ = {
+		7778B6ED1CE491DB006534A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8281A311CEE058F5F8E78F61 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = AF375DA0B7BDA81FD8DAAC54 /* Pods-EZKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = EZKit/EZKit.entitlements;
 				INFOPLIST_FILE = EZKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhen-xie.EZKit";
@@ -521,12 +512,11 @@
 			};
 			name = Debug;
 		};
-		39D80A921CC9ECE500289133 /* Release */ = {
+		7778B6EE1CE491DB006534A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0822DFABB99453F08E863D83 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 19FFF69EEB938D789E57B60E /* Pods-EZKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = EZKit/EZKit.entitlements;
 				INFOPLIST_FILE = EZKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhen-xie.EZKit";
@@ -537,25 +527,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		39D80A741CC9ECE500289133 /* Build configuration list for PBXProject "EZKit" */ = {
+		7778B6D01CE491DB006534A9 /* Build configuration list for PBXProject "EZKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39D80A8E1CC9ECE500289133 /* Debug */,
-				39D80A8F1CC9ECE500289133 /* Release */,
+				7778B6EA1CE491DB006534A9 /* Debug */,
+				7778B6EB1CE491DB006534A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39D80A901CC9ECE500289133 /* Build configuration list for PBXNativeTarget "EZKit" */ = {
+		7778B6EC1CE491DB006534A9 /* Build configuration list for PBXNativeTarget "EZKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39D80A911CC9ECE500289133 /* Debug */,
-				39D80A921CC9ECE500289133 /* Release */,
+				7778B6ED1CE491DB006534A9 /* Debug */,
+				7778B6EE1CE491DB006534A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 39D80A711CC9ECE500289133 /* Project object */;
+	rootObject = 7778B6CD1CE491DB006534A9 /* Project object */;
 }
