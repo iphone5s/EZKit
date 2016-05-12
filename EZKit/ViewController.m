@@ -13,7 +13,7 @@
 #import "TestViewController.h"
 
 //#import "YTKNetworkConfig.h"
-//#import "TestApi.h"
+#import "TestApi.h"
 
 @interface ViewController ()
 
@@ -75,7 +75,7 @@
     [hudbtn setTitle:@"hudTest" forState:UIControlStateNormal];
     [hudbtn addTarget:self action:@selector(hudBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.view.backgroundColor = HEX_RGB(0x000000);
-    
+//    http://sportsipad.qq.com/match/indexColumns
 //    YTKNetworkConfig *config = [YTKNetworkConfig sharedInstance];
 //    config.baseUrl = @"http://sportsipad.qq.com";
 //
@@ -111,6 +111,8 @@
 //    }
 //    btn.enabled
 //    EZSharedCache.enableAutoClear = YES;
+    EZNetworkConfig *config = [EZNetworkConfig sharedInstance];
+    config.baseUrl = @"http://sportsipad.qq.com";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,19 +135,34 @@
 //    [self ez_presentViewController:nav animatedType:EZPresentAnimationAlert completion:nil];
 //    [EZSharedHUD showIndicatorMsg:@"正在插入数据"];
 
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        // something
-        NSString *strdata = @"a";
-        for (int i =0; i<1; i++) {
-            strdata = [strdata stringByAppendingString:@"a"];
-        }
-        for (int i = 0; i< 1; i++) {
-            NSString *str = [NSString stringWithFormat:@"%d",i];
-            [EZSharedCache ez_saveCacheByKey:str value:strdata];
-        }
-        
-    });
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        // something
+//        NSString *strdata = @"a";
+//        for (int i =0; i<1; i++) {
+//            strdata = [strdata stringByAppendingString:@"a"];
+//        }
+//        for (int i = 0; i< 1; i++) {
+//            NSString *str = [NSString stringWithFormat:@"%d",i];
+//            [EZSharedCache ez_saveCacheByKey:str value:strdata];
+//        }
+//        
+//    });
+//    __weak ViewController *weakSelf = self;
+//    for (int i = 0 ; i<100; i++) {
+//        TestApi *api = [[TestApi alloc]init];
+//        [api startWithCompletionBlockWithSuccess:^(__kindof EZBaseRequest *request) {
+////            NSLog(@"Success %d",i);
+//        } failure:^(__kindof EZBaseRequest *request) {
+//            
+//        }];
+//    }
 
+    TestApi *api = [[TestApi alloc]init];
+    [api startWithCompletionBlockWithSuccess:^(__kindof EZRequest *request) {
+        //            NSLog(@"Success %d",i);
+    } failure:^(__kindof EZRequest *request) {
+        
+    }];
 }
 
 -(void)hudBtnClicked:(UIButton *)sender

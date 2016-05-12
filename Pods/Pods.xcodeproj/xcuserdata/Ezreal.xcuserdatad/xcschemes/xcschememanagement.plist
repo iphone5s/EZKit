@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FCUUID.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,6 +52,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>78EAA9B439B0FDB694E80663A02E2652</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>928353533005A4198EBDA5B700D37B64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9B412E0D1AA7CFCC3B6CBEC582819D45</key>
 		<dict>
 			<key>primary</key>
@@ -57,17 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE76225C8C1F4EF6AEF220B1457A6C51</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B2B0F87BC788FA547E5356A9006F455A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C99914A667C6A5E3F8D42C577D6236D1</key>
+		<key>B8DE2A4B70221AE958C2EB0214E643D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
