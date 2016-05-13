@@ -23,7 +23,7 @@
 
 -(BOOL)responseArgument:(NSDictionary *)dict
 {
-    return nil;
+    return YES;
 }
 
 - (EZResponseMethod)responseMethod {
