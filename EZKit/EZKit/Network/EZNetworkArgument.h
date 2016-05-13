@@ -18,6 +18,6 @@
 /// Http返回方式
 - (EZResponseMethod)responseMethod;
 
--(NSDictionary *)responseArgument:(NSDictionary *)dict;
+-(BOOL)responseArgument:(NSDictionary *)dict;
 
 @end

@@ -21,7 +21,7 @@
     return nil;
 }
 
--(NSDictionary *)responseArgument:(NSDictionary *)dict
+-(BOOL)responseArgument:(NSDictionary *)dict
 {
     return nil;
 }

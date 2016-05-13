@@ -26,10 +26,9 @@
     return dict;
 }
 
--(NSDictionary *)responseArgument:(NSDictionary *)data
+-(BOOL)responseArgument:(NSDictionary *)data
 {
-    NSDictionary *dict = [NSDictionary dictionary];
-    return dict;
+    return YES;
 }
 
 -(EZResponseMethod)responseMethod
