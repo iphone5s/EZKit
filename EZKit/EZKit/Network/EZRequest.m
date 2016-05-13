@@ -13,13 +13,21 @@
 
 NSString *stringForArgument (NSDictionary *dict)
 {
-    NSString *strResult = @"";
-    
-    for (NSString *key in dict.allKeys)
+    if (dict != nil && [dict isKindOfClass:[NSDictionary class]])
     {
-        strResult = [NSString stringWithFormat:@"%@&%@=%@",strResult,key,[dict ez_stringForKey:key]];
+        NSString *strResult = @"";
+        
+        for (NSString *key in dict.allKeys)
+        {
+            strResult = [NSString stringWithFormat:@"%@&%@=%@",strResult,key,[dict ez_stringForKey:key]];
+        }
+        return strResult;
     }
-    return strResult;
+    else
+    {
+        return @"";
+    }
+
 }
 
 @implementation EZRequest
@@ -66,7 +74,7 @@ NSString *stringForArgument (NSDictionary *dict)
 }
 
 - (id)requestArgument {
-    return @"";
+    return nil;
 }
 
 -(id)jsonModel:(NSDictionary *)dict

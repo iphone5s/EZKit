@@ -10,12 +10,12 @@
 
 @implementation TestApi
 
-- (id)requestArgument {
-    return @{
-             @"username": @"c",
-             @"password": @"d"
-             };
-}
+//- (id)requestArgument {
+//    return @{
+//             @"username": @"c",
+//             @"password": @"d"
+//             };
+//}
 
 - (NSString *)requestUrl {
     return @"/match/indexColumns";
