@@ -228,8 +228,8 @@ DEF_SINGLETON(EZNetworkAgent);
 }
 
 - (NSString *)requestTaskID:(NSURLSessionDataTask *)task {
-    NSString *key = [NSString stringWithFormat:@"%lu", task.taskIdentifier];
-    return key;
+    NSNumber *num = [NSNumber numberWithUnsignedInteger:task.taskIdentifier];
+    return num.description;
 }
 
 -(EZRequest *)getRequestBy:(NSURLSessionDataTask *)task
