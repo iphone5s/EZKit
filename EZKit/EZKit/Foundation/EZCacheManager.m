@@ -98,21 +98,29 @@ DEF_SINGLETON(EZCacheManager)
 
 -(BOOL)ez_saveCacheByKey:(NSString *)key value:(NSString *)value
 {
-    NSString *secret_key = _EZNSStringMD5(key);
-    if ([self ez_isHasKey:secret_key]) {
-        if ([self ez_updateKey:secret_key value:value]) {
-            NSLog(@"更新成功");
+    if (key != nil && value != nil)
+    {
+        NSString *secret_key = _EZNSStringMD5(key);
+        if ([self ez_isHasKey:secret_key]) {
+            if ([self ez_updateKey:secret_key value:value]) {
+                NSLog(@"更新成功");
+            }else{
+                NSLog(@"更新失败");
+            }
         }else{
-            NSLog(@"更新失败");
+            if ([self ez_insertKey:secret_key value:value]) {
+                NSLog(@"插入成功");
+            }else{
+                NSLog(@"插入失败");
+            }
         }
-    }else{
-        if ([self ez_insertKey:secret_key value:value]) {
-            NSLog(@"插入成功");
-        }else{
-            NSLog(@"插入失败");
-        }
+        return YES;
     }
-    return YES;
+    else
+    {
+        return NO;
+    }
+
 }
 
 -(NSString *)ez_valueByKey:(NSString *)key
@@ -140,6 +148,12 @@ DEF_SINGLETON(EZCacheManager)
 -(BOOL)ez_clearAllCache
 {
     NSString *strSQL = @"Delete from EZ_Cache";
+    return [_db executeUpdate:strSQL];
+}
+
+-(BOOL)ez_clearCacheByKey:(NSString *)key
+{
+    NSString *strSQL = @"";
     return [_db executeUpdate:strSQL];
 }
 

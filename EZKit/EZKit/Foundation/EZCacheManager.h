@@ -15,14 +15,16 @@
 
 AS_SINGLETON(EZCacheManager)
 
+@property(nonatomic,assign)NSInteger cacheTime;
+
+@property(nonatomic,assign)CGFloat cacheSize;
+
+-(BOOL)ez_clearAllCache;
+
 -(BOOL)ez_saveCacheByKey:(NSString *)key value:(NSString *)value;
 
 -(NSString *)ez_valueByKey:(NSString *)key;
 
-@property(nonatomic,assign)NSInteger cacheTime;
-
--(BOOL)ez_clearAllCache;
-
-@property(nonatomic,assign)CGFloat cacheSize;
+-(BOOL)ez_clearCacheByKey:(NSString *)key;
 
 @end

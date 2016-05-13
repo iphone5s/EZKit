@@ -33,7 +33,8 @@
 		7778B72B1CE492EF006534A9 /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B72A1CE492EF006534A9 /* TestApi.m */; };
 		7778B7301CE492FD006534A9 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B72D1CE492FD006534A9 /* CustomViewController.m */; };
 		7778B7311CE492FD006534A9 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B72F1CE492FD006534A9 /* TestViewController.m */; };
-		77C15A731CE4BFB000B0DCD4 /* EZNetworkArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C15A721CE4BFB000B0DCD4 /* EZNetworkArgument.m */; };
+		778D1C011CE4DCE400E9619C /* Argument.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D1C001CE4DCE400E9619C /* Argument.m */; };
+		778D1C041CE4F8E200E9619C /* EZNetworkArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D1C031CE4F8E200E9619C /* EZNetworkArgument.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,8 +90,10 @@
 		7778B72D1CE492FD006534A9 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
 		7778B72E1CE492FD006534A9 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		7778B72F1CE492FD006534A9 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		77C15A711CE4BFB000B0DCD4 /* EZNetworkArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkArgument.h; sourceTree = "<group>"; };
-		77C15A721CE4BFB000B0DCD4 /* EZNetworkArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkArgument.m; sourceTree = "<group>"; };
+		778D1BFF1CE4DCE400E9619C /* Argument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argument.h; sourceTree = "<group>"; };
+		778D1C001CE4DCE400E9619C /* Argument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Argument.m; sourceTree = "<group>"; };
+		778D1C021CE4F8E200E9619C /* EZNetworkArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkArgument.h; sourceTree = "<group>"; };
+		778D1C031CE4F8E200E9619C /* EZNetworkArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkArgument.m; sourceTree = "<group>"; };
 		AF375DA0B7BDA81FD8DAAC54 /* Pods-EZKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EZKit/Pods-EZKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,10 +150,10 @@
 				7778B6EF1CE4922C006534A9 /* EZKit */,
 				7778B6DB1CE491DB006534A9 /* AppDelegate.h */,
 				7778B6DC1CE491DB006534A9 /* AppDelegate.m */,
-				77C15A711CE4BFB000B0DCD4 /* EZNetworkArgument.h */,
-				77C15A721CE4BFB000B0DCD4 /* EZNetworkArgument.m */,
 				7778B6DE1CE491DB006534A9 /* ViewController.h */,
 				7778B6DF1CE491DB006534A9 /* ViewController.m */,
+				778D1BFF1CE4DCE400E9619C /* Argument.h */,
+				778D1C001CE4DCE400E9619C /* Argument.m */,
 				7778B7291CE492EF006534A9 /* TestApi.h */,
 				7778B72A1CE492EF006534A9 /* TestApi.m */,
 				7778B72C1CE492FD006534A9 /* CustomViewController.h */,
@@ -241,6 +244,8 @@
 				7778B7111CE4922C006534A9 /* EZNetworkAgent.m */,
 				7778B7141CE4922C006534A9 /* EZNetworkConfig.h */,
 				7778B7151CE4922C006534A9 /* EZNetworkConfig.m */,
+				778D1C021CE4F8E200E9619C /* EZNetworkArgument.h */,
+				778D1C031CE4F8E200E9619C /* EZNetworkArgument.m */,
 				7778B7161CE4922C006534A9 /* EZRequest.h */,
 				7778B7171CE4922C006534A9 /* EZRequest.m */,
 			);
@@ -368,9 +373,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778D1C011CE4DCE400E9619C /* Argument.m in Sources */,
 				7778B7201CE4922C006534A9 /* UIView+EZKit.m in Sources */,
 				7778B7221CE4922C006534A9 /* EZCacheManager.m in Sources */,
-				77C15A731CE4BFB000B0DCD4 /* EZNetworkArgument.m in Sources */,
 				7778B71A1CE4922C006534A9 /* NSArray+EZKit.m in Sources */,
 				7778B7301CE492FD006534A9 /* CustomViewController.m in Sources */,
 				7778B71B1CE4922C006534A9 /* NSDictionary+EZKit.m in Sources */,
@@ -378,6 +383,7 @@
 				7778B6E01CE491DB006534A9 /* ViewController.m in Sources */,
 				7778B7181CE4922C006534A9 /* EZDismissAlertAnimator.m in Sources */,
 				7778B71F1CE4922C006534A9 /* UIColor+EZKit.m in Sources */,
+				778D1C041CE4F8E200E9619C /* EZNetworkArgument.m in Sources */,
 				7778B7271CE4922C006534A9 /* EZNetworkConfig.m in Sources */,
 				7778B6DD1CE491DB006534A9 /* AppDelegate.m in Sources */,
 				7778B71C1CE4922C006534A9 /* NSMutableArray+EZKit.m in Sources */,

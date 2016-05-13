@@ -25,9 +25,13 @@ typedef void(^EZRequestCompletionBlock)(__kindof EZRequest *request);
 
 @interface EZRequest : NSObject
 
+@property(nonatomic,strong,readonly)NSString *strUrl;
+
 @property(nonatomic,assign,readonly)BOOL isCache;
 //返回结果
-@property (nonatomic, strong, readonly) NSString *responseString;
+@property (nonatomic, strong, readonly) id responseJSONObject;
+//返回结果
+@property (nonatomic, strong, readonly) id responseModel;
 
 @property (nonatomic, strong) NSURLSessionDataTask *requestSessionDataTask;
 /// Http请求的方式
@@ -39,6 +43,11 @@ typedef void(^EZRequestCompletionBlock)(__kindof EZRequest *request);
 - (NSString *)baseUrl;
 /// 请求的URL
 - (NSString *)requestUrl;
+/// 请求的参数列表
+- (id)requestArgument;
+
+//字典模型转换
+-(id)jsonModel:(NSDictionary *)dict;
 
 @property (nonatomic, copy) EZRequestCompletionBlock successCompletionBlock;
 

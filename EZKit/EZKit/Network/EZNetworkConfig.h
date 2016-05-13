@@ -9,20 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "EZKitDefine.h"
 #import "EZRequest.h"
-
-@protocol EZNetworkArgumentProtocol <NSObject>
-- (NSDictionary *)requestArgument;
-- (NSDictionary *)responseArgument;
-@end
+#import "EZNetworkArgument.h"
 
 @interface EZNetworkConfig : NSObject
 
 AS_SINGLETON(EZNetworkConfig);
 
-@property (strong, nonatomic) NSString *baseUrl;
+@property (nonatomic,strong) NSString *baseUrl;
 
-@property (strong, nonatomic, readonly) NSArray *urlFilters;
-
-- (void)addUrlFilter:(id<EZNetworkArgumentProtocol>)filter;
+@property (nonatomic,strong)EZNetworkArgument *arugment;
 
 @end

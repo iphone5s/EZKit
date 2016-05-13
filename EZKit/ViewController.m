@@ -12,7 +12,7 @@
 #import "Masonry.h"
 #import "TestViewController.h"
 #import "TestApi.h"
-#import "EZNetworkArgument.h"
+#import "Argument.h"
 
 @interface ViewController ()
 
@@ -112,8 +112,9 @@
     //    EZSharedCache.enableAutoClear = YES;
     EZNetworkConfig *config = [EZNetworkConfig sharedInstance];
     config.baseUrl = @"http://sportsipad.qq.com";
-    EZNetworkArgument *argument = [EZNetworkArgument alloc];
-    [config addUrlFilter:argument];
+    Argument *argument = [[Argument alloc]init];
+    [config setArugment:argument];
+     
 }
 
 - (void)didReceiveMemoryWarning {
@@ -160,9 +161,9 @@
     
     TestApi *api = [[TestApi alloc]init];
     [api startWithCompletionBlockWithSuccess:^(__kindof EZRequest *request) {
-        //            NSLog(@"Success %d",i);
+        NSLog(@"缓存:%d 接口调用成功",request.isCache);
     } failure:^(__kindof EZRequest *request) {
-        
+        NSLog(@"接口调用失败");
     }];
 }
 

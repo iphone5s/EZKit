@@ -10,8 +10,40 @@
 #import "EZNetworkConfig.h"
 #import "EZCacheManager.h"
 #import "AFNetworking.h"
-#import "EZNetworkArgument.h"
 #import "NSDictionary+EZKit.h"
+
+NSDictionary *dictForString(NSString *str)
+{
+    NSError *error = nil;
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    id jsObj = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    if (error != nil)
+    {
+        return nil;
+    }
+    else
+    {
+        return jsObj;
+    }
+}
+
+NSString *stringForDict(NSDictionary *dict)
+{
+    NSError *error = nil;
+    NSData *jsData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    if (error != nil)
+    {
+        return nil;
+    }
+    else
+    {
+        NSString *strJson = [[NSString alloc]initWithData:jsData encoding:NSUTF8StringEncoding];
+        return strJson;
+    }
+}
+
+
+
 @implementation EZNetworkAgent
 {
     AFHTTPSessionManager *_manager;
@@ -43,40 +75,47 @@ DEF_SINGLETON(EZNetworkAgent);
     }
     
     EZRequestMethod requestMethod = [request requestMethod];
-    NSString *url = [self buildRequestUrl:request];
+    
     EZResponseMethod responseMethod = [request responseMethod];
     
     switch (responseMethod)
     {
         case EZResponseMethodDefault:
         {
-            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:url];
+            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl];
         }
             break;
         case EZResponseMethodCache1:
         {
-            NSString *strData = [EZSharedCache ez_valueByKey:url];//取缓存数据
+            NSString *strData = [EZSharedCache ez_valueByKey:request.strUrl];//取缓存数据
+            
             if (strData != nil)
             {
-                [request setValue:@YES forKey:@"isCache"];
+                NSDictionary *dict = dictForString(strData);
                 
-                [request setValue:strData forKey:@"responseString"];
-                
+                [self handleRequestResult:request responseObject:dict isCache:YES];
             }
             else
             {
-                request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:url];
+                request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl];
             }
         }
             break;
         case EZResponseMethodCache2:
         {
+            NSString *strData = [EZSharedCache ez_valueByKey:request.strUrl];//取缓存数据
             
+            if (strData != nil)
+            {
+                NSDictionary *dict = dictForString(strData);
+                [self handleRequestResult:request responseObject:dict isCache:YES];
+            }
+            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl];
         }
             break;
         default:
         {
-            
+            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl];
         }
             break;
     }
@@ -93,9 +132,13 @@ DEF_SINGLETON(EZNetworkAgent);
             return [_manager GET:url parameters:@"" progress:^(NSProgress * _Nonnull downloadProgress) {
                 NSLog(@"progress");
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [self handleRequestResult:task];
+                EZRequest *request = [self getRequestBy:task];
+                [self handleRequestResult:request responseObject:responseObject isCache:NO];
+                [self removeSessionDataTask:task];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [self handleRequestResult:task];
+                EZRequest *request = [self getRequestBy:task];
+                [self handleRequestResult:request responseObject:nil isCache:NO];
+                [self removeSessionDataTask:task];
             }];
         }
             break;
@@ -113,88 +156,87 @@ DEF_SINGLETON(EZNetworkAgent);
     return nil;
 }
 
-- (void)handleRequestResult:(NSURLSessionDataTask *)task
+-(void)callBack:(EZRequest *)request success:(BOOL)success
 {
-    NSString *strTaskID = [self requestTaskID:task];
-    EZRequest *request = _requestsRecord[strTaskID];
-    
-    if (request)
+    if (success)
     {
-        BOOL succeed = [self checkResult:request];
+        if (request.successCompletionBlock)
+        {
+            request.successCompletionBlock(request);
+        }
+    }
+    else
+    {
+        if (request.failureCompletionBlock)
+        {
+            request.failureCompletionBlock(request);
+        }
+    }
+}
+
+-(void)handleRequestResult:(EZRequest *)request responseObject:(id)responseObject isCache:(BOOL)isCache
+{
+    BOOL succeed = [self checkResult:request responseObject:responseObject];
+    
+    if (succeed)
+    {
+        [request setValue:[NSNumber numberWithBool:isCache] forKey:@"isCache"];
+        [request setValue:responseObject forKey:@"responseJSONObject"];
         
-        if (succeed)
+        id obj = [request jsonModel:responseObject];
+        
+        if (obj != nil)
         {
-            if ([request responseMethod] != EZResponseMethodDefault)
-            {
-                //保存缓存数据
-                NSString *strURL = [request requestUrl];
-                [EZSharedCache ez_saveCacheByKey:request.responseString value:strURL];
-            }
-            
-            if (request.successCompletionBlock)
-            {
-                //接口成功回调
-                request.successCompletionBlock(request);
-            }
+            [request setValue:obj forKey:@"responseModel"];
         }
-        else
+
+        if ([request responseMethod] != EZResponseMethodDefault)
         {
-            if (request.failureCompletionBlock)
-            {
-                //接口失败回调
-                request.failureCompletionBlock(request);
-            }
+            NSString *strData = stringForDict(responseObject);
+            [EZSharedCache ez_saveCacheByKey:request.strUrl value:strData];
         }
     }
-
-    [self removeSessionDataTask:task];
-}
-
-- (BOOL)checkResult:(EZRequest *)request {
-    
-    return YES;
-//    BOOL result = [request statusCodeValidator];
-//    if (!result) {
-//        return result;
-//    }
-//    id validator = [request jsonValidator];
-//    if (validator != nil) {
-//        id json = [request responseJSONObject];
-//        result = [YTKNetworkPrivate checkJson:json withValidator:validator];
-//    }
-//    return result;
-}
-
-- (NSString *)buildRequestUrl:(EZRequest *)request {
-    
-    NSString *detailUrl = [request requestUrl];
-    if ([detailUrl hasPrefix:@"http"]) {
-        return detailUrl;
-    }
-    
-    NSArray *filters = [_config urlFilters];
-    for (id<EZNetworkArgumentProtocol> f in filters)
+    else
     {
-        NSDictionary *dict = [f requestArgument];
-        for (NSString *key in dict.allKeys)
+        if (isCache)
         {
-            detailUrl = [NSString stringWithFormat:@"%@%@",detailUrl,[dict ez_stringForKey:key]];
+            [EZSharedCache ez_clearCacheByKey:request.strUrl];
         }
-//        detailUrl = [f filterUrl:detailUrl withRequest:request];
-    }
-    NSString *baseUrl;
-    if ([request baseUrl].length > 0) {
-        baseUrl = [request baseUrl];
-    } else {
-        baseUrl = [_config baseUrl];
     }
     
-    return [NSString stringWithFormat:@"%@%@", baseUrl, detailUrl];
+    [self callBack:request success:succeed];
+}
+
+
+- (BOOL)checkResult:(EZRequest *)request responseObject:(id)responseObject
+{
+    if (responseObject != nil)
+    {
+        if (_config.arugment != nil)
+        {
+            //公共参数检查
+            return [_config.arugment responseArgument:responseObject];
+        }
+        
+        return YES;
+        
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 - (NSString *)requestTaskID:(NSURLSessionDataTask *)task {
     NSString *key = [NSString stringWithFormat:@"%lu", task.taskIdentifier];
     return key;
+}
+
+-(EZRequest *)getRequestBy:(NSURLSessionDataTask *)task
+{
+    NSString *strTaskID = [self requestTaskID:task];
+    EZRequest *request = _requestsRecord[strTaskID];
+    return request;
 }
 
 - (void)addSessionDataTask:(EZRequest *)request
