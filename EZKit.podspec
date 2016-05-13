@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'EZKit'
-  spec.version      = '0.0.4'
+  spec.version      = '0.0.5'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/iphone5s/EZKit'
   spec.authors      = { 'Ezreal' => '453742103@qq.com' }
@@ -12,5 +12,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'Masonry'
   spec.dependency 'FCUUID'
   spec.dependency 'pop'
+  spec.dependency 'FMDB'
   spec.dependency 'MBProgressHUD'
+  spec.dependency 'AFNetworking'
 end
