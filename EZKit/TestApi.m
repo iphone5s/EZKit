@@ -7,6 +7,7 @@
 //
 
 #import "TestApi.h"
+#import "Model.h"
 
 @implementation TestApi
 
@@ -21,4 +22,23 @@
     return @"/match/indexColumns";
 }
 
+-(id)jsonModel:(NSDictionary *)dict
+{
+    NSArray *arr = [dict objectForKey:@"list"];
+    
+
+    NSMutableArray *array = [[NSMutableArray alloc]init];
+    for (int i = 0; i < arr.count; i++) {
+        NSDictionary *js = [arr objectAtIndex: i];
+//        Model *model = [[Model alloc]init];
+
+        Model *model = [Model mj_objectWithKeyValues:js];
+        NSLog(@"%@ %@ %@ %@ %@",model.strName,model.strDesc,model.strIcon,model.strColumnId,model.strRankColumn);
+        [array addObject:model];
+        
+    }
+    
+    
+    return array;
+}
 @end

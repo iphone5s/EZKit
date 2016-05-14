@@ -21,9 +21,14 @@
     return nil;
 }
 
--(BOOL)responseArgument:(NSDictionary *)dict
+-(BOOL)responseCheckErrorCode:(NSDictionary *)dict
 {
     return YES;
+}
+
+-(NSDictionary *)responseData:(NSDictionary *)dict
+{
+    return nil;
 }
 
 - (EZResponseMethod)responseMethod {

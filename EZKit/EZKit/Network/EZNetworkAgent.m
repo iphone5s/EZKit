@@ -174,6 +174,33 @@ DEF_SINGLETON(EZNetworkAgent);
     }
 }
 
+-(void)jsonModel:(EZRequest *)request
+{
+    if (_config.arugment != nil)
+    {
+        //提取公共数据
+        id data = [_config.arugment responseData:request.responseJSONObject];
+        if (data != nil)
+        {
+            id obj = [request jsonModel:data];
+            
+            [request setValue:obj forKey:@"responseModel"];
+        }
+        else
+        {
+            id obj = [request jsonModel:request.responseJSONObject];
+            
+            [request setValue:obj forKey:@"responseModel"];
+        }
+    }
+    else
+    {
+        id obj = [request jsonModel:request.responseJSONObject];
+        
+        [request setValue:obj forKey:@"responseModel"];
+    }
+}
+
 -(void)handleRequestResult:(EZRequest *)request responseObject:(id)responseObject isCache:(BOOL)isCache
 {
     BOOL succeed = [self checkResult:request responseObject:responseObject];
@@ -183,12 +210,7 @@ DEF_SINGLETON(EZNetworkAgent);
         [request setValue:[NSNumber numberWithBool:isCache] forKey:@"isCache"];
         [request setValue:responseObject forKey:@"responseJSONObject"];
         
-        id obj = [request jsonModel:responseObject];
-        
-        if (obj != nil)
-        {
-            [request setValue:obj forKey:@"responseModel"];
-        }
+        [self jsonModel:request];
 
         if ([request responseMethod] != EZResponseMethodDefault)
         {
@@ -215,7 +237,7 @@ DEF_SINGLETON(EZNetworkAgent);
         if (_config.arugment != nil)
         {
             //公共参数检查
-            return [_config.arugment responseArgument:responseObject];
+            return [_config.arugment responseCheckErrorCode:responseObject];
         }
         
         return YES;

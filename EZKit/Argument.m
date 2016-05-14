@@ -35,4 +35,15 @@
 {
     return EZResponseMethodCache2;
 }
+
+-(BOOL)responseCheckErrorCode:(NSDictionary *)dict
+{
+    return YES;
+}
+
+-(NSDictionary *)responseData:(NSDictionary *)dict
+{
+    
+    return [dict objectForKey:@"data"];
+}
 @end
