@@ -75,7 +75,7 @@ DEF_SINGLETON_AUTOLOAD(EZDeviceManager)
 {
     NSDate *currentDate = [NSDate date];//获取当前时间，日期
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS"];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
     NSString *dateString = [dateFormatter stringFromDate:currentDate];
 
     return dateString;

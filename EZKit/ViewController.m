@@ -158,7 +158,8 @@
     //
     //        }];
     //    }
-    
+    NSString *str = EZSharedDevice.strCurrentDate;
+    NSLog(EZSharedDevice.strCurrentDate);
     TestApi *api = [[TestApi alloc]init];
     [api startWithCompletionBlockWithSuccess:^(__kindof EZRequest *request) {
         NSLog(@"缓存:%d 接口调用成功",request.isCache);
