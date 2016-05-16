@@ -78,6 +78,7 @@ DEF_SINGLETON(EZNetworkAgent);
     
     EZResponseMethod responseMethod = [request responseMethod];
     
+    
     switch (responseMethod)
     {
         case EZResponseMethodDefault:
@@ -123,8 +124,38 @@ DEF_SINGLETON(EZNetworkAgent);
     [self addSessionDataTask:request];
 }
 
+-(void)setCookies:(NSString *)strUrl
+{
+    if (_config.arugment != nil)
+    {
+        NSArray *array = [_config.arugment requestCookieArgument];
+        if (array != nil && array.count > 0)
+        {
+            NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+            NSArray *cookies = [cookieStorage cookiesForURL:[NSURL URLWithString:strUrl]];
+            for (NSHTTPCookie *cookie in cookies){
+                [cookieStorage deleteCookie:cookie];
+            }
+            
+            for (int i = 0; i < array.count; i++)
+            {
+                id obj = [array objectAtIndex:i];
+                if ([obj isKindOfClass:[NSDictionary class]])
+                {
+                    [cookieStorage setCookie:[NSHTTPCookie cookieWithProperties:obj]];
+                }
+            }
+            
+            
+        }
+    }
+    return;
+}
+
 - (NSURLSessionDataTask *)sendNetworkRequest:(EZRequestMethod)method url:(NSString *)url
 {
+    [self setCookies:url];
+    
     switch (method)
     {
         case EZRequestMethodGet:
@@ -144,7 +175,13 @@ DEF_SINGLETON(EZNetworkAgent);
             break;
         case EZRequestMethodPost:
         {
-            
+            [_manager POST:url parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                
+            }];
         }
             break;
         default:

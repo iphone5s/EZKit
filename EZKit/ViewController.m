@@ -133,8 +133,8 @@
 {
 //        EZSharedCache.enableAutoClear = YES;//!EZSharedCache.enableAutoClear;
         TestViewController *vc = [TestViewController new];
-        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-        [self ez_presentViewController:nav animatedType:EZPresentAnimationAlert completion:nil];
+//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+//        [self ez_presentViewController:nav animatedType:EZPresentAnimationAlert completion:nil];
     //    [EZSharedHUD showIndicatorMsg:@"正在插入数据"];
     
     //    dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -158,8 +158,8 @@
     //
     //        }];
     //    }
-    NSString *str = EZSharedDevice.strCurrentDate;
-    NSLog(EZSharedDevice.strCurrentDate);
+    
+  
     TestApi *api = [[TestApi alloc]init];
     [api startWithCompletionBlockWithSuccess:^(__kindof EZRequest *request) {
         NSLog(@"缓存:%d 接口调用成功",request.isCache);

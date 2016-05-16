@@ -13,13 +13,13 @@
 
 @property (nonatomic,strong,readonly)NSString *strUrlArgument;
 
-@property (nonatomic,strong,readonly)NSString *strCookieArgument;
-
 /// Http返回方式
 - (EZResponseMethod)responseMethod;
 
 -(BOOL)responseCheckErrorCode:(NSDictionary *)dict;
 
 -(NSDictionary *)responseData:(NSDictionary *)dict;
+
+-(NSArray *)requestCookieArgument;
 
 @end

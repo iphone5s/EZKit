@@ -22,6 +22,10 @@
     return @"/match/indexColumns";
 }
 
+- (EZRequestMethod)requestMethod {
+    return EZRequestMethodGet;
+}
+
 -(id)jsonModel:(NSDictionary *)dict
 {
     NSArray *arr = [dict objectForKey:@"list"];

@@ -16,7 +16,7 @@
     return nil;
 }
 
--(NSDictionary *)requestCookieArgument
+-(NSArray *)requestCookieArgument
 {
     return nil;
 }
