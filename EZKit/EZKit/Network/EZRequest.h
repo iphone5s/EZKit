@@ -25,6 +25,8 @@ typedef void(^EZRequestCompletionBlock)(__kindof EZRequest *request);
 
 @interface EZRequest : NSObject
 
+@property(nonatomic,strong)id userInfo;
+
 @property(nonatomic,strong,readonly)NSString *strUrl;
 
 @property(nonatomic,assign,readonly)BOOL isCache;
