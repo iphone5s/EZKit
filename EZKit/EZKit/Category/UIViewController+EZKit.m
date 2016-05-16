@@ -53,8 +53,10 @@ static const void *animationKey = &animationKey;
         default:
             break;
     }
+    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-    [self presentViewController:viewController animated:YES completion:completion];
+    [appRootVC presentViewController:viewController animated:YES completion:completion];
+    
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate

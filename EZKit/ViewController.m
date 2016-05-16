@@ -131,10 +131,10 @@
 
 -(void)navBtnClicked:(UIButton *)sender
 {
-    //    EZSharedCache.enableAutoClear = YES;//!EZSharedCache.enableAutoClear;
-    //    TestViewController *vc = [TestViewController new];
-    //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-    //    [self ez_presentViewController:nav animatedType:EZPresentAnimationAlert completion:nil];
+//        EZSharedCache.enableAutoClear = YES;//!EZSharedCache.enableAutoClear;
+        TestViewController *vc = [TestViewController new];
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+        [self ez_presentViewController:nav animatedType:EZPresentAnimationAlert completion:nil];
     //    [EZSharedHUD showIndicatorMsg:@"正在插入数据"];
     
     //    dispatch_async(dispatch_get_global_queue(0, 0), ^{
