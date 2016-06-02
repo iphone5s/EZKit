@@ -20,4 +20,8 @@
 
 + (UIColor *) randomColor;
 
++(UIColor *)colorPercent:(CGFloat)percent fromColor:(UIColor *)fromColor toColor:(UIColor *)toColor;
+
++ (NSUInteger) hexFromColor: (UIColor*) color;
+
 @end

@@ -72,4 +72,59 @@
     return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
 }
 
++ (NSUInteger) hexFromColor: (UIColor*) color
+{
+    if (CGColorGetNumberOfComponents(color.CGColor) < 4)
+    {
+        const CGFloat *components = CGColorGetComponents(color.CGColor);
+        color = [UIColor colorWithRed:components[0]
+                                green:components[0]
+                                 blue:components[0]
+                                alpha:components[1]];
+    }
+    
+    if (CGColorSpaceGetModel(CGColorGetColorSpace(color.CGColor)) != kCGColorSpaceModelRGB) {
+        return 0xffffff;
+    }
+    
+    NSUInteger hex = 0x000000;
+    
+    hex = (hex << 0)|(int)((CGColorGetComponents(color.CGColor))[0]*255.0);
+    
+    hex = (hex << 8)|(int)((CGColorGetComponents(color.CGColor))[1]*255.0);
+    
+    hex = (hex << 8)|(int)((CGColorGetComponents(color.CGColor))[2]*255.0);;
+    
+    return hex;
+}
+
++(UIColor *)colorPercent:(CGFloat)percent fromColor:(UIColor *)fromColor toColor:(UIColor *)toColor
+{
+    NSUInteger fromColorHex = [UIColor hexFromColor:fromColor];
+    NSUInteger toColorHex = [UIColor hexFromColor:toColor];
+    
+    NSUInteger r1 = ((fromColorHex >> 16) & 0x000000FF);
+    NSUInteger g1 = ((fromColorHex >> 8) & 0x000000FF);
+    NSUInteger b1 = ((fromColorHex >> 0) & 0x000000FF);
+    
+    NSUInteger r2 = ((toColorHex >> 16) & 0x000000FF);
+    NSUInteger g2 = ((toColorHex >> 8) & 0x000000FF);
+    NSUInteger b2 = ((toColorHex >> 0) & 0x000000FF);
+    
+    int r_ = (int)(r1 - r2);
+    int g_ = (int)(g1 - g2);
+    int b_ = (int)(b1 - b2);
+    CGFloat r_v = r_ / 100.0;
+    CGFloat g_v = g_ / 100.0;
+    CGFloat b_v = b_ / 100.0;
+    
+    int r__ = round(r_v * percent);
+    int g__ = round(g_v * percent);
+    int b__ = round(b_v * percent);
+    NSInteger r = r1 - r__;
+    NSInteger g = g1 - g__;
+    NSInteger b = b1 - b__;
+    return [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1];
+}
+
 @end

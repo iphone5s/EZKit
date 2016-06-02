@@ -88,20 +88,22 @@ DEF_SINGLETON( __class ) \
 #undef	RGBA
 #define RGBA(R,G,B,A)	[UIColor colorWithRed:R/255.0f green:G/255.0f blue:B/255.0f alpha:A]
 
-#undef	HEX_RGB
-#define HEX_RGB(V)		[UIColor fromHexValue:V]
-
-#undef	HEX_RGBA
-#define HEX_RGBA(V, A)	[UIColor fromHexValue:V alpha:A]
-
-#undef	SHORT_RGB
-#define SHORT_RGB(V)	[UIColor fromShortHexValue:V]
-
 #undef	RGB_IMAGE
 #define RGB_IMAGE(V)	[UIColor createImageWithColor:V]
 
 #undef	RGB_RANDOM
 #define RGB_RANDOM  	[UIColor randomColor]
 
+#undef	HEX_RGB
+#define HEX_RGB(V)		[UIColor fromHexValue:V]
+
+#undef	HEX_RGBA
+#define HEX_RGBA(V, A)	[UIColor fromHexValue:V alpha:A]
+
+#undef	HEX_RGB_RGB
+#define HEX_RGB_RGB(F,T,P)	[UIColor colorPercent:P fromColor:F toColor:T]
+
+#undef	SHORT_RGB
+#define SHORT_RGB(V)	[UIColor fromShortHexValue:V]
 
 #endif /* EZKitDefine_h */
