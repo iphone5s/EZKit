@@ -132,14 +132,18 @@
 //    tabView.tabBackgroundView = tabBackgroundV;
 //    
 //    [tabView reloadData];
-    for (int i = 0; i < 100; i++) {
-        UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 5 * i, 100, 5)];
-        [self.view addSubview:v];
-//        v.backgroundColor = [self colorPercent:i fromColor:HEX_RGB(0xabb7c1) toColor:HEX_RGB(0x1c90f2)];
-        v.backgroundColor = HEX_RGB_RGB(HEX_RGB(0xabb7c1), HEX_RGB(0x1c90f2), i);
-//        v.backgroundColor = [self test:i color1:0xabb7c1 color2:0x1c90f2];
-    }
+//    for (int i = 0; i < 100; i++) {
+//        UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 5 * i, 100, 5)];
+//        [self.view addSubview:v];
+////        v.backgroundColor = [self colorPercent:i fromColor:HEX_RGB(0xabb7c1) toColor:HEX_RGB(0x1c90f2)];
+//        v.backgroundColor = HEX_RGB_RGB(HEX_RGB(0xabb7c1), HEX_RGB(0x1c90f2), i);
+////        v.backgroundColor = [self test:i color1:0xabb7c1 color2:0x1c90f2];
+//    }
 
+    self.view.backgroundColor = HEX_RGB(0x22292f);
+    UIView *v=[[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    [self.view addSubview:v];
+    v.backgroundColor = HEX_RGBA(0xffffff, 0.2);
 }
 //
 //- (NSUInteger) hexFromColor: (UIColor*) color {

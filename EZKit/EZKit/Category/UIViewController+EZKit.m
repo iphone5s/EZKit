@@ -53,9 +53,14 @@ static const void *animationKey = &animationKey;
         default:
             break;
     }
+    
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-    [appRootVC presentViewController:viewController animated:YES completion:completion];
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        [appRootVC presentViewController:viewController animated:YES completion:completion];
+    });
+    
     
 }
 
