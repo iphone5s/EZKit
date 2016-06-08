@@ -11,11 +11,10 @@
 #import "EZDismissAlertAnimator.h"
 #import <objc/runtime.h>
 #import "EZKitDefine.h"
-#import "CustomViewController.h"
+
 @interface EZModalVCManager : NSObject
 {
     NSMutableArray *modalViewControllers;
-//    UIViewController *presentVC;
 }
 @end
 
