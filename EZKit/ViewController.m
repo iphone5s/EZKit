@@ -39,18 +39,18 @@
 //    NSLog([array objectAtIndex:2]);
 //    NSLog([array objectAtIndex:100]);
 //    NSLog(@"没挂");
-//    UIButton *vcBtn = [UIButton new];
-//    
-//    [self.view addSubview:vcBtn];
-//    [vcBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(100, 30));
-//        make.centerY.mas_equalTo(self.view);
-//        make.left.mas_equalTo(self.view).offset(20);
-//    }];
-//    vcBtn.backgroundColor = [UIColor grayColor];
-//    [vcBtn setTitle:@"Present VC" forState:UIControlStateNormal];
-//    [vcBtn addTarget:self action:@selector(vcBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-//    
+    UIButton *vcBtn = [UIButton new];
+    
+    [self.view addSubview:vcBtn];
+    [vcBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(100, 30));
+        make.centerY.mas_equalTo(self.view);
+        make.left.mas_equalTo(self.view).offset(20);
+    }];
+    vcBtn.backgroundColor = [UIColor grayColor];
+    [vcBtn setTitle:@"Present VC" forState:UIControlStateNormal];
+    [vcBtn addTarget:self action:@selector(vcBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
 //    UIButton *navbtn = [UIButton new];
 //    
 //    [self.view addSubview:navbtn];

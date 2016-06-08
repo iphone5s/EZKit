@@ -10,6 +10,86 @@
 #import "EZPresentAlertAnimator.h"
 #import "EZDismissAlertAnimator.h"
 #import <objc/runtime.h>
+#import "EZKitDefine.h"
+#import "CustomViewController.h"
+@interface EZModalVCManager : NSObject
+{
+    NSMutableArray *modalViewControllers;
+//    UIViewController *presentVC;
+}
+@end
+
+@implementation EZModalVCManager
+
+DEF_SINGLETON(EZModalVCManager)
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        modalViewControllers = [NSMutableArray new];
+    }
+    return self;
+}
+
+-(UIViewController *)getVC
+{
+    return [modalViewControllers objectAtIndex:modalViewControllers.count - 2];
+}
+
+-(void)presentVC:(UIViewController *)vc
+{
+    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    [modalViewControllers addObject:vc];
+    if (appRootVC.presentedViewController == nil)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^
+        {
+            [appRootVC presentViewController:vc animated:YES completion:nil];
+        });
+    }
+    else
+    {
+        __weak EZModalVCManager *weakSelf = self;
+        [appRootVC dismissViewControllerAnimated:YES completion:^{
+            [weakSelf present];
+        }];
+    }
+
+    
+}
+
+-(void)present
+{
+    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    UIViewController *presentVC = [modalViewControllers lastObject];
+    
+    if (presentVC != nil)
+    {
+        [appRootVC presentViewController:presentVC animated:YES completion:nil];
+    }
+    else
+    {
+        
+    }
+}
+
+-(void)popVC:(UIViewController *)viewController
+{
+    [modalViewControllers removeLastObject];
+    
+    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    __weak EZModalVCManager *weakSelf = self;
+    [appRootVC dismissViewControllerAnimated:YES completion:^{
+        [weakSelf present];
+    }];
+
+}
+
+@end
 
 static const void *animationKey = &animationKey;
 
@@ -37,6 +117,8 @@ static const void *animationKey = &animationKey;
 {
     self.animation = animation;
     
+    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
     switch (self.animation)
     {
         case EZPresentAnimationNone:
@@ -47,23 +129,21 @@ static const void *animationKey = &animationKey;
         case EZPresentAnimationAlert:
         {
             viewController.modalPresentationStyle = UIModalPresentationCustom;
-            viewController.transitioningDelegate = self;
+            viewController.transitioningDelegate = appRootVC;
         }
             break;
         default:
             break;
     }
     
-    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
-    dispatch_async(dispatch_get_main_queue(), ^
-    {
-        [appRootVC presentViewController:viewController animated:YES completion:completion];
-    });
-    
+    [[EZModalVCManager sharedInstance]presentVC:viewController];
     
 }
 
+- (void)ez_dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion
+{
+    [[EZModalVCManager sharedInstance]popVC:self];
+}
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented

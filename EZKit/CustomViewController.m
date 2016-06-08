@@ -11,6 +11,8 @@
 #import "Masonry.h"
 @implementation CustomViewController
 
+static int num = 0;
+
 -(void)viewDidLoad
 {
     self.view.backgroundColor = [UIColor whiteColor];
@@ -22,19 +24,38 @@
         make.center.mas_equalTo(self.view);
     }];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btn setTitle:@"Dismiss" forState:UIControlStateNormal];
+    NSString *str = [NSString stringWithFormat:@"%d",++num];
+    [btn setTitle:str forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(testBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
 
+    UIButton *btn2 = [UIButton new];
+    [self.view addSubview:btn2];
+    [btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(80, 30));
+        make.center.mas_equalTo(self.view).offset(80);
+    }];
+    [btn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btn2 setTitle:@"Dismiss" forState:UIControlStateNormal];
+    [btn2 addTarget:self action:@selector(testBtnClicked2:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 -(void)testBtnClicked:(UIButton *)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    CustomViewController *vc = [CustomViewController new];
+    
+    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert completion:nil];
+}
+
+-(void)testBtnClicked2:(UIButton *)sender
+{
+    [self ez_dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)handleSingleTap:(UITapGestureRecognizer *)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self ez_dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

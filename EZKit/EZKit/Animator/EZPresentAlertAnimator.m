@@ -86,6 +86,7 @@
     
     POPSpringAnimation *scaleAnim = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
     scaleAnim.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.2)];
+    scaleAnim.toValue = [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)];
     scaleAnim.springBounciness = 8;
     [scaleAnim setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
         [transitionContext completeTransition:YES];
