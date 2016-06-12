@@ -37,17 +37,17 @@ DEF_SINGLETON(EZModalVCManager)
     [modalViewControllers removeObject:vc];
 }
 
--(UIViewController *)getVC
-{
-    if (modalViewControllers.count > 2)
-    {
-        return [modalViewControllers objectAtIndex:modalViewControllers.count - 2];
-    }
-    else
-    {
-        return nil;
-    }
-}
+//-(UIViewController *)getVC
+//{
+//    if (modalViewControllers.count > 2)
+//    {
+//        return [modalViewControllers objectAtIndex:modalViewControllers.count - 2];
+//    }
+//    else
+//    {
+//        return nil;
+//    }
+//}
 
 -(void)presentVC:(UIViewController *)vc
 {
@@ -101,7 +101,7 @@ DEF_SINGLETON(EZModalVCManager)
 
 -(void)popVC:(UIViewController *)viewController
 {
-    [modalViewControllers removeLastObject];
+    [modalViewControllers removeObject:viewController];
     
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     
