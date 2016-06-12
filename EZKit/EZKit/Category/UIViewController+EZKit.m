@@ -11,6 +11,7 @@
 #import "EZDismissAlertAnimator.h"
 #import <objc/runtime.h>
 #import "EZKitDefine.h"
+#import "NSObject+EZKit.h"
 
 @interface EZModalVCManager : NSObject
 {
@@ -31,16 +32,32 @@ DEF_SINGLETON(EZModalVCManager)
     return self;
 }
 
+-(void)removeVC:(UIViewController *)vc
+{
+    [modalViewControllers removeObject:vc];
+}
+
 -(UIViewController *)getVC
 {
-    return [modalViewControllers objectAtIndex:modalViewControllers.count - 2];
+    if (modalViewControllers.count > 2)
+    {
+        return [modalViewControllers objectAtIndex:modalViewControllers.count - 2];
+    }
+    else
+    {
+        return nil;
+    }
 }
 
 -(void)presentVC:(UIViewController *)vc
 {
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-    [modalViewControllers addObject:vc];
+    if (vc.ez_isPush)
+    {
+        [modalViewControllers addObject:vc];
+    }
+    
     if (appRootVC.presentedViewController == nil)
     {
         dispatch_async(dispatch_get_main_queue(), ^
@@ -92,6 +109,8 @@ DEF_SINGLETON(EZModalVCManager)
 
 static const void *animationKey = &animationKey;
 
+static const void *ez_isPushKey = &ez_isPushKey;
+
 @interface UIViewController ()<UIViewControllerTransitioningDelegate,UIViewControllerTransitioningDelegate>
 
 @property(nonatomic,assign)EZPresentAnimation animation;
@@ -111,13 +130,40 @@ static const void *animationKey = &animationKey;
     objc_setAssociatedObject(self, animationKey, [NSNumber numberWithInteger:animation], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+-(BOOL)ez_isPush
+{
+    NSNumber *num = objc_getAssociatedObject(self, ez_isPushKey);
+    if (num != nil)
+    {
+        return num.integerValue;
+    }
+    else
+    {
+        return YES;
+    }
+    
+}
+
+-(void)setEz_isPush:(BOOL)ez_isPush
+{
+    if (ez_isPush == NO)
+    {
+        [[EZModalVCManager sharedInstance]removeVC:self];
+    }
+    else
+    {
+        
+    }
+    
+    objc_setAssociatedObject(self, ez_isPushKey, [NSNumber numberWithInteger:ez_isPush], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 - (void)ez_presentViewController:(UIViewController *)viewController animatedType: (EZPresentAnimation)animation completion:(void (^ )(void))completion
 {
     self.animation = animation;
     
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
+
     switch (self.animation)
     {
         case EZPresentAnimationNone:

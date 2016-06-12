@@ -15,7 +15,10 @@ typedef NS_ENUM(NSInteger, EZPresentAnimation) {
 
 @interface UIViewController (EZKit)
 
+@property(nonatomic,assign)BOOL ez_isPush;
+
 - (void)ez_presentViewController:(UIViewController *)viewController animatedType: (EZPresentAnimation)animation completion:(void (^ )(void))completion;
 
 - (void)ez_dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion;
+
 @end
