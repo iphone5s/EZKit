@@ -209,7 +209,9 @@
 {
     CustomViewController *vc = [CustomViewController new];
 
-    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert completion:nil];
+    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:^{
+        
+    }];
 }
 
 -(void)navBtnClicked:(UIButton *)sender

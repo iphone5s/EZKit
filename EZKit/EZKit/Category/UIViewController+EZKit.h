@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^EZPresentDissmissCompletionBlock)(void);
+
 typedef NS_ENUM(NSInteger, EZPresentAnimation) {
     EZPresentAnimationNone,
     EZPresentAnimationAlert,
@@ -17,7 +19,7 @@ typedef NS_ENUM(NSInteger, EZPresentAnimation) {
 
 @property(nonatomic,assign)BOOL ez_isPush;
 
-- (void)ez_presentViewController:(UIViewController *)viewController animatedType: (EZPresentAnimation)animation completion:(void (^ )(void))completion;
+- (void)ez_presentViewController:(UIViewController *)viewController animatedType: (EZPresentAnimation)animation dismissCompletion:(EZPresentDissmissCompletionBlock)dissmiss;
 
 - (void)ez_dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion;
 

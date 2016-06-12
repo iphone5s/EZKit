@@ -37,18 +37,6 @@ DEF_SINGLETON(EZModalVCManager)
     [modalViewControllers removeObject:vc];
 }
 
-//-(UIViewController *)getVC
-//{
-//    if (modalViewControllers.count > 2)
-//    {
-//        return [modalViewControllers objectAtIndex:modalViewControllers.count - 2];
-//    }
-//    else
-//    {
-//        return nil;
-//    }
-//}
-
 -(void)presentVC:(UIViewController *)vc
 {
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
@@ -99,26 +87,35 @@ DEF_SINGLETON(EZModalVCManager)
     }
 }
 
--(void)popVC:(UIViewController *)viewController
+-(void)popVC:(UIViewController *)viewController dissmissCompletion: (EZPresentDissmissCompletionBlock)complet
 {
     [modalViewControllers removeObject:viewController];
     
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     
     __weak EZModalVCManager *weakSelf = self;
+    __weak EZPresentDissmissCompletionBlock dissmissblock = complet;
     [appRootVC dismissViewControllerAnimated:YES completion:^{
         [weakSelf present];
+        if (dissmissblock != nil) {
+            dissmissblock();
+        }
     }];
 
 }
 
+
 @end
 
-static const void *animationKey = &animationKey;
+static const void *ez_animationKey = &ez_animationKey;
 
 static const void *ez_isPushKey = &ez_isPushKey;
 
+static const void *ez_dissmissKey = &ez_dissmissKey;
+
 @interface UIViewController ()<UIViewControllerTransitioningDelegate,UIViewControllerTransitioningDelegate>
+
+@property(nonatomic,copy)EZPresentDissmissCompletionBlock dissmissComple;
 
 @property(nonatomic,assign)EZPresentAnimation animation;
 
@@ -126,15 +123,26 @@ static const void *ez_isPushKey = &ez_isPushKey;
 
 @implementation UIViewController (EZKit)
 
+-(EZPresentDissmissCompletionBlock)dissmissComple
+{
+    id obj = objc_getAssociatedObject(self, ez_dissmissKey);
+    return obj;
+}
+
+-(void)setDissmissComple:(EZPresentDissmissCompletionBlock)dissmissComple
+{
+    objc_setAssociatedObject(self, ez_dissmissKey, dissmissComple, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 -(EZPresentAnimation)animation
 {
-    NSNumber *num = objc_getAssociatedObject(self, animationKey);
+    NSNumber *num = objc_getAssociatedObject(self, ez_animationKey);
     return num.integerValue;
 }
 
 -(void)setAnimation:(EZPresentAnimation)animation
 {
-    objc_setAssociatedObject(self, animationKey, [NSNumber numberWithInteger:animation], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, ez_animationKey, [NSNumber numberWithInteger:animation], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 -(BOOL)ez_isPush
@@ -165,9 +173,11 @@ static const void *ez_isPushKey = &ez_isPushKey;
     objc_setAssociatedObject(self, ez_isPushKey, [NSNumber numberWithInteger:ez_isPush], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)ez_presentViewController:(UIViewController *)viewController animatedType: (EZPresentAnimation)animation completion:(void (^ )(void))completion
+- (void)ez_presentViewController:(UIViewController *)viewController animatedType: (EZPresentAnimation)animation dismissCompletion:(EZPresentDissmissCompletionBlock)dissmiss;
 {
     self.animation = animation;
+
+    viewController.dissmissComple = dissmiss;
     
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
 
@@ -194,7 +204,7 @@ static const void *ez_isPushKey = &ez_isPushKey;
 
 - (void)ez_dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion
 {
-    [[EZModalVCManager sharedInstance]popVC:self];
+    [[EZModalVCManager sharedInstance]popVC:self dissmissCompletion:self.dissmissComple];
 }
 #pragma mark - UIViewControllerTransitioningDelegate
 
