@@ -53,13 +53,15 @@ DEF_SINGLETON(EZModalVCManager)
 {
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-    if (vc.ez_isPush)
-    {
-        [modalViewControllers addObject:vc];
-    }
+    [modalViewControllers addObject:vc];
     
     if (appRootVC.presentedViewController == nil)
     {
+        if (vc.ez_isPush == NO)
+        {
+            [modalViewControllers removeObject:vc];
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^
         {
             [appRootVC presentViewController:vc animated:YES completion:nil];
@@ -81,6 +83,11 @@ DEF_SINGLETON(EZModalVCManager)
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     
     UIViewController *presentVC = [modalViewControllers lastObject];
+    
+    if (presentVC.ez_isPush == NO)
+    {
+        [modalViewControllers removeObject:presentVC];
+    }
     
     if (presentVC != nil)
     {

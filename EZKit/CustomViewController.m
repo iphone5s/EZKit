@@ -43,7 +43,7 @@ static int num = 0;
 -(void)testBtnClicked:(UIButton *)sender
 {
     CustomViewController *vc = [CustomViewController new];
-    
+//    vc.ez_isPush = NO;
     [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert completion:nil];
 }
 
