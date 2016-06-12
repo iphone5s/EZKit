@@ -32,11 +32,6 @@ DEF_SINGLETON(EZModalVCManager)
     return self;
 }
 
--(void)removeVC:(UIViewController *)vc
-{
-    [modalViewControllers removeObject:vc];
-}
-
 -(void)presentVC:(UIViewController *)vc
 {
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
@@ -45,10 +40,6 @@ DEF_SINGLETON(EZModalVCManager)
     
     if (appRootVC.presentedViewController == nil)
     {
-//        if (vc.ez_isPush == NO)
-//        {
-//            [modalViewControllers removeObject:vc];
-//        }
         
         dispatch_async(dispatch_get_main_queue(), ^
         {
@@ -163,15 +154,6 @@ static const void *ez_dissmissKey = &ez_dissmissKey;
 
 -(void)setEz_isPush:(BOOL)ez_isPush
 {
-    if (ez_isPush == NO)
-    {
-        [[EZModalVCManager sharedInstance]removeVC:self];
-    }
-    else
-    {
-        
-    }
-    
     objc_setAssociatedObject(self, ez_isPushKey, [NSNumber numberWithInteger:ez_isPush], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
