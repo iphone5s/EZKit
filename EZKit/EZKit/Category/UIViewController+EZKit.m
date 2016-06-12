@@ -13,6 +13,22 @@
 #import "EZKitDefine.h"
 #import "NSObject+EZKit.h"
 
+
+static const void *ez_animationKey = &ez_animationKey;
+
+static const void *ez_isPushKey = &ez_isPushKey;
+
+static const void *ez_dissmissKey = &ez_dissmissKey;
+
+@interface UIViewController ()<UIViewControllerTransitioningDelegate,UIViewControllerTransitioningDelegate>
+
+@property(nonatomic,copy)EZPresentDissmissCompletionBlock dissmissComple;
+
+@property(nonatomic,assign)EZPresentAnimation animation;
+
+@end
+
+
 @interface EZModalVCManager : NSObject
 {
     NSMutableArray *modalViewControllers;
@@ -80,14 +96,14 @@ DEF_SINGLETON(EZModalVCManager)
     }
 }
 
--(void)popVCdissmissCompletion: (EZPresentDissmissCompletionBlock)complet
+-(void)popVC
 {
+    UIViewController *vc = [modalViewControllers lastObject];
     [modalViewControllers removeLastObject];
-    
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     
     __weak EZModalVCManager *weakSelf = self;
-    __weak EZPresentDissmissCompletionBlock dissmissblock = complet;
+    __weak EZPresentDissmissCompletionBlock dissmissblock = vc.dissmissComple;
     [appRootVC dismissViewControllerAnimated:YES completion:^{
         [weakSelf present];
         if (dissmissblock != nil) {
@@ -97,22 +113,8 @@ DEF_SINGLETON(EZModalVCManager)
 
 }
 
-
 @end
 
-static const void *ez_animationKey = &ez_animationKey;
-
-static const void *ez_isPushKey = &ez_isPushKey;
-
-static const void *ez_dissmissKey = &ez_dissmissKey;
-
-@interface UIViewController ()<UIViewControllerTransitioningDelegate,UIViewControllerTransitioningDelegate>
-
-@property(nonatomic,copy)EZPresentDissmissCompletionBlock dissmissComple;
-
-@property(nonatomic,assign)EZPresentAnimation animation;
-
-@end
 
 @implementation UIViewController (EZKit)
 
@@ -188,7 +190,7 @@ static const void *ez_dissmissKey = &ez_dissmissKey;
 
 - (void)ez_dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion
 {
-    [[EZModalVCManager sharedInstance]popVCdissmissCompletion:self.dissmissComple];
+    [[EZModalVCManager sharedInstance]popVC];
 }
 #pragma mark - UIViewControllerTransitioningDelegate
 
