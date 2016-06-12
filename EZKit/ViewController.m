@@ -204,11 +204,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+extern int num = 0;
 -(void)vcBtnClicked:(UIButton *)sender
 {
     CustomViewController *vc = [CustomViewController new];
-
+    num = 0;
+    vc.ez_isPush = YES;
     [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:^{
         
     }];

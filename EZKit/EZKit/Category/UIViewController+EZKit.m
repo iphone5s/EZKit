@@ -45,10 +45,10 @@ DEF_SINGLETON(EZModalVCManager)
     
     if (appRootVC.presentedViewController == nil)
     {
-        if (vc.ez_isPush == NO)
-        {
-            [modalViewControllers removeObject:vc];
-        }
+//        if (vc.ez_isPush == NO)
+//        {
+//            [modalViewControllers removeObject:vc];
+//        }
         
         dispatch_async(dispatch_get_main_queue(), ^
         {
@@ -72,9 +72,11 @@ DEF_SINGLETON(EZModalVCManager)
     
     UIViewController *presentVC = [modalViewControllers lastObject];
     
-    if (presentVC.ez_isPush == NO)
+ 
+    while (presentVC != nil && presentVC.ez_isPush == NO)
     {
         [modalViewControllers removeObject:presentVC];
+        presentVC = [modalViewControllers lastObject];
     }
     
     if (presentVC != nil)
@@ -87,9 +89,9 @@ DEF_SINGLETON(EZModalVCManager)
     }
 }
 
--(void)popVC:(UIViewController *)viewController dissmissCompletion: (EZPresentDissmissCompletionBlock)complet
+-(void)popVCdissmissCompletion: (EZPresentDissmissCompletionBlock)complet
 {
-    [modalViewControllers removeObject:viewController];
+    [modalViewControllers removeLastObject];
     
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     
@@ -204,7 +206,7 @@ static const void *ez_dissmissKey = &ez_dissmissKey;
 
 - (void)ez_dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion
 {
-    [[EZModalVCManager sharedInstance]popVC:self dissmissCompletion:self.dissmissComple];
+    [[EZModalVCManager sharedInstance]popVCdissmissCompletion:self.dissmissComple];
 }
 #pragma mark - UIViewControllerTransitioningDelegate
 
