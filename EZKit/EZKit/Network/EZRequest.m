@@ -65,6 +65,11 @@ NSString *stringForArgument (NSDictionary *dict)
     return _method;
 }
 
+-(id)parameters
+{
+    return nil;
+}
+
 - (NSString *)baseUrl {
     return @"";
 }

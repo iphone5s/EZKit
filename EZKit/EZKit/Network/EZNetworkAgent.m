@@ -83,7 +83,7 @@ DEF_SINGLETON(EZNetworkAgent);
     {
         case EZResponseMethodDefault:
         {
-            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl];
+            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
         }
             break;
         case EZResponseMethodCache1:
@@ -98,7 +98,7 @@ DEF_SINGLETON(EZNetworkAgent);
             }
             else
             {
-                request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl];
+                request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
             }
         }
             break;
@@ -111,12 +111,12 @@ DEF_SINGLETON(EZNetworkAgent);
                 NSDictionary *dict = dictForString(strData);
                 [self handleRequestResult:request responseObject:dict isCache:YES];
             }
-            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl];
+            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
         }
             break;
         default:
         {
-            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl];
+            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
         }
             break;
     }
@@ -152,7 +152,7 @@ DEF_SINGLETON(EZNetworkAgent);
     return;
 }
 
-- (NSURLSessionDataTask *)sendNetworkRequest:(EZRequestMethod)method url:(NSString *)url
+- (NSURLSessionDataTask *)sendNetworkRequest:(EZRequestMethod)method url:(NSString *)url parameters:(id)parameters
 {
     [self setCookies:url];
     
@@ -160,7 +160,7 @@ DEF_SINGLETON(EZNetworkAgent);
     {
         case EZRequestMethodGet:
         {
-            return [_manager GET:url parameters:@"" progress:^(NSProgress * _Nonnull downloadProgress) {
+            return [_manager GET:url parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
                 NSLog(@"progress");
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 EZRequest *request = [self getRequestBy:task];
