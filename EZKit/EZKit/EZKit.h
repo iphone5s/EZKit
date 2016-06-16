@@ -21,6 +21,7 @@
 #import "UIView+EZKit.h"
 #import "UIViewController+EZKit.h"
 #import "UIColor+EZKit.h"
+#import "NSMapTable+EZKit.h"
 #pragma mark ======Foundation======
 
 #import "EZDeviceManager.h"

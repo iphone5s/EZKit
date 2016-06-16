@@ -38,6 +38,8 @@ static int num = 0;
     [btn2 setTitle:@"Dismiss" forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(testBtnClicked2:) forControlEvents:UIControlEventTouchUpInside];
     
+    NSMutableDictionary *dict;
+    [dict allKeysForObject:@""];
 }
 
 -(void)testBtnClicked:(UIButton *)sender

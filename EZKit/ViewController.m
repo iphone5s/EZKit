@@ -140,10 +140,21 @@
 ////        v.backgroundColor = [self test:i color1:0xabb7c1 color2:0x1c90f2];
 //    }
 
-    self.view.backgroundColor = HEX_RGB(0x22292f);
-    UIView *v=[[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    [self.view addSubview:v];
-    v.backgroundColor = HEX_RGBA(0xffffff, 0.2);
+    NSMapTable *mapTable = [[NSMapTable alloc]initWithKeyOptions:NSPointerFunctionsWeakMemory valueOptions:NSPointerFunctionsWeakMemory capacity:0];
+    
+    for (int i = 0; i < 100; i++)
+    {
+        NSString *strKey = [NSString stringWithFormat:@"%d",i];
+        NSInteger num = arc4random() % 10;
+        NSString *strObject = [NSString stringWithFormat:@"%lu",num];
+        [mapTable setObject:strObject forKey:strKey];
+    }
+    
+//    NSArray *array = [mapTable allKeysForObject:@"1"];
+//    
+//    for (NSString *strKey in array) {
+//        NSLog(strKey);
+//    }
 }
 //
 //- (NSUInteger) hexFromColor: (UIColor*) color {

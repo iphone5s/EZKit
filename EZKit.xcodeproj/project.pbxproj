@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A400CFFD8C7D887A9C4E9D5 /* libPods-EZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3535134BD77354B1D64817 /* libPods-EZKit.a */; };
+		7723D7531D125436006EEB11 /* NSMapTable+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */; };
 		7778B6DA1CE491DB006534A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6D91CE491DB006534A9 /* main.m */; };
 		7778B6DD1CE491DB006534A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6DC1CE491DB006534A9 /* AppDelegate.m */; };
 		7778B6E01CE491DB006534A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6DF1CE491DB006534A9 /* ViewController.m */; };
@@ -51,6 +52,8 @@
 /* Begin PBXFileReference section */
 		19FFF69EEB938D789E57B60E /* Pods-EZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-EZKit/Pods-EZKit.release.xcconfig"; sourceTree = "<group>"; };
 		5F3535134BD77354B1D64817 /* libPods-EZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7723D7511D125436006EEB11 /* NSMapTable+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+EZKit.h"; sourceTree = "<group>"; };
+		7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+EZKit.m"; sourceTree = "<group>"; };
 		7778B6D51CE491DB006534A9 /* EZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7778B6D91CE491DB006534A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7778B6DB1CE491DB006534A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -257,6 +260,8 @@
 				7778B7031CE4922C006534A9 /* UIView+EZKit.m */,
 				7778B7041CE4922C006534A9 /* UIViewController+EZKit.h */,
 				7778B7051CE4922C006534A9 /* UIViewController+EZKit.m */,
+				7723D7511D125436006EEB11 /* NSMapTable+EZKit.h */,
+				7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 				77FDF21C1CE6E91100B21E2E /* NSString+MJExtension.m in Sources */,
 				77FDF2181CE6E91100B21E2E /* NSObject+MJClass.m in Sources */,
 				77FDF21A1CE6E91100B21E2E /* NSObject+MJKeyValue.m in Sources */,
+				7723D7531D125436006EEB11 /* NSMapTable+EZKit.m in Sources */,
 				77FDF2141CE6E91100B21E2E /* MJFoundation.m in Sources */,
 				7778B71A1CE4922C006534A9 /* NSArray+EZKit.m in Sources */,
 				7778B7301CE492FD006534A9 /* CustomViewController.m in Sources */,
