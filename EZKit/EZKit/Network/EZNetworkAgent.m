@@ -78,6 +78,18 @@ DEF_SINGLETON(EZNetworkAgent);
     
     EZResponseMethod responseMethod = [request responseMethod];
     
+    NSDictionary *dict = [request requestSerializerHTTPHeaderField];
+    if (dict != nil)
+    {
+        for (NSString *strKey in dict.allKeys)
+        {
+            NSString *strValue = [dict objectForKey:strKey];
+            [_manager.requestSerializer setValue:strValue forHTTPHeaderField:strKey];
+        }
+    }
+    else
+    {
+    }
     
     switch (responseMethod)
     {
@@ -152,26 +164,9 @@ DEF_SINGLETON(EZNetworkAgent);
     return;
 }
 
--(void)setHTTPHeaderField
-{
-    if (_config.arugment != nil)
-    {
-        NSDictionary *dict = [_config.arugment requestSerializerHTTPHeaderField];
-        if (dict != nil)
-        {
-            for (NSString *strKey in dict.allKeys)
-            {
-                NSString *strValue = [dict objectForKey:strKey];
-                [_manager.requestSerializer setValue:strValue forHTTPHeaderField:strKey];
-            }
-        }
-    }
-}
-
 - (NSURLSessionDataTask *)sendNetworkRequest:(EZRequestMethod)method url:(NSString *)url parameters:(id)parameters
 {
     [self setCookies:url];
-    [self setHTTPHeaderField];
     
     switch (method)
     {

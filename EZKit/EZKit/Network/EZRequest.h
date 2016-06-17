@@ -51,6 +51,8 @@ typedef void(^EZRequestCompletionBlock)(__kindof EZRequest *request);
 /// 请求的参数列表
 - (id)requestArgument;
 
+-(NSDictionary *)requestSerializerHTTPHeaderField;
+
 //字典模型转换
 -(id)jsonModel:(NSDictionary *)dict;
 

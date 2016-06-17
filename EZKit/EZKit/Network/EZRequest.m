@@ -141,6 +141,11 @@ NSString *stringForArgument (NSDictionary *dict)
     return _strUrl;
 }
 
+-(NSDictionary *)requestSerializerHTTPHeaderField
+{
+    return nil;
+}
+
 -(void)dealloc
 {
     NSLog(@"request 释放");
