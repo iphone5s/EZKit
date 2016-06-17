@@ -22,4 +22,5 @@
 
 -(NSArray *)requestCookieArgument;
 
+-(NSDictionary *)requestSerializerHTTPHeaderField;
 @end
