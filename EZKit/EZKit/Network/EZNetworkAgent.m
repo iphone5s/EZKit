@@ -175,12 +175,16 @@ DEF_SINGLETON(EZNetworkAgent);
             break;
         case EZRequestMethodPost:
         {
-            [_manager POST:url parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
-                
+            [_manager POST:url parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                
+                EZRequest *request = [self getRequestBy:task];
+                [self handleRequestResult:request responseObject:responseObject isCache:NO];
+                [self removeSessionDataTask:task];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                
+                EZRequest *request = [self getRequestBy:task];
+                [self handleRequestResult:request responseObject:nil isCache:NO];
+                [self removeSessionDataTask:task];
             }];
         }
             break;
