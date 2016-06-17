@@ -175,7 +175,7 @@ DEF_SINGLETON(EZNetworkAgent);
             break;
         case EZRequestMethodPost:
         {
-            [_manager POST:url parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+            return [_manager POST:url parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 EZRequest *request = [self getRequestBy:task];
