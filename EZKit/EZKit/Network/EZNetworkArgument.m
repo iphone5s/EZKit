@@ -48,8 +48,5 @@
     return strArgument;
 }
 
--(NSDictionary *)requestSerializerHTTPHeaderField
-{
-    return nil;
-}
+
 @end
