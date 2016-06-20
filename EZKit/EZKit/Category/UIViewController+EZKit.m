@@ -118,6 +118,35 @@ DEF_SINGLETON(EZModalVCManager)
 
 @implementation UIViewController (EZKit)
 
++(void)load
+{
+    [self ez_hookMethod:@selector(ez_presentVC:animated:completion:) tarSel:@selector(presentViewController:animated:completion:)];
+    
+    [self ez_hookMethod:@selector(ez_dismissVCAnimated:completion:) tarSel:@selector(dismissViewControllerAnimated:completion:)];
+}
+
+- (void)ez_presentVC:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^ __nullable)(void))completion;
+{
+    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    if ([appRootVC isEqual:self]) {
+       [appRootVC ez_presentVC:viewControllerToPresent animated:YES completion:completion];
+    }else{
+        [self ez_presentViewController:viewControllerToPresent animatedType:EZPresentAnimationNone dismissCompletion:completion];
+    }
+}
+
+- (void)ez_dismissVCAnimated: (BOOL)flag completion: (void (^ __nullable)(void))completion
+{
+    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    if ([appRootVC isEqual:self]) {
+        [appRootVC ez_dismissVCAnimated:flag completion:completion];
+    }else{
+        [self ez_dismissViewControllerAnimated:flag completion:completion];
+    }
+}
+
 -(EZPresentDissmissCompletionBlock)dissmissComple
 {
     id obj = objc_getAssociatedObject(self, ez_dissmissKey);

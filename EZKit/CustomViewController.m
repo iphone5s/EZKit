@@ -9,6 +9,8 @@
 #import "CustomViewController.h"
 #import "EZKit.h"
 #import "Masonry.h"
+#import "TestViewController.h"
+
 @implementation CustomViewController
 
 static int num = 0;
@@ -44,15 +46,23 @@ static int num = 0;
 
 -(void)testBtnClicked:(UIButton *)sender
 {
-    CustomViewController *vc = [CustomViewController new];
-//    vc.ez_isPush = NO;
-    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
+    if (num % 3 == 0) {
+        TestViewController *vc = [TestViewController new];
+        //    vc.ez_isPush = NO;
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else{
+        CustomViewController *vc = [CustomViewController new];
+        //    vc.ez_isPush = NO;
+        [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
+    }
+
 }
 
 -(void)testBtnClicked2:(UIButton *)sender
 {
-//    [self ez_dismissViewControllerAnimated:YES completion:nil];
-    self.ez_isPush = NO;
+    [self ez_dismissViewControllerAnimated:YES completion:nil];
+//    self.ez_isPush = NO;
 }
 
 -(void)handleSingleTap:(UITapGestureRecognizer *)sender
