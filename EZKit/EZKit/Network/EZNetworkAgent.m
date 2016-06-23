@@ -178,7 +178,7 @@ DEF_SINGLETON(EZNetworkAgent);
         case EZRequestMethodGet:
         {
             return [_manager GET:url parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
-                NSLog(@"progress");
+//                NSLog(@"progress");
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 EZRequest *request = [self getRequestBy:task];
                 [self handleRequestResult:request responseObject:responseObject isCache:NO];
@@ -237,7 +237,12 @@ DEF_SINGLETON(EZNetworkAgent);
     if (_config.arugment != nil)
     {
         //提取公共数据
-        id data = [_config.arugment responseData:request.responseJSONObject];
+        id data = [request responseData:request.responseJSONObject];
+        
+        if (data == nil) {
+            data = [_config.arugment responseData:request.responseJSONObject];
+        }
+        
         if (data != nil)
         {
             id obj = [request jsonModel:data];

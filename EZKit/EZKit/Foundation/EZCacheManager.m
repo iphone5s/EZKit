@@ -103,15 +103,15 @@ DEF_SINGLETON(EZCacheManager)
         NSString *secret_key = _EZNSStringMD5(key);
         if ([self ez_isHasKey:secret_key]) {
             if ([self ez_updateKey:secret_key value:value]) {
-                NSLog(@"更新成功");
+//                NSLog(@"更新成功");
             }else{
-                NSLog(@"更新失败");
+//                NSLog(@"更新失败");
             }
         }else{
             if ([self ez_insertKey:secret_key value:value]) {
-                NSLog(@"插入成功");
+//                NSLog(@"插入成功");
             }else{
-                NSLog(@"插入失败");
+//                NSLog(@"插入失败");
             }
         }
         return YES;
