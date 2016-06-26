@@ -9,6 +9,8 @@
 #ifndef EZKitDefine_h
 #define EZKitDefine_h
 
+#import <UIKit/UIKit.h>
+
 #pragma mark -
 
 #if __has_feature(objc_instancetype)
@@ -79,6 +81,8 @@ DEF_SINGLETON( __class ) \
 { \
 [self sharedInstance]; \
 }
+
+#define ez_debug_msg(msg) [[[UIAlertView alloc]initWithTitle:nil message:msg delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil] show];
 
 #pragma mark -
 

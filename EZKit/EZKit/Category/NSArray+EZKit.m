@@ -8,14 +8,17 @@
 
 #import "NSArray+EZKit.h"
 #import "NSObject+EZKit.h"
+#import "EZKitDefine.h"
 
 @implementation NSArray (EZKit)
 
 - (instancetype)initWithObjects_ez:(id *)objects count:(NSUInteger)cnt
 {
     NSUInteger newCnt = 0;
-    for (NSUInteger i = 0; i < cnt; i++) {
-        if (!objects[i]) {
+    for (NSUInteger i = 0; i < cnt; i++)
+    {
+        if (!objects[i])
+        {
             break;
         }
         newCnt++;
@@ -26,7 +29,11 @@
 
 - (id)ez_objectAtIndex:(NSUInteger)index
 {
-    if (index >= [self count]) {
+    if (index >= [self count])
+    {
+        #ifdef DEBUG 
+            ez_debug_msg(@"数组越界");
+        #endif
         return nil;
     }
     return [self ez_objectAtIndex:index];

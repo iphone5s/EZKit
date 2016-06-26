@@ -8,11 +8,16 @@
 
 #import "NSMutableArray+EZKit.h"
 #import "NSObject+EZKit.h"
+#import "EZKitDefine.h"
 
 @implementation NSMutableArray (EZKit)
 
 - (id)ez_objectAtIndex:(NSUInteger)index {
-    if (index >= [self count]) {
+    if (index >= [self count])
+    {
+        #ifdef DEBUG
+            ez_debug_msg(@"数组越界");
+        #endif
         return nil;
     }
     return [self ez_objectAtIndex:index];
