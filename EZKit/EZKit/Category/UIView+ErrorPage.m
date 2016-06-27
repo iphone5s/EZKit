@@ -115,7 +115,7 @@ static char const * const kErrorPageDelegate ="errorPageDelegate";
     
     if (!self.errorView)
     {
-        self.errorView = [[EZErrorView alloc]initWithFrame:self.superview.frame];
+        self.errorView = [[EZErrorView alloc]initWithFrame:CGRectMake(0, 0, self.superview.frame.size.width, self.superview.frame.size.height)];
         [self addSubview:self.errorView];
 
         self.userInteractionEnabled = YES;
