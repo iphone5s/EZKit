@@ -124,6 +124,11 @@ static char const * const kErrorPageDelegate ="errorPageDelegate";
 
     }
     
+    if ([self isKindOfClass:[UIScrollView class]])
+    {
+        ((UIScrollView *)self).scrollEnabled = (self.ez_pageType == EZErrorPageTypeNone)?YES:NO;
+    }
+    
     switch (ez_pageType)
     {
         case EZErrorPageTypeNone:
