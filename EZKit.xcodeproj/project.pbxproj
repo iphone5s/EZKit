@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A400CFFD8C7D887A9C4E9D5 /* libPods-EZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3535134BD77354B1D64817 /* libPods-EZKit.a */; };
+		7701FBAF1D20557700846C48 /* UIViewController+EZLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 7701FBAE1D20557700846C48 /* UIViewController+EZLoading.m */; };
 		7723D7531D125436006EEB11 /* NSMapTable+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */; };
 		7778B6DA1CE491DB006534A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6D91CE491DB006534A9 /* main.m */; };
 		7778B6DD1CE491DB006534A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6DC1CE491DB006534A9 /* AppDelegate.m */; };
@@ -51,6 +52,8 @@
 /* Begin PBXFileReference section */
 		19FFF69EEB938D789E57B60E /* Pods-EZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-EZKit/Pods-EZKit.release.xcconfig"; sourceTree = "<group>"; };
 		5F3535134BD77354B1D64817 /* libPods-EZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7701FBAD1D20557700846C48 /* UIViewController+EZLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EZLoading.h"; sourceTree = "<group>"; };
+		7701FBAE1D20557700846C48 /* UIViewController+EZLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EZLoading.m"; sourceTree = "<group>"; };
 		7723D7511D125436006EEB11 /* NSMapTable+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+EZKit.h"; sourceTree = "<group>"; };
 		7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+EZKit.m"; sourceTree = "<group>"; };
 		7778B6D51CE491DB006534A9 /* EZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,6 +260,8 @@
 				7778B7031CE4922C006534A9 /* UIView+EZKit.m */,
 				7778B7041CE4922C006534A9 /* UIViewController+EZKit.h */,
 				7778B7051CE4922C006534A9 /* UIViewController+EZKit.m */,
+				7701FBAD1D20557700846C48 /* UIViewController+EZLoading.h */,
+				7701FBAE1D20557700846C48 /* UIViewController+EZLoading.m */,
 				7723D7511D125436006EEB11 /* NSMapTable+EZKit.h */,
 				7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */,
 			);
@@ -353,7 +358,7 @@
 				TargetAttributes = {
 					7778B6D41CE491DB006534A9 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = UPLXHXPX73;
+						DevelopmentTeam = ZURG2YH3G6;
 					};
 				};
 			};
@@ -463,6 +468,7 @@
 				77FDF2171CE6E91100B21E2E /* MJPropertyType.m in Sources */,
 				7778B6DD1CE491DB006534A9 /* AppDelegate.m in Sources */,
 				77FDF2131CE6E91100B21E2E /* MJExtensionConst.m in Sources */,
+				7701FBAF1D20557700846C48 /* UIViewController+EZLoading.m in Sources */,
 				7778B71C1CE4922C006534A9 /* NSMutableArray+EZKit.m in Sources */,
 				7778B72B1CE492EF006534A9 /* TestApi.m in Sources */,
 				7778B7211CE4922C006534A9 /* UIViewController+EZKit.m in Sources */,
@@ -589,7 +595,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhen-xie.EZKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2b52cc3b-9909-4516-943c-2ed228cc0136";
 			};
 			name = Debug;
 		};
@@ -605,7 +611,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhen-xie.EZKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2b52cc3b-9909-4516-943c-2ed228cc0136";
 			};
 			name = Release;
 		};
