@@ -20,7 +20,6 @@
 #import "NSString+EZKit.h"
 #import "UIView+EZKit.h"
 #import "UIViewController+EZKit.h"
-#import "UIViewController+EZLoading.h"
 #import "UIColor+EZKit.h"
 #import "NSMapTable+EZKit.h"
 #pragma mark ======Foundation======
