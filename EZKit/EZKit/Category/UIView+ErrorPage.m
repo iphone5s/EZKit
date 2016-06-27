@@ -45,7 +45,7 @@
 
 -(void)layoutSubviews
 {
-    imageView.center = CGPointMake(self.width / 2.0, self.height / 2.0);
+    imageView.center = CGPointMake(self.superview.width / 2.0, self.superview.height / 2.0);
     imageView.size = self.image.size;
     descLab.frame = CGRectMake(0, imageView.bottom + 10, self.superview.width, 20);
 }
