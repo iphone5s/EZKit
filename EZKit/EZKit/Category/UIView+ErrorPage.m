@@ -39,17 +39,20 @@
         descLab.textColor = HEX_RGB(0x22292f);
         descLab.textAlignment = NSTextAlignmentCenter;
         descLab.font = [UIFont systemFontOfSize:14];
+        descLab.frame = CGRectMake(0, 0, 300, 20);
     }
     return self;
 }
 
 -(void)layoutSubviews
 {
-    imageView.center = CGPointMake(self.superview.width / 2.0, self.superview.height / 2.0);
+    [super layoutSubviews];
+    
+    imageView.center = CGPointMake(self.superview.width / 2.0, self.height / 2.0 - self.image.size.height);
     imageView.size = self.image.size;
-    descLab.frame = CGRectMake(0, imageView.bottom + 10, self.superview.width, 20);
+    descLab.centerX = imageView.centerX;
+    descLab.top = imageView.bottom + 10;
 }
-
 
 -(void)setImage:(UIImage *)image
 {
@@ -117,11 +120,11 @@ static char const * const kErrorPageDelegate ="errorPageDelegate";
     {
         self.errorView = [[EZErrorView alloc]initWithFrame:CGRectMake(0, 0, self.superview.frame.size.width, self.superview.frame.size.height)];
         [self addSubview:self.errorView];
-
+        
         self.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTap:)];
         [self.errorView addGestureRecognizer:tap];
-
+        
     }
     
     if ([self isKindOfClass:[UIScrollView class]])
