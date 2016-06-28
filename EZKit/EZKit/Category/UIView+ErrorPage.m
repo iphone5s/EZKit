@@ -46,13 +46,12 @@
 
 -(void)layoutSubviews
 {
-    [super layoutSubviews];
-    
-    imageView.center = CGPointMake(self.superview.width / 2.0, self.height / 2.0 - self.image.size.height);
     imageView.size = self.image.size;
+    imageView.center = CGPointMake(self.width / 2.0, self.height / 2.0);
     descLab.centerX = imageView.centerX;
     descLab.top = imageView.bottom + 10;
 }
+
 
 -(void)setImage:(UIImage *)image
 {
@@ -118,9 +117,9 @@ static char const * const kErrorPageDelegate ="errorPageDelegate";
     
     if (!self.errorView)
     {
-        self.errorView = [[EZErrorView alloc]initWithFrame:CGRectMake(0, 0, self.superview.frame.size.width, self.superview.frame.size.height)];
+        self.errorView = [[EZErrorView alloc]initWithFrame:CGRectMake(0, 0, self.width + 20, self.height)];
         [self addSubview:self.errorView];
-        
+        self.errorView.backgroundColor = [UIColor redColor];
         self.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTap:)];
         [self.errorView addGestureRecognizer:tap];
