@@ -119,7 +119,6 @@ static char const * const kErrorPageDelegate ="errorPageDelegate";
     {
         self.errorView = [[EZErrorView alloc]initWithFrame:CGRectMake(0, 0, self.width + 20, self.height)];
         [self addSubview:self.errorView];
-        self.errorView.backgroundColor = [UIColor redColor];
         self.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTap:)];
         [self.errorView addGestureRecognizer:tap];
