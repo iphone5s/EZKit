@@ -119,6 +119,7 @@ static char const * const kErrorPageDelegate ="errorPageDelegate";
     if (!self.errorView)
     {
         self.errorView = [[EZErrorView alloc]initWithFrame:CGRectMake(0, 0, self.width + 20, self.height)];
+        self.errorView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self addSubview:self.errorView];
         self.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTap:)];
