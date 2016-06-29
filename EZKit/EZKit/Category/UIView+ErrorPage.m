@@ -57,6 +57,7 @@
 {
     _image = image;
     imageView.image = self.image;
+    imageView.size = image.size;
 }
 
 -(void)setStrDesc:(NSString *)strDesc
