@@ -146,7 +146,14 @@ DEF_SINGLETON(EZNetworkAgent);
                 }
             }
             
-            
+        }
+    }
+    else
+    {
+        NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+        NSArray *cookies = [cookieStorage cookiesForURL:[NSURL URLWithString:strUrl]];
+        for (NSHTTPCookie *cookie in cookies){
+            [cookieStorage deleteCookie:cookie];
         }
     }
     return;
