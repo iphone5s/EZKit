@@ -147,15 +147,16 @@ DEF_SINGLETON(EZNetworkAgent);
             }
             
         }
-    }
-    else
-    {
-        NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-        NSArray *cookies = [cookieStorage cookiesForURL:[NSURL URLWithString:strUrl]];
-        for (NSHTTPCookie *cookie in cookies){
-            [cookieStorage deleteCookie:cookie];
+        else
+        {
+            NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+            NSArray *cookies = [cookieStorage cookiesForURL:[NSURL URLWithString:strUrl]];
+            for (NSHTTPCookie *cookie in cookies){
+                [cookieStorage deleteCookie:cookie];
+            }
         }
     }
+    
     return;
 }
 
@@ -185,7 +186,7 @@ DEF_SINGLETON(EZNetworkAgent);
         case EZRequestMethodGet:
         {
             return [_manager GET:url parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
-//                NSLog(@"progress");
+                //                NSLog(@"progress");
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 EZRequest *request = [self getRequestBy:task];
                 [self handleRequestResult:request responseObject:responseObject isCache:NO];
@@ -200,7 +201,7 @@ DEF_SINGLETON(EZNetworkAgent);
         case EZRequestMethodPost:
         {
             return [_manager POST:url parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
-
+                
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 EZRequest *request = [self getRequestBy:task];
                 [self handleRequestResult:request responseObject:responseObject isCache:NO];
@@ -281,7 +282,7 @@ DEF_SINGLETON(EZNetworkAgent);
         [request setValue:responseObject forKey:@"responseJSONObject"];
         
         [self jsonModel:request];
-
+        
         if ([request responseMethod] != EZResponseMethodDefault)
         {
             NSString *strData = stringForDict(responseObject);
