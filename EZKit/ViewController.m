@@ -26,25 +26,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-//    self.view.errorPageDelegate = self;
-//    self.view.ez_pageType = EZErrorPageTypeLoading;
-    
-    table = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
-    [self.view addSubview:table];
-    
-//    UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-//    v.backgroundColor = [UIColor redColor];
-//    [table addSubview:v];
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTap:)];
-//    [v addGestureRecognizer:tap];
-    
-    table.errorPageDelegate = self;
-    table.ez_pageType = EZErrorPageTypeLoading;
-//    [table reloadData];
-//    self.ez_loadingType = EZLoadingTypeLoading;
+//    
+////    self.view.errorPageDelegate = self;
+////    self.view.ez_pageType = EZErrorPageTypeLoading;
+//    
+//    table = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
+//    [self.view addSubview:table];
+//    
+////    UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+////    v.backgroundColor = [UIColor redColor];
+////    [table addSubview:v];
+////    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTap:)];
+////    [v addGestureRecognizer:tap];
+//    
+//    table.errorPageDelegate = self;
+//    table.ez_pageType = EZErrorPageTypeLoading;
+////    [table reloadData];
+////    self.ez_loadingType = EZLoadingTypeLoading;
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    btn.backgroundColor = [UIColor redColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
 }
 
+-(void)test{
+    CustomViewController *vc = [CustomViewController new];
+    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 10;

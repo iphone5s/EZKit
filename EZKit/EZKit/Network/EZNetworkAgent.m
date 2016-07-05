@@ -69,10 +69,10 @@ DEF_SINGLETON(EZNetworkAgent);
 
 - (void)addRequest:(EZRequest *)request
 {
-    if ([self isTaskRun:request])
-    {
-        return;
-    }
+//    if ([self isTaskRun:request])
+//    {
+//        return;
+//    }
     
     EZRequestMethod requestMethod = [request requestMethod];
     

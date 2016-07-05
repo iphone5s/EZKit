@@ -15,33 +15,49 @@
 
 static int num = 0;
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    
+}
 -(void)viewDidLoad
 {
     self.view.backgroundColor = [UIColor whiteColor];
     self.view.frame = CGRectMake(0, 0, EZSharedDevice.screenWidth / 2.0, EZSharedDevice.screenHeight / 2.0);
-    UIButton *btn = [UIButton new];
-    [self.view addSubview:btn];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(80, 30));
-        make.center.mas_equalTo(self.view);
-    }];
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    NSString *str = [NSString stringWithFormat:@"%d",++num];
-    [btn setTitle:str forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(testBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-
-    UIButton *btn2 = [UIButton new];
-    [self.view addSubview:btn2];
-    [btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(80, 30));
-        make.center.mas_equalTo(self.view).offset(80);
-    }];
-    [btn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btn2 setTitle:@"Dismiss" forState:UIControlStateNormal];
-    [btn2 addTarget:self action:@selector(testBtnClicked2:) forControlEvents:UIControlEventTouchUpInside];
+    UITextField *userNameTF = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    userNameTF.backgroundColor = [UIColor whiteColor];
+    userNameTF.textColor = HEX_RGB(0x22292F);
+    userNameTF.placeholder = @"请输入QQ账号";
+//    userNameTF.delegate = self;
+    userNameTF.clearButtonMode = UITextFieldViewModeWhileEditing;
+    userNameTF.backgroundColor = [UIColor whiteColor];
+    userNameTF.borderStyle = UITextBorderStyleNone;
+    userNameTF.text = @"aaa";
     
-    NSMutableDictionary *dict;
-    [dict allKeysForObject:@""];
+    [self.view addSubview:userNameTF];
+
+//    UIButton *btn = [UIButton new];
+//    [self.view addSubview:btn];
+//    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.size.mas_equalTo(CGSizeMake(80, 30));
+//        make.center.mas_equalTo(self.view);
+//    }];
+//    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    NSString *str = [NSString stringWithFormat:@"%d",++num];
+//    [btn setTitle:str forState:UIControlStateNormal];
+//    [btn addTarget:self action:@selector(testBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+//
+//    UIButton *btn2 = [UIButton new];
+//    [self.view addSubview:btn2];
+//    [btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.size.mas_equalTo(CGSizeMake(80, 30));
+//        make.center.mas_equalTo(self.view).offset(80);
+//    }];
+//    [btn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [btn2 setTitle:@"Dismiss" forState:UIControlStateNormal];
+//    [btn2 addTarget:self action:@selector(testBtnClicked2:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    NSMutableDictionary *dict;
+//    [dict allKeysForObject:@""];
 }
 
 -(void)testBtnClicked:(UIButton *)sender
