@@ -16,7 +16,6 @@
 #import "NSObject+EZKit.h"
 #import "NSArray+EZKit.h"
 #import "NSMutableArray+EZKit.h"
-#import "NSMutableArray+EZKitMRC.h"
 #import "NSDictionary+EZKit.h"
 #import "NSString+EZKit.h"
 #import "UIView+EZKit.h"
