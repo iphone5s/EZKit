@@ -12,18 +12,6 @@
 
 @implementation NSMutableArray (EZKit)
 
-- (id)ez_objectAtIndex:(NSUInteger)index {
-    if (index >= [self count])
-    {
-        #ifdef DEBUG
-            ez_debug_msg(@"数组越界");
-        #endif
-        return nil;
-    }
-    return [self ez_objectAtIndex:index];
-}
-
-
 - (void)ez_addObject:(id)anObject
 {
     if (!anObject)
@@ -71,7 +59,6 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [self ez_hookMethod:@selector(ez_objectAtIndex:) tarClass:@"__NSArrayM" tarSel:@selector(objectAtIndex:)];
         [self ez_hookMethod:@selector(ez_addObject:) tarClass:@"__NSArrayM" tarSel:@selector(addObject:)];
         [self ez_hookMethod:@selector(ez_insertObject:atIndex:) tarClass:@"__NSArrayM" tarSel:@selector(insertObject:atIndex:)];
         [self ez_hookMethod:@selector(ez_removeObjectAtIndex:) tarClass:@"__NSArrayM" tarSel:@selector(removeObjectAtIndex:)];

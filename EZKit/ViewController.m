@@ -47,6 +47,14 @@
     btn.backgroundColor = [UIColor redColor];
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+    
+    NSMutableArray *ar = [NSMutableArray new];
+    [ar addObject:@"1"];
+    [ar addObject:@"2"];
+    [ar addObject:@"3"];
+    [ar addObject:@"4"];
+    NSString *obj = [ar objectAtIndex:5];
+    NSLog(@"");
 }
 
 -(void)test{
