@@ -8,22 +8,18 @@
 
 #import "NSMapTable+EZKit.h"
 
-FOUNDATION_EXPORT NSArray *NSAllMapTableKeys(NSMapTable *table);
-FOUNDATION_EXPORT NSArray *NSAllMapTableValues(NSMapTable *table);
-
 @implementation NSMapTable (EZKit)
 
-- (NSArray *) allKeys
+- (NSArray *) ez_allKeys
 {
-    NSAllMapTableKeys(self);
-    return nil;
+    return [[self keyEnumerator]allObjects];
 }
 
-- (NSArray *)allKeysForObject:(NSObject *)anObject
+- (NSArray *)ez_allKeysForObject:(NSObject *)anObject
 {
     NSMutableArray *array = [NSMutableArray new];
-
-    for (NSObject *objectKey in self.allKeys)
+    
+    for (NSObject *objectKey in self.ez_allKeys)
     {
         NSObject *objectValue = [self objectForKey:objectKey];
         if ([anObject isEqual:objectValue])

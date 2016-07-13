@@ -10,8 +10,8 @@
 
 @interface NSMapTable (EZKit)
 
-- (NSArray *) allKeys;
+- (NSArray *) ez_allKeys;
 
-- (NSArray *)allKeysForObject:(NSObject *)anObject;
+- (NSArray *)ez_allKeysForObject:(NSObject *)anObject;
 
 @end
