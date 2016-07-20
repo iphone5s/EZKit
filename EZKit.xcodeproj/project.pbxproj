@@ -12,9 +12,9 @@
 		771F8BAC1D3F5A9100DEB070 /* NSArray+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8B9F1D3F5A9100DEB070 /* NSArray+EZKit.m */; };
 		771F8BAD1D3F5A9100DEB070 /* NSDictionary+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8BA11D3F5A9100DEB070 /* NSDictionary+EZKit.m */; };
 		771F8BAF1D3F5A9100DEB070 /* NSString+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8BA51D3F5A9100DEB070 /* NSString+EZKit.m */; };
-		771F8BB11D3F5A9100DEB070 /* NSObject+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8BAB1D3F5A9100DEB070 /* NSObject+EZKit.m */; };
 		771F8BB41D3F5B3300DEB070 /* NSMutableArray+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8BB31D3F5B3300DEB070 /* NSMutableArray+EZKit.m */; };
 		771F8BB71D3F5B6600DEB070 /* NSMutableArray+EZKitMRC.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8BB61D3F5B6600DEB070 /* NSMutableArray+EZKitMRC.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		771F8BBB1D3F697500DEB070 /* NSObject+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8BBA1D3F697500DEB070 /* NSObject+EZKit.m */; };
 		7723D7531D125436006EEB11 /* NSMapTable+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */; };
 		7778B6DA1CE491DB006534A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6D91CE491DB006534A9 /* main.m */; };
 		7778B6DD1CE491DB006534A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6DC1CE491DB006534A9 /* AppDelegate.m */; };
@@ -61,12 +61,12 @@
 		771F8BA11D3F5A9100DEB070 /* NSDictionary+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+EZKit.m"; sourceTree = "<group>"; };
 		771F8BA41D3F5A9100DEB070 /* NSString+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EZKit.h"; sourceTree = "<group>"; };
 		771F8BA51D3F5A9100DEB070 /* NSString+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EZKit.m"; sourceTree = "<group>"; };
-		771F8BAA1D3F5A9100DEB070 /* NSObject+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EZKit.h"; sourceTree = "<group>"; };
-		771F8BAB1D3F5A9100DEB070 /* NSObject+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EZKit.m"; sourceTree = "<group>"; };
 		771F8BB21D3F5B3300DEB070 /* NSMutableArray+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+EZKit.h"; sourceTree = "<group>"; };
 		771F8BB31D3F5B3300DEB070 /* NSMutableArray+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+EZKit.m"; sourceTree = "<group>"; };
 		771F8BB51D3F5B6600DEB070 /* NSMutableArray+EZKitMRC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+EZKitMRC.h"; sourceTree = "<group>"; };
 		771F8BB61D3F5B6600DEB070 /* NSMutableArray+EZKitMRC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+EZKitMRC.m"; sourceTree = "<group>"; };
+		771F8BB91D3F697500DEB070 /* NSObject+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EZKit.h"; sourceTree = "<group>"; };
+		771F8BBA1D3F697500DEB070 /* NSObject+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EZKit.m"; sourceTree = "<group>"; };
 		7723D7511D125436006EEB11 /* NSMapTable+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+EZKit.h"; sourceTree = "<group>"; };
 		7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+EZKit.m"; sourceTree = "<group>"; };
 		7778B6D51CE491DB006534A9 /* EZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,9 +170,9 @@
 		771F8B9C1D3F5A9100DEB070 /* SafeCore */ = {
 			isa = PBXGroup;
 			children = (
+				771F8BB81D3F697500DEB070 /* SafeCore */,
 				771F8B9D1D3F5A9100DEB070 /* Foundation */,
 				771F8BA61D3F5A9100DEB070 /* MRC */,
-				771F8BA91D3F5A9100DEB070 /* SafeSore */,
 			);
 			path = SafeCore;
 			sourceTree = "<group>";
@@ -201,13 +201,13 @@
 			path = MRC;
 			sourceTree = "<group>";
 		};
-		771F8BA91D3F5A9100DEB070 /* SafeSore */ = {
+		771F8BB81D3F697500DEB070 /* SafeCore */ = {
 			isa = PBXGroup;
 			children = (
-				771F8BAA1D3F5A9100DEB070 /* NSObject+EZKit.h */,
-				771F8BAB1D3F5A9100DEB070 /* NSObject+EZKit.m */,
+				771F8BB91D3F697500DEB070 /* NSObject+EZKit.h */,
+				771F8BBA1D3F697500DEB070 /* NSObject+EZKit.m */,
 			);
-			path = SafeSore;
+			path = SafeCore;
 			sourceTree = "<group>";
 		};
 		7778B6CC1CE491DB006534A9 = {
@@ -517,7 +517,7 @@
 				77FDF2151CE6E91100B21E2E /* MJProperty.m in Sources */,
 				7778B7191CE4922C006534A9 /* EZPresentAlertAnimator.m in Sources */,
 				77FDF2191CE6E91100B21E2E /* NSObject+MJCoding.m in Sources */,
-				771F8BB11D3F5A9100DEB070 /* NSObject+EZKit.m in Sources */,
+				771F8BBB1D3F697500DEB070 /* NSObject+EZKit.m in Sources */,
 				7778B7281CE4922C006534A9 /* EZRequest.m in Sources */,
 				7778B7311CE492FD006534A9 /* TestViewController.m in Sources */,
 			);

@@ -20,11 +20,11 @@ Pod::Spec.new do |spec|
     specSub.source_files = 'EZKit/EZKit/SafeCore/SafeCore/*'
   end
 
-  # spec.subspec 'SafeMRC' do |specSub|
-  #   specSub.requires_arc = false
-  #   specSub.compiler_flags = '-ObjC'
-  #   specSub.dependency 'EZKit/EZKit/SafeCore/SafeCore'
-  #   specSub.source_files = 'EZKit/EZKit/SafeCore/MRC/*'
-  # end
+  spec.subspec 'SafeMRC' do |specSub|
+    specSub.requires_arc = false
+    specSub.compiler_flags = '-ObjC'
+    specSub.dependency 'EZKit/SafeCore'
+    specSub.source_files = 'EZKit/EZKit/SafeCore/MRC/*'
+  end
 
 end
