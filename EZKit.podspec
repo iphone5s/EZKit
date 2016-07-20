@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'FCUUID'
   spec.dependency 'pop'
   spec.dependency 'FMDB'
-  spec.dependency 'MBProgressHUD'
+  spec.dependency 'MBProgressHUD', '~> 0.9.2'
   spec.dependency 'AFNetworking'
 
   spec.subspec 'SafeCore' do |specSub|
