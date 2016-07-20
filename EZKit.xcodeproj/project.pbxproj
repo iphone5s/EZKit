@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A400CFFD8C7D887A9C4E9D5 /* libPods-EZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3535134BD77354B1D64817 /* libPods-EZKit.a */; };
 		770C461A1D215D9000243A6D /* UIView+ErrorPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 770C46191D215D9000243A6D /* UIView+ErrorPage.m */; };
+		771F8B861D3F509200DEB070 /* NSMutableArray+EZKit_MRC.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8B851D3F509200DEB070 /* NSMutableArray+EZKit_MRC.m */; };
 		7723D7531D125436006EEB11 /* NSMapTable+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */; };
 		7778B6DA1CE491DB006534A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6D91CE491DB006534A9 /* main.m */; };
 		7778B6DD1CE491DB006534A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6DC1CE491DB006534A9 /* AppDelegate.m */; };
@@ -54,6 +55,8 @@
 		5F3535134BD77354B1D64817 /* libPods-EZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		770C46181D215D9000243A6D /* UIView+ErrorPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ErrorPage.h"; sourceTree = "<group>"; };
 		770C46191D215D9000243A6D /* UIView+ErrorPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ErrorPage.m"; sourceTree = "<group>"; };
+		771F8B841D3F509200DEB070 /* NSMutableArray+EZKit_MRC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+EZKit_MRC.h"; sourceTree = "<group>"; };
+		771F8B851D3F509200DEB070 /* NSMutableArray+EZKit_MRC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+EZKit_MRC.m"; sourceTree = "<group>"; };
 		7723D7511D125436006EEB11 /* NSMapTable+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+EZKit.h"; sourceTree = "<group>"; };
 		7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+EZKit.m"; sourceTree = "<group>"; };
 		7778B6D51CE491DB006534A9 /* EZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +253,8 @@
 				7778B6F91CE4922C006534A9 /* NSDictionary+EZKit.m */,
 				7778B6FA1CE4922C006534A9 /* NSMutableArray+EZKit.h */,
 				7778B6FB1CE4922C006534A9 /* NSMutableArray+EZKit.m */,
+				771F8B841D3F509200DEB070 /* NSMutableArray+EZKit_MRC.h */,
+				771F8B851D3F509200DEB070 /* NSMutableArray+EZKit_MRC.m */,
 				7778B6FC1CE4922C006534A9 /* NSObject+EZKit.h */,
 				7778B6FD1CE4922C006534A9 /* NSObject+EZKit.m */,
 				7778B6FE1CE4922C006534A9 /* NSString+EZKit.h */,
@@ -445,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771F8B861D3F509200DEB070 /* NSMutableArray+EZKit_MRC.m in Sources */,
 				778D1C011CE4DCE400E9619C /* Argument.m in Sources */,
 				7778B7201CE4922C006534A9 /* UIView+EZKit.m in Sources */,
 				7778B7221CE4922C006534A9 /* EZCacheManager.m in Sources */,
