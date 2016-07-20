@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
   spec.authors      = { 'Ezreal' => '453742103@qq.com' }
   spec.summary      = 'EZKit for ios'
   spec.source       = { :git => 'https://github.com/iphone5s/EZKit.git', :tag => spec.version }
-  spec.source_files = 'EZKit/EZKit/*'
+  spec.source_files = 'EZKit/EZKit/**/*'
   spec.platform     = :ios, '7.0'
   spec.requires_arc = true
   spec.dependency 'Masonry'
@@ -20,11 +20,11 @@ Pod::Spec.new do |spec|
     specSub.source_files = 'EZKit/EZKit/SafeCore/SafeCore/*'
   end
 
-  spec.subspec 'SafeMRC' do |specSub|
-    specSub.requires_arc = false
-    specSub.compiler_flags = '-ObjC'
-    specSub.dependency 'EZKit/EZKit/SafeCore/SafeCore'
-    specSub.source_files = 'EZKit/EZKit/SafeCore/SafeCore/*'
-  end
+  # spec.subspec 'SafeMRC' do |specSub|
+  #   specSub.requires_arc = false
+  #   specSub.compiler_flags = '-ObjC'
+  #   specSub.dependency 'EZKit/EZKit/SafeCore/SafeCore'
+  #   specSub.source_files = 'EZKit/EZKit/SafeCore/MRC/*'
+  # end
 
 end
