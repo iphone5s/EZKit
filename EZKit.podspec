@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'EZKit'
-  spec.version      = '0.0.6'
+  spec.version      = '0.0.7'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/iphone5s/EZKit'
   spec.authors      = { 'Ezreal' => '453742103@qq.com' }
@@ -16,10 +16,15 @@ Pod::Spec.new do |spec|
   spec.dependency 'MBProgressHUD'
   spec.dependency 'AFNetworking'
 
-  spec.subspec 'Foundation' do |specSub|
+  spec.subspec 'SafeCore' do |specSub|
+    specSub.source_files = 'EZKit/EZKit/SafeCore/SafeCore/*'
+  end
+
+  spec.subspec 'SafeMRC' do |specSub|
     specSub.requires_arc = false
     specSub.compiler_flags = '-ObjC'
-    specSub.source_files = 'EZKit/EZKit/**/*_MRC*'
+    specSub.dependency 'EZKit/EZKit/SafeCore/SafeCore'
+    specSub.source_files = 'EZKit/EZKit/SafeCore/SafeCore/*'
   end
 
 end
