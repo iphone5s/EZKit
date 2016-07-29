@@ -29,6 +29,7 @@
 #import "EZDeviceManager.h"
 #import "EZHudManager.h"
 #import "EZCacheManager.h"
+#import "EZTabViewController.h"
 
 #pragma mark ======Network======
 
