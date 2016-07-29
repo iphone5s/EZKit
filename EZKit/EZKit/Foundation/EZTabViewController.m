@@ -10,7 +10,6 @@
 #import "EZKit.h"
 #import <objc/runtime.h>
 #import "NSObject+EZKit.h"
-#import "TestViewController.h"
 
 static const void *ez_AppearanceStateKey = &ez_AppearanceStateKey;
 
