@@ -37,6 +37,7 @@
 		7778B7311CE492FD006534A9 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B72F1CE492FD006534A9 /* TestViewController.m */; };
 		778D1C011CE4DCE400E9619C /* Argument.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D1C001CE4DCE400E9619C /* Argument.m */; };
 		778D1C041CE4F8E200E9619C /* EZNetworkArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D1C031CE4F8E200E9619C /* EZNetworkArgument.m */; };
+		77F9F5071D4B4B38004EC89A /* EZTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F9F5061D4B4B38004EC89A /* EZTabViewController.m */; };
 		77FDF1FC1CE6CF0B00B21E2E /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FDF1FB1CE6CF0B00B21E2E /* Model.m */; };
 		77FDF2131CE6E91100B21E2E /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FDF2001CE6E91100B21E2E /* MJExtensionConst.m */; };
 		77FDF2141CE6E91100B21E2E /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FDF2021CE6E91100B21E2E /* MJFoundation.m */; };
@@ -112,6 +113,8 @@
 		778D1C001CE4DCE400E9619C /* Argument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Argument.m; sourceTree = "<group>"; };
 		778D1C021CE4F8E200E9619C /* EZNetworkArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkArgument.h; sourceTree = "<group>"; };
 		778D1C031CE4F8E200E9619C /* EZNetworkArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkArgument.m; sourceTree = "<group>"; };
+		77F9F5051D4B4B38004EC89A /* EZTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZTabViewController.h; sourceTree = "<group>"; };
+		77F9F5061D4B4B38004EC89A /* EZTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZTabViewController.m; sourceTree = "<group>"; };
 		77FDF1FA1CE6CF0B00B21E2E /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		77FDF1FB1CE6CF0B00B21E2E /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		77FDF1FE1CE6E91100B21E2E /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 				7778B70C1CE4922C006534A9 /* EZDeviceManager.m */,
 				7778B70D1CE4922C006534A9 /* EZHudManager.h */,
 				7778B70E1CE4922C006534A9 /* EZHudManager.m */,
+				77F9F5051D4B4B38004EC89A /* EZTabViewController.h */,
+				77F9F5061D4B4B38004EC89A /* EZTabViewController.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -516,6 +521,7 @@
 				7778B7251CE4922C006534A9 /* EZNetworkAgent.m in Sources */,
 				77FDF2151CE6E91100B21E2E /* MJProperty.m in Sources */,
 				7778B7191CE4922C006534A9 /* EZPresentAlertAnimator.m in Sources */,
+				77F9F5071D4B4B38004EC89A /* EZTabViewController.m in Sources */,
 				77FDF2191CE6E91100B21E2E /* NSObject+MJCoding.m in Sources */,
 				771F8BBB1D3F697500DEB070 /* NSObject+EZKit.m in Sources */,
 				7778B7281CE4922C006534A9 /* EZRequest.m in Sources */,
