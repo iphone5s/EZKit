@@ -41,7 +41,7 @@ NSString *stringForArgument (NSDictionary *dict)
     self = [super init];
     if (self) {
         _strUrl = [self buildRequestUrl];
-        self.requestSessionDataTask = nil;
+        
     }
     return self;
 }

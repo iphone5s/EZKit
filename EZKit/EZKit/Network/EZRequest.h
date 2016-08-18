@@ -35,7 +35,7 @@ typedef void(^EZRequestCompletionBlock)(__kindof EZRequest *request);
 //返回结果
 @property (nonatomic, strong, readonly) id responseModel;
 
-@property (nonatomic, strong) NSURLSessionDataTask *requestSessionDataTask;
+//@property (nonatomic, strong) NSURLSessionDataTask *requestSessionDataTask;
 
 @property(nonatomic,strong,readonly)id parameters;
 

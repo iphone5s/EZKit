@@ -78,12 +78,13 @@ DEF_SINGLETON(EZNetworkAgent);
     
     EZResponseMethod responseMethod = [request responseMethod];
     
+    NSURLSessionDataTask *task = nil;
     
     switch (responseMethod)
     {
         case EZResponseMethodDefault:
         {
-            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
+            task = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
         }
             break;
         case EZResponseMethodCache1:
@@ -98,7 +99,7 @@ DEF_SINGLETON(EZNetworkAgent);
             }
             else
             {
-                request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
+                task = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
             }
         }
             break;
@@ -111,17 +112,17 @@ DEF_SINGLETON(EZNetworkAgent);
                 NSDictionary *dict = dictForString(strData);
                 [self handleRequestResult:request responseObject:dict isCache:YES];
             }
-            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
+            task = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
         }
             break;
         default:
         {
-            request.requestSessionDataTask = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
+            task = [self sendNetworkRequest:requestMethod url:request.strUrl parameters:request.parameters];
         }
             break;
     }
     
-    [self addSessionDataTask:request];
+    [self addSessionDataTask:request task:task];
 }
 
 -(void)setCookies:(NSString *)strUrl
@@ -188,6 +189,7 @@ DEF_SINGLETON(EZNetworkAgent);
             return [_manager GET:url parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
                 //                NSLog(@"progress");
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                
                 EZRequest *request = [self getRequestBy:task];
                 [self handleRequestResult:request responseObject:responseObject isCache:NO];
                 [self removeSessionDataTask:task];
@@ -332,11 +334,11 @@ DEF_SINGLETON(EZNetworkAgent);
     return request;
 }
 
-- (void)addSessionDataTask:(EZRequest *)request
+- (void)addSessionDataTask:(EZRequest *)request task:(NSURLSessionDataTask *)task
 {
-    if (request.requestSessionDataTask != nil)
+    if (task != nil)
     {
-        NSString *strTaskID = [self requestTaskID:request.requestSessionDataTask];
+        NSString *strTaskID = [self requestTaskID:task];
         @synchronized (self)
         {
             _requestsRecord[strTaskID] = request;
@@ -344,19 +346,19 @@ DEF_SINGLETON(EZNetworkAgent);
     }
 }
 
--(BOOL)isTaskRun:(EZRequest *)request
-{
-    NSString *strTaskID = [self requestTaskID:request.requestSessionDataTask];
-    id obj = _requestsRecord[strTaskID];
-    if (obj != nil)
-    {
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
-}
+//-(BOOL)isTaskRun:(EZRequest *)request
+//{
+//    NSString *strTaskID = [self requestTaskID:request.requestSessionDataTask];
+//    id obj = _requestsRecord[strTaskID];
+//    if (obj != nil)
+//    {
+//        return YES;
+//    }
+//    else
+//    {
+//        return NO;
+//    }
+//}
 
 - (void)removeSessionDataTask:(NSURLSessionDataTask *)task {
     NSString *strTaskID = [self requestTaskID:task];
