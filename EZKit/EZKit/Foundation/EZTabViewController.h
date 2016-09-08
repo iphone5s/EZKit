@@ -19,6 +19,13 @@ typedef NS_ENUM(NSUInteger, EZTabLayoutStyle) {
     EZTabLayoutStyleDivide,
 };
 
+/** 导航栏滑块样式 */
+typedef NS_ENUM(NSUInteger, EZSliderStyle) {
+    /** 默认显示下划线 */
+    EZSliderStyleDefault,
+    /** 气泡样式，该样式下需结合bubbleInset和bubbleRadius使用 */
+    EZSliderStyleBubble,
+};
 
 /****************************************delegate****************************************/
 @protocol EZTabViewControllerDelegate <NSObject>
@@ -89,6 +96,16 @@ typedef NS_ENUM(NSUInteger, EZTabLayoutStyle) {
  */
 @property (nonatomic, assign) EZTabLayoutStyle layoutStyle;
 /**
+ *  导航栏滑块样式，默认显示下划线
+ */
+@property (nonatomic, assign) EZSliderStyle sliderStyle;
+/**
+ *  滑块的圆角半径，默认10
+ *
+ *  @warning 该属性用于EZSliderStyleBubble样式下
+ */
+@property (nonatomic, assign) CGFloat bubbleRadius;
+/**
  *  顶部导航栏左侧视图项
  */
 @property (nonatomic, strong) UIView *leftNavigatoinItem;
@@ -109,6 +126,11 @@ typedef NS_ENUM(NSUInteger, EZTabLayoutStyle) {
  *  item间距，默认是10
  */
 @property (nonatomic, assign) CGFloat itemSpacing;
+
+/**
+ *  顶部导航栏是否紧贴系统状态栏，即是否需要为状态栏留出20个点的区域，默认NO
+ */
+@property (nonatomic, assign, getter=isAgainstStatusBar) BOOL againstStatusBar;
 
 -(void)reloadDataAtPage:(NSInteger)pageIndex;
 

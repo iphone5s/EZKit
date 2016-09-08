@@ -96,6 +96,8 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     
     NSMutableArray *menuArray;
     
+    UIView *sliderView;
+    
     BOOL isViewWillAppear;
     NSInteger nextPageIndex;
     CGFloat lastOffSetX;
@@ -114,6 +116,8 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
 {
     self = [super init];
     if (self) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        
         menuArray = [NSMutableArray new];
         
         navigationView = [UIView new];
@@ -121,6 +125,9 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         menuBar.showsVerticalScrollIndicator = NO;
         menuBar.showsHorizontalScrollIndicator = NO;
         menuBar.backgroundColor = [UIColor clearColor];
+        
+        sliderView = [UIView new];
+        sliderView.backgroundColor = RGBA(0, 0, 0, 0.3);
         
         contentView = [UIScrollView new];
         contentView.showsVerticalScrollIndicator = NO;
@@ -138,6 +145,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         
         [self.view addSubview:navigationView];
         [navigationView addSubview:menuBar];
+        [menuBar addSubview:sliderView];
         [self.view addSubview:contentView];
     }
     return self;
@@ -187,7 +195,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         [_leftNavigatoinItem removeFromSuperview];
     }
     _leftNavigatoinItem = leftNavigatoinItem;
-    [menuBar addSubview:_leftNavigatoinItem];
+    [navigationView addSubview:_leftNavigatoinItem];
     
     [self.view layoutIfNeeded];
 }
@@ -196,8 +204,22 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
 {
     navigationView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.navigationHeight);
     
-    menuBar.frame = CGRectMake(0, 0, self.view.frame.size.width, self.navigationHeight);
     contentView.frame = CGRectMake(0, self.navigationHeight, self.view.frame.size.width, self.view.frame.size.height - self.navigationHeight);
+    
+    CGFloat topY = _againstStatusBar ? 20 : 0;
+    
+    if (self.leftNavigatoinItem != nil)
+    {
+        menuBar.frame = CGRectMake(self.leftNavigatoinItem.width, 0, self.view.frame.size.width - self.leftNavigatoinItem.width, self.navigationHeight - 0);
+        [self.leftNavigatoinItem setFrame:CGRectMake(0, topY, self.leftNavigatoinItem.width, self.leftNavigatoinItem.height)];
+    }
+    
+    if (self.sliderStyle == EZSliderStyleBubble) {
+        [sliderView setFrame:CGRectMake(self.currentPage * (self.itemSize.width + self.itemSpacing), (self.navigationHeight - self.itemSize.height + topY) / 2.0, self.itemSize.width, self.itemSize.height)];
+    }else
+    {
+        
+    }
     
     for (int i = 0; i < menuArray.count; i++)
     {
@@ -205,7 +227,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         switch (self.layoutStyle) {
             case EZTabLayoutStyleDefault:
             {
-                menuItem.frame = CGRectMake(i * (self.itemSize.width + self.itemSpacing), (self.navigationHeight - self.itemSize.height) / 2.0, self.itemSize.width, self.itemSize.height);
+                menuItem.frame = CGRectMake(i * (self.itemSize.width + self.itemSpacing), (self.navigationHeight - self.itemSize.height + topY) / 2.0, self.itemSize.width, self.itemSize.height);
             }
                 break;
             case EZTabLayoutStyleCenter:
@@ -313,7 +335,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     CGFloat offsetX = scrollView.contentOffset.x;
     CGFloat scrollWidth = scrollView.frame.size.width;
     BOOL isSwipeToLeft = scrollWidth * _currentPage < offsetX;
-
+    
     if (offsetX < 0  || offsetX > scrollWidth * (self.childViewControllers.count - 1) || isSkipUpdate)
     {
         return;
@@ -339,7 +361,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         newIndex = ceilf(offsetX/scrollWidth);
         tempIndex = floorf(offsetX / scrollWidth);
     }
-
+    
     if (newIndex != _currentPage)
     {
         self.currentPage = newIndex;
@@ -377,6 +399,8 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     }
     
     lastOffSetX = offsetX;
+    
+    sliderView.left = (offsetX / scrollWidth) * (sliderView.width + self.itemSpacing);
 }
 
 - (void)viewControllerWillDisappear:(NSUInteger)pageIndex
@@ -456,13 +480,30 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     self.currentPage = pageIndex;
 }
 
+-(void)setAgainstStatusBar:(BOOL)againstStatusBar
+{
+    _againstStatusBar = againstStatusBar;
+    [self.view setNeedsLayout];
+}
+
+-(void)setSliderStyle:(EZSliderStyle)sliderStyle
+{
+    _sliderStyle = sliderStyle;
+    [self.view setNeedsLayout];
+}
+
+-(void)setBubbleRadius:(CGFloat)bubbleRadius
+{
+    _bubbleRadius = bubbleRadius;
+    sliderView.layer.cornerRadius = bubbleRadius;
+}
 //- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 //{
-//    
+//
 //    NSInteger pageIndex = scrollView.contentOffset.x / scrollView.width;
-//    
+//
 ////    self.currentPage = pageIndex;
-//    
+//
 //    NSLog(@"%lu",self.currentPage);
 //    
 //}
