@@ -143,10 +143,13 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         self.layoutStyle = EZTabLayoutStyleDefault;
         self.itemSpacing = 10.0f;
         
-        [self.view addSubview:navigationView];
+        self.itemNormalColor = [UIColor whiteColor];
+        self.itemSelectedColor = [UIColor whiteColor];
+        
         [navigationView addSubview:menuBar];
         [menuBar addSubview:sliderView];
         [self.view addSubview:contentView];
+        [self.view addSubview:navigationView];
     }
     return self;
 }
@@ -292,6 +295,8 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         for (int index = 0; index < tabCount; index++)
         {
             UIButton *menuItem = [self.delegate tabViewController:self menuItemAtIndex:index];
+            [menuItem setTitleColor:self.itemNormalColor forState:UIControlStateNormal];
+            
             menuItem.tag = index;
             [menuItem addTarget:self action:@selector(menuItemClicked:) forControlEvents:UIControlEventTouchUpInside];
             [menuBar addSubview:menuItem];
@@ -304,7 +309,18 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         }
         
     }
+    
+    if (pageIndex >= menuArray.count) {
+        pageIndex = 0;
+    }
+    
     _currentPage = pageIndex;
+    
+    if (menuArray.count > 0)
+    {
+        UIButton *menuItem = [menuArray objectAtIndex:pageIndex];
+        [menuItem setTitleColor:self.itemSelectedColor forState:UIControlStateNormal];
+    }
     
     [self viewControllerWillAppear:pageIndex];
     
@@ -400,7 +416,16 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     
     lastOffSetX = offsetX;
     
-    sliderView.left = (offsetX / scrollWidth) * (sliderView.width + self.itemSpacing);
+    float percent = offsetX / scrollWidth;
+    
+    sliderView.left = percent * (sliderView.width + self.itemSpacing);
+    
+    percent = fabsf(percent - self.currentPage);
+
+    UIButton *nextItem = [menuArray objectAtIndex:nextPageIndex];
+    UIButton *currentItem = [menuArray objectAtIndex:self.currentPage];
+    [nextItem setTitleColor:[UIColor colorPercent:(100 * percent) fromColor:self.itemNormalColor toColor:self.itemSelectedColor] forState:UIControlStateNormal];
+    [currentItem setTitleColor:[UIColor colorPercent:(percent * 100) fromColor:self.itemSelectedColor toColor:self.itemNormalColor] forState:UIControlStateNormal];
 }
 
 - (void)viewControllerWillDisappear:(NSUInteger)pageIndex
@@ -480,6 +505,17 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     sliderView.left = pageIndex * (self.itemSize.width + self.itemSpacing);
     
     self.currentPage = pageIndex;
+    
+    for (int i = 0; i < menuArray.count; i++) {
+        UIButton *menuItem = [menuArray objectAtIndex:i];
+        if (i == pageIndex) {
+            [menuItem setTitleColor:self.itemSelectedColor forState:UIControlStateNormal];
+        }else{
+            [menuItem setTitleColor:self.itemNormalColor forState:UIControlStateNormal];
+        }
+        [menuItem setNeedsLayout];
+    }
+    
 }
 
 -(void)setAgainstStatusBar:(BOOL)againstStatusBar
@@ -499,6 +535,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     _bubbleRadius = bubbleRadius;
     sliderView.layer.cornerRadius = bubbleRadius;
 }
+
 //- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 //{
 //

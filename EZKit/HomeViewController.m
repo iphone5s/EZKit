@@ -29,6 +29,8 @@
     self.againstStatusBar = YES;
     self.sliderStyle = EZSliderStyleBubble;
     self.bubbleRadius = 6;
+    self.itemNormalColor = [UIColor whiteColor];
+    self.itemSelectedColor = [UIColor redColor];
     
     UIView *leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 80)];
     self.leftNavigatoinItem = leftView;
@@ -65,7 +67,8 @@
 {
     UIButton * menuItem = [UIButton new];
     [menuItem setTitle:@"热门" forState:UIControlStateNormal];
-    [menuItem setTitleColor:HEX_RGB(0x4e5459) forState:UIControlStateNormal];
+//    [menuItem setTitleColor:HEX_RGB(0x4e5459) forState:UIControlStateNormal];
+//    [menuItem setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     menuItem.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
     return menuItem;
 }
@@ -77,14 +80,5 @@
     viewController.page = pageIndex;
     return viewController;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

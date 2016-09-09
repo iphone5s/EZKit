@@ -113,7 +113,6 @@ typedef NS_ENUM(NSUInteger, EZSliderStyle) {
  *  顶部导航栏背景色
  */
 @property (nonatomic, strong) UIColor *navigationColor;
-
 /**
  *  顶部导航条的高度，默认是44
  */
@@ -126,11 +125,20 @@ typedef NS_ENUM(NSUInteger, EZSliderStyle) {
  *  item间距，默认是10
  */
 @property (nonatomic, assign) CGFloat itemSpacing;
+/**
+ *  MenuTitle的正常颜色
+ */
+@property (nonatomic, strong) UIColor *itemNormalColor;
+/**
+ *  MenuTitle的选中颜色
+ */
+@property (nonatomic, strong) UIColor *itemSelectedColor;
 
 /**
  *  顶部导航栏是否紧贴系统状态栏，即是否需要为状态栏留出20个点的区域，默认NO
  */
 @property (nonatomic, assign, getter=isAgainstStatusBar) BOOL againstStatusBar;
+
 
 -(void)reloadDataAtPage:(NSInteger)pageIndex;
 

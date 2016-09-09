@@ -410,7 +410,7 @@
 				TargetAttributes = {
 					7778B6D41CE491DB006534A9 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = ZURG2YH3G6;
+						DevelopmentTeam = UPLXHXPX73;
 					};
 				};
 			};
@@ -651,7 +651,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhen-xie.EZKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9f74ed53-2e7b-45ca-ae09-4be758e46a77";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -667,7 +667,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhen-xie.EZKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9f74ed53-2e7b-45ca-ae09-4be758e46a77";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
