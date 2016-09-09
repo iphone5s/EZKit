@@ -213,7 +213,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     
     if (self.leftNavigatoinItem != nil)
     {
-        menuBar.frame = CGRectMake(self.leftNavigatoinItem.width, 0, self.view.frame.size.width - self.leftNavigatoinItem.width-300, self.navigationHeight - 0);
+        menuBar.frame = CGRectMake(self.leftNavigatoinItem.width, 0, self.view.frame.size.width - self.leftNavigatoinItem.width, self.navigationHeight);
         [self.leftNavigatoinItem setFrame:CGRectMake(0, topY, self.leftNavigatoinItem.width, self.leftNavigatoinItem.height)];
     }
     
