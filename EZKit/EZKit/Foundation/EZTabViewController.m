@@ -477,6 +477,8 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     [contentView setContentOffset:CGPointMake(contentView.width * pageIndex, 0) animated:NO];
     isSkipUpdate = NO;
     
+    sliderView.left = pageIndex * (self.itemSize.width + self.itemSpacing);
+    
     self.currentPage = pageIndex;
 }
 
@@ -505,7 +507,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
 ////    self.currentPage = pageIndex;
 //
 //    NSLog(@"%lu",self.currentPage);
-//    
+//
 //}
 
 @end
