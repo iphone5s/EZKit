@@ -536,15 +536,16 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     sliderView.layer.cornerRadius = bubbleRadius;
 }
 
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-//{
-//
-//    NSInteger pageIndex = scrollView.contentOffset.x / scrollView.width;
-//
-////    self.currentPage = pageIndex;
-//
-//    NSLog(@"%lu",self.currentPage);
-//
-//}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    for (int i = 0; i < menuArray.count; i++) {
+        UIButton *menuItem = [menuArray objectAtIndex:i];
+        if (i == self.currentPage) {
+            [menuItem setTitleColor:self.itemSelectedColor forState:UIControlStateNormal];
+        }else{
+            [menuItem setTitleColor:self.itemNormalColor forState:UIControlStateNormal];
+        }
+    }
+}
 
 @end

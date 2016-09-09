@@ -26,11 +26,12 @@
     self.navigationHeight = 100;
     self.navigationColor = HEX_RGB(0x22292f);
     self.itemSize = CGSizeMake(100, 40);
+    self.itemSpacing = 0;
     self.againstStatusBar = YES;
     self.sliderStyle = EZSliderStyleBubble;
     self.bubbleRadius = 6;
-    self.itemNormalColor = [UIColor whiteColor];
-    self.itemSelectedColor = [UIColor redColor];
+    self.itemNormalColor = HEX_RGB(0x4e5459);
+    self.itemSelectedColor = [UIColor whiteColor];
     
     UIView *leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 80)];
     self.leftNavigatoinItem = leftView;
