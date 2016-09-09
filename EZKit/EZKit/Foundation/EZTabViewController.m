@@ -217,6 +217,12 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         [self.leftNavigatoinItem setFrame:CGRectMake(0, topY, self.leftNavigatoinItem.width, self.leftNavigatoinItem.height)];
     }
     
+    if (menuArray.count == 0) {
+        sliderView.hidden = YES;
+    }else{
+        sliderView.hidden = NO;
+    }
+    
     if (self.sliderStyle == EZSliderStyleBubble) {
         [sliderView setFrame:CGRectMake(self.currentPage * (self.itemSize.width + self.itemSpacing), (self.navigationHeight - self.itemSize.height + topY) / 2.0, self.itemSize.width, self.itemSize.height)];
     }else
