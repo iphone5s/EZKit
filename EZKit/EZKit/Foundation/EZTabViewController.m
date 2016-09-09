@@ -213,7 +213,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     
     if (self.leftNavigatoinItem != nil)
     {
-        menuBar.frame = CGRectMake(self.leftNavigatoinItem.width, 0, self.view.frame.size.width - self.leftNavigatoinItem.width, self.navigationHeight - 0);
+        menuBar.frame = CGRectMake(self.leftNavigatoinItem.width, 0, self.view.frame.size.width - self.leftNavigatoinItem.width-300, self.navigationHeight - 0);
         [self.leftNavigatoinItem setFrame:CGRectMake(0, topY, self.leftNavigatoinItem.width, self.leftNavigatoinItem.height)];
     }
     
@@ -258,7 +258,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     }
     
     [contentView setContentSize:CGSizeMake(self.view.frame.size.width * menuArray.count, 0)];
-    [menuBar setContentSize:CGSizeMake((self.itemSize.width + self.itemSpacing) * menuArray.count, 0)];
+    [menuBar setContentSize:CGSizeMake((self.itemSize.width + self.itemSpacing) * menuArray.count, self.itemSize.height)];
     
     isSkipUpdate = YES;
     [contentView setContentOffset:CGPointMake(self.view.frame.size.width * self.currentPage, 0) animated:NO];
@@ -516,6 +516,8 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         [menuItem setNeedsLayout];
     }
     
+    [menuBar scrollRectToVisible:CGRectMake(self.currentPage * (self.itemSize.width + self.itemSpacing), 0, 100, 100) animated:YES];
+
 }
 
 -(void)setAgainstStatusBar:(BOOL)againstStatusBar
@@ -546,6 +548,8 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
             [menuItem setTitleColor:self.itemNormalColor forState:UIControlStateNormal];
         }
     }
+    
+    [menuBar scrollRectToVisible:CGRectMake(self.currentPage * (self.itemSize.width + self.itemSpacing), 0, 100, 100) animated:YES];
 }
 
 @end

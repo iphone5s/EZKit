@@ -61,7 +61,7 @@
 
 - (NSInteger)numberOfTabIntabViewController:(EZTabViewController *)tabViewController
 {
-    return 10;
+    return 50;
 }
 
 - (UIButton *)tabViewController:(EZTabViewController *)tabViewController menuItemAtIndex:(NSUInteger)itemIndex
