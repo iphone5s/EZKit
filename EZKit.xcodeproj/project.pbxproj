@@ -28,10 +28,16 @@
 		7778B7211CE4922C006534A9 /* UIViewController+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7051CE4922C006534A9 /* UIViewController+EZKit.m */; };
 		7778B7231CE4922C006534A9 /* EZDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B70C1CE4922C006534A9 /* EZDeviceManager.m */; };
 		7778B7241CE4922C006534A9 /* EZHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B70E1CE4922C006534A9 /* EZHudManager.m */; };
+		7778B7251CE4922C006534A9 /* EZNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7111CE4922C006534A9 /* EZNetworkAgent.m */; };
+		7778B7271CE4922C006534A9 /* EZNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7151CE4922C006534A9 /* EZNetworkConfig.m */; };
+		7778B7281CE4922C006534A9 /* EZRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7171CE4922C006534A9 /* EZRequest.m */; };
+		7778B72B1CE492EF006534A9 /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B72A1CE492EF006534A9 /* TestApi.m */; };
 		7778B7301CE492FD006534A9 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B72D1CE492FD006534A9 /* CustomViewController.m */; };
 		7778B7311CE492FD006534A9 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B72F1CE492FD006534A9 /* TestViewController.m */; };
 		7780294E1D81B6E200394E3E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7780294D1D81B6E200394E3E /* HomeViewController.m */; };
 		778029511D81B7C700394E3E /* TSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778029501D81B7C700394E3E /* TSViewController.m */; };
+		778D1C011CE4DCE400E9619C /* Argument.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D1C001CE4DCE400E9619C /* Argument.m */; };
+		778D1C041CE4F8E200E9619C /* EZNetworkArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D1C031CE4F8E200E9619C /* EZNetworkArgument.m */; };
 		77F9F5071D4B4B38004EC89A /* EZTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F9F5061D4B4B38004EC89A /* EZTabViewController.m */; };
 		77FDF1FC1CE6CF0B00B21E2E /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FDF1FB1CE6CF0B00B21E2E /* Model.m */; };
 		77FDF2131CE6E91100B21E2E /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FDF2001CE6E91100B21E2E /* MJExtensionConst.m */; };
@@ -90,6 +96,14 @@
 		7778B70C1CE4922C006534A9 /* EZDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDeviceManager.m; sourceTree = "<group>"; };
 		7778B70D1CE4922C006534A9 /* EZHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHudManager.h; sourceTree = "<group>"; };
 		7778B70E1CE4922C006534A9 /* EZHudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZHudManager.m; sourceTree = "<group>"; };
+		7778B7101CE4922C006534A9 /* EZNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkAgent.h; sourceTree = "<group>"; };
+		7778B7111CE4922C006534A9 /* EZNetworkAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkAgent.m; sourceTree = "<group>"; };
+		7778B7141CE4922C006534A9 /* EZNetworkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkConfig.h; sourceTree = "<group>"; };
+		7778B7151CE4922C006534A9 /* EZNetworkConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkConfig.m; sourceTree = "<group>"; };
+		7778B7161CE4922C006534A9 /* EZRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRequest.h; sourceTree = "<group>"; };
+		7778B7171CE4922C006534A9 /* EZRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRequest.m; sourceTree = "<group>"; };
+		7778B7291CE492EF006534A9 /* TestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
+		7778B72A1CE492EF006534A9 /* TestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestApi.m; sourceTree = "<group>"; };
 		7778B72C1CE492FD006534A9 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
 		7778B72D1CE492FD006534A9 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
 		7778B72E1CE492FD006534A9 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
@@ -98,6 +112,10 @@
 		7780294D1D81B6E200394E3E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7780294F1D81B7C700394E3E /* TSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSViewController.h; sourceTree = "<group>"; };
 		778029501D81B7C700394E3E /* TSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSViewController.m; sourceTree = "<group>"; };
+		778D1BFF1CE4DCE400E9619C /* Argument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argument.h; sourceTree = "<group>"; };
+		778D1C001CE4DCE400E9619C /* Argument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Argument.m; sourceTree = "<group>"; };
+		778D1C021CE4F8E200E9619C /* EZNetworkArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZNetworkArgument.h; sourceTree = "<group>"; };
+		778D1C031CE4F8E200E9619C /* EZNetworkArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZNetworkArgument.m; sourceTree = "<group>"; };
 		77F9F5051D4B4B38004EC89A /* EZTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZTabViewController.h; sourceTree = "<group>"; };
 		77F9F5061D4B4B38004EC89A /* EZTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZTabViewController.m; sourceTree = "<group>"; };
 		77FDF1FA1CE6CF0B00B21E2E /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
@@ -231,6 +249,10 @@
 				778029501D81B7C700394E3E /* TSViewController.m */,
 				77FDF1FA1CE6CF0B00B21E2E /* Model.h */,
 				77FDF1FB1CE6CF0B00B21E2E /* Model.m */,
+				778D1BFF1CE4DCE400E9619C /* Argument.h */,
+				778D1C001CE4DCE400E9619C /* Argument.m */,
+				7778B7291CE492EF006534A9 /* TestApi.h */,
+				7778B72A1CE492EF006534A9 /* TestApi.m */,
 				7778B72C1CE492FD006534A9 /* CustomViewController.h */,
 				7778B72D1CE492FD006534A9 /* CustomViewController.m */,
 				7778B72E1CE492FD006534A9 /* TestViewController.h */,
@@ -260,6 +282,7 @@
 				7778B6F01CE4922C006534A9 /* Animator */,
 				7778B6F51CE4922C006534A9 /* Category */,
 				7778B7081CE4922C006534A9 /* Foundation */,
+				7778B70F1CE4922C006534A9 /* Network */,
 			);
 			path = EZKit;
 			sourceTree = "<group>";
@@ -303,6 +326,21 @@
 				77F9F5061D4B4B38004EC89A /* EZTabViewController.m */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		7778B70F1CE4922C006534A9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7778B7101CE4922C006534A9 /* EZNetworkAgent.h */,
+				7778B7111CE4922C006534A9 /* EZNetworkAgent.m */,
+				7778B7141CE4922C006534A9 /* EZNetworkConfig.h */,
+				7778B7151CE4922C006534A9 /* EZNetworkConfig.m */,
+				778D1C021CE4F8E200E9619C /* EZNetworkArgument.h */,
+				778D1C031CE4F8E200E9619C /* EZNetworkArgument.m */,
+				7778B7161CE4922C006534A9 /* EZRequest.h */,
+				7778B7171CE4922C006534A9 /* EZRequest.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		77FDF1FD1CE6E91100B21E2E /* MJExtension */ = {
@@ -455,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				771F8BAD1D3F5A9100DEB070 /* NSDictionary+EZKit.m in Sources */,
+				778D1C011CE4DCE400E9619C /* Argument.m in Sources */,
 				7778B7201CE4922C006534A9 /* UIView+EZKit.m in Sources */,
 				77FDF21C1CE6E91100B21E2E /* NSString+MJExtension.m in Sources */,
 				77FDF2181CE6E91100B21E2E /* NSObject+MJClass.m in Sources */,
@@ -471,22 +510,27 @@
 				77FDF21B1CE6E91100B21E2E /* NSObject+MJProperty.m in Sources */,
 				7778B71F1CE4922C006534A9 /* UIColor+EZKit.m in Sources */,
 				771F8BB71D3F5B6600DEB070 /* NSMutableArray+EZKitMRC.m in Sources */,
+				778D1C041CE4F8E200E9619C /* EZNetworkArgument.m in Sources */,
 				77FDF2161CE6E91100B21E2E /* MJPropertyKey.m in Sources */,
+				7778B7271CE4922C006534A9 /* EZNetworkConfig.m in Sources */,
 				77FDF2171CE6E91100B21E2E /* MJPropertyType.m in Sources */,
 				7780294E1D81B6E200394E3E /* HomeViewController.m in Sources */,
 				771F8BAF1D3F5A9100DEB070 /* NSString+EZKit.m in Sources */,
 				7778B6DD1CE491DB006534A9 /* AppDelegate.m in Sources */,
 				77FDF2131CE6E91100B21E2E /* MJExtensionConst.m in Sources */,
+				7778B72B1CE492EF006534A9 /* TestApi.m in Sources */,
 				7778B7211CE4922C006534A9 /* UIViewController+EZKit.m in Sources */,
 				770C461A1D215D9000243A6D /* UIView+ErrorPage.m in Sources */,
 				7778B6DA1CE491DB006534A9 /* main.m in Sources */,
 				7778B7231CE4922C006534A9 /* EZDeviceManager.m in Sources */,
+				7778B7251CE4922C006534A9 /* EZNetworkAgent.m in Sources */,
 				778029511D81B7C700394E3E /* TSViewController.m in Sources */,
 				77FDF2151CE6E91100B21E2E /* MJProperty.m in Sources */,
 				7778B7191CE4922C006534A9 /* EZPresentAlertAnimator.m in Sources */,
 				77F9F5071D4B4B38004EC89A /* EZTabViewController.m in Sources */,
 				77FDF2191CE6E91100B21E2E /* NSObject+MJCoding.m in Sources */,
 				771F8BBB1D3F697500DEB070 /* NSObject+EZKit.m in Sources */,
+				7778B7281CE4922C006534A9 /* EZRequest.m in Sources */,
 				7778B7311CE492FD006534A9 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

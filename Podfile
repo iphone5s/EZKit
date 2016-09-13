@@ -5,4 +5,6 @@ target 'EZKit' do
   pod 'MBProgressHUD', '~> 0.9.2'
   pod 'pop'
   pod 'Masonry'
+  pod 'YYCache'
+  pod 'AFNetworking'
 end
