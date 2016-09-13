@@ -35,4 +35,7 @@
 #import "EZNetworkConfig.h"
 #import "EZRequest.h"
 
+#import <YTKNetwork/YTKNetwork.h>
+#import "YTKBaseRequest+EZKit.h"
+
 #endif /* EZKit_h */

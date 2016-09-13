@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A400CFFD8C7D887A9C4E9D5 /* libPods-EZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3535134BD77354B1D64817 /* libPods-EZKit.a */; };
+		7701F0731D8848A50045CA45 /* YTKBaseRequest+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7701F0721D8848A50045CA45 /* YTKBaseRequest+EZKit.m */; };
 		770C461A1D215D9000243A6D /* UIView+ErrorPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 770C46191D215D9000243A6D /* UIView+ErrorPage.m */; };
 		771F8BAC1D3F5A9100DEB070 /* NSArray+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8B9F1D3F5A9100DEB070 /* NSArray+EZKit.m */; };
 		771F8BAD1D3F5A9100DEB070 /* NSDictionary+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8BA11D3F5A9100DEB070 /* NSDictionary+EZKit.m */; };
@@ -55,6 +56,8 @@
 /* Begin PBXFileReference section */
 		19FFF69EEB938D789E57B60E /* Pods-EZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-EZKit/Pods-EZKit.release.xcconfig"; sourceTree = "<group>"; };
 		5F3535134BD77354B1D64817 /* libPods-EZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7701F0711D8848A50045CA45 /* YTKBaseRequest+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YTKBaseRequest+EZKit.h"; sourceTree = "<group>"; };
+		7701F0721D8848A50045CA45 /* YTKBaseRequest+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YTKBaseRequest+EZKit.m"; sourceTree = "<group>"; };
 		770C46181D215D9000243A6D /* UIView+ErrorPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ErrorPage.h"; sourceTree = "<group>"; };
 		770C46191D215D9000243A6D /* UIView+ErrorPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ErrorPage.m"; sourceTree = "<group>"; };
 		771F8B9E1D3F5A9100DEB070 /* NSArray+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EZKit.h"; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				778D1C031CE4F8E200E9619C /* EZNetworkArgument.m */,
 				7778B7161CE4922C006534A9 /* EZRequest.h */,
 				7778B7171CE4922C006534A9 /* EZRequest.m */,
+				7701F0711D8848A50045CA45 /* YTKBaseRequest+EZKit.h */,
+				7701F0721D8848A50045CA45 /* YTKBaseRequest+EZKit.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -520,6 +525,7 @@
 				77FDF2131CE6E91100B21E2E /* MJExtensionConst.m in Sources */,
 				7778B72B1CE492EF006534A9 /* TestApi.m in Sources */,
 				7778B7211CE4922C006534A9 /* UIViewController+EZKit.m in Sources */,
+				7701F0731D8848A50045CA45 /* YTKBaseRequest+EZKit.m in Sources */,
 				770C461A1D215D9000243A6D /* UIView+ErrorPage.m in Sources */,
 				7778B6DA1CE491DB006534A9 /* main.m in Sources */,
 				7778B7231CE4922C006534A9 /* EZDeviceManager.m in Sources */,

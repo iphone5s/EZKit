@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YTKNetwork.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YYCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +52,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0D2D6D058F7C4C304A42354A01724B5A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>129B70F3111C6E605F3E38E05EA02B45</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>170E3800AF02BF2361DC9DBB2BC316D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>62A2FFAEFD0DB461ECC753384948BA4E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>807D8E6D56CC036158B5F9BB04A012EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,12 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF413BD7F92DBE8BFAEF282862E55234</key>
+		<key>B2B0F87BC788FA547E5356A9006F455A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B2B0F87BC788FA547E5356A9006F455A</key>
+		<key>BB847B429BCD6885B5E71F0E9462F8B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -6,5 +6,5 @@ target 'EZKit' do
   pod 'pop'
   pod 'Masonry'
   pod 'YYCache'
-  pod 'AFNetworking'
+  pod 'YTKNetwork'
 end
