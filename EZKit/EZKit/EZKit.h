@@ -30,9 +30,4 @@
 #import "EZHudManager.h"
 #import "EZTabViewController.h"
 
-#pragma mark ======Network======
-
-#import "EZNetworkConfig.h"
-#import "EZRequest.h"
-
 #endif /* EZKit_h */
