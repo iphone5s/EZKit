@@ -8,9 +8,9 @@
 
 #import "EZNetworkAgent.h"
 #import "EZNetworkConfig.h"
-#import "EZCacheManager.h"
 #import "AFNetworking.h"
 #import "NSDictionary+EZKit.h"
+#import "YYCache.h"
 
 NSDictionary *dictForString(NSString *str)
 {
@@ -49,6 +49,7 @@ NSString *stringForDict(NSDictionary *dict)
     AFHTTPSessionManager *_manager;
     EZNetworkConfig *_config;
     NSMutableDictionary *_requestsRecord;
+    YYDiskCache *cache;
 }
 
 DEF_SINGLETON(EZNetworkAgent);
@@ -63,6 +64,9 @@ DEF_SINGLETON(EZNetworkAgent);
         _requestsRecord = [NSMutableDictionary dictionary];
         _manager.operationQueue.maxConcurrentOperationCount = 4;
         _manager.responseSerializer.acceptableContentTypes  = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain", nil];
+        NSString *basePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) firstObject];
+        basePath = [basePath stringByAppendingPathComponent:@"FileCacheBenchmarkSmall"];
+        cache = [[YYDiskCache alloc] initWithPath:[basePath stringByAppendingPathComponent:@"yy"]];
     }
     return self;
 }
@@ -89,7 +93,7 @@ DEF_SINGLETON(EZNetworkAgent);
             break;
         case EZResponseMethodCache1:
         {
-            NSString *strData = [EZSharedCache ez_valueByKey:request.strUrl];//取缓存数据
+            NSString *strData = (id)[cache objectForKey:request.strUrl];
             
             if (strData != nil)
             {
@@ -105,7 +109,7 @@ DEF_SINGLETON(EZNetworkAgent);
             break;
         case EZResponseMethodCache2:
         {
-            NSString *strData = [EZSharedCache ez_valueByKey:request.strUrl];//取缓存数据
+            NSString *strData = (id)[cache objectForKey:request.strUrl];
             
             if (strData != nil)
             {
@@ -288,15 +292,11 @@ DEF_SINGLETON(EZNetworkAgent);
         if ([request responseMethod] != EZResponseMethodDefault)
         {
             NSString *strData = stringForDict(responseObject);
-            [EZSharedCache ez_saveCacheByKey:request.strUrl value:strData];
+            [cache setObject:strData forKey:request.strUrl];
         }
     }
     else
     {
-        if (isCache)
-        {
-            [EZSharedCache ez_clearCacheByKey:request.strUrl];
-        }
     }
     
     [self callBack:request success:succeed];

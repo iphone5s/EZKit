@@ -26,7 +26,6 @@
 		7778B71F1CE4922C006534A9 /* UIColor+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7011CE4922C006534A9 /* UIColor+EZKit.m */; };
 		7778B7201CE4922C006534A9 /* UIView+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7031CE4922C006534A9 /* UIView+EZKit.m */; };
 		7778B7211CE4922C006534A9 /* UIViewController+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7051CE4922C006534A9 /* UIViewController+EZKit.m */; };
-		7778B7221CE4922C006534A9 /* EZCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B70A1CE4922C006534A9 /* EZCacheManager.m */; };
 		7778B7231CE4922C006534A9 /* EZDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B70C1CE4922C006534A9 /* EZDeviceManager.m */; };
 		7778B7241CE4922C006534A9 /* EZHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B70E1CE4922C006534A9 /* EZHudManager.m */; };
 		7778B7251CE4922C006534A9 /* EZNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B7111CE4922C006534A9 /* EZNetworkAgent.m */; };
@@ -93,8 +92,6 @@
 		7778B7051CE4922C006534A9 /* UIViewController+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EZKit.m"; sourceTree = "<group>"; };
 		7778B7061CE4922C006534A9 /* EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZKit.h; sourceTree = "<group>"; };
 		7778B7071CE4922C006534A9 /* EZKitDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZKitDefine.h; sourceTree = "<group>"; };
-		7778B7091CE4922C006534A9 /* EZCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZCacheManager.h; sourceTree = "<group>"; };
-		7778B70A1CE4922C006534A9 /* EZCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZCacheManager.m; sourceTree = "<group>"; };
 		7778B70B1CE4922C006534A9 /* EZDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDeviceManager.h; sourceTree = "<group>"; };
 		7778B70C1CE4922C006534A9 /* EZDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDeviceManager.m; sourceTree = "<group>"; };
 		7778B70D1CE4922C006534A9 /* EZHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHudManager.h; sourceTree = "<group>"; };
@@ -321,8 +318,6 @@
 		7778B7081CE4922C006534A9 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				7778B7091CE4922C006534A9 /* EZCacheManager.h */,
-				7778B70A1CE4922C006534A9 /* EZCacheManager.m */,
 				7778B70B1CE4922C006534A9 /* EZDeviceManager.h */,
 				7778B70C1CE4922C006534A9 /* EZDeviceManager.m */,
 				7778B70D1CE4922C006534A9 /* EZHudManager.h */,
@@ -500,7 +495,6 @@
 				771F8BAD1D3F5A9100DEB070 /* NSDictionary+EZKit.m in Sources */,
 				778D1C011CE4DCE400E9619C /* Argument.m in Sources */,
 				7778B7201CE4922C006534A9 /* UIView+EZKit.m in Sources */,
-				7778B7221CE4922C006534A9 /* EZCacheManager.m in Sources */,
 				77FDF21C1CE6E91100B21E2E /* NSString+MJExtension.m in Sources */,
 				77FDF2181CE6E91100B21E2E /* NSObject+MJClass.m in Sources */,
 				77FDF21A1CE6E91100B21E2E /* NSObject+MJKeyValue.m in Sources */,
