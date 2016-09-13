@@ -205,6 +205,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
 
 -(void)viewDidLayoutSubviews
 {
+    [super viewDidLayoutSubviews];
     navigationView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.navigationHeight);
     
     contentView.frame = CGRectMake(0, self.navigationHeight, self.view.frame.size.width, self.view.frame.size.height - self.navigationHeight);
@@ -262,13 +263,13 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         UIViewController *viewController = [self.childViewControllers objectAtIndex:i];
         viewController.view.frame = CGRectMake(i * contentView.frame.size.width, 0, contentView.frame.size.width, contentView.frame.size.height);
     }
-    
-    [contentView setContentSize:CGSizeMake(self.view.frame.size.width * menuArray.count, 0)];
-    [menuBar setContentSize:CGSizeMake((self.itemSize.width + self.itemSpacing) * menuArray.count, self.itemSize.height)];
-    
-    isSkipUpdate = YES;
-    [contentView setContentOffset:CGPointMake(self.view.frame.size.width * self.currentPage, 0) animated:NO];
-    isSkipUpdate = NO;
+
+//    [contentView setContentSize:CGSizeMake(self.view.frame.size.width * menuArray.count, 0)];
+//    [menuBar setContentSize:CGSizeMake((self.itemSize.width + self.itemSpacing) * menuArray.count, self.itemSize.height)];
+//
+//    isSkipUpdate = YES;
+//    [contentView setContentOffset:CGPointMake(self.view.frame.size.width * self.currentPage, 0) animated:NO];
+//    isSkipUpdate = NO;
 }
 
 -(void)reloadDataAtPage:(NSInteger)pageIndex
@@ -334,6 +335,14 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     [self.view layoutIfNeeded];
     
     [self viewControllerDidAppear:pageIndex];
+    
+    [contentView setContentSize:CGSizeMake(self.view.width * menuArray.count, 0)];
+    [menuBar setContentSize:CGSizeMake((self.itemSize.width + self.itemSpacing) * menuArray.count, self.itemSize.height)];
+    
+    isSkipUpdate = YES;
+    [contentView setContentOffset:CGPointMake(self.view.width * self.currentPage, 0) animated:NO];
+    isSkipUpdate = NO;
+
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

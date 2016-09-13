@@ -7,7 +7,7 @@
 //
 
 #import "TSViewController.h"
-
+#import "Masonry.h"
 @interface TSViewController ()
 
 @end
@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIView *v = [UIView new];
+    [self.view addSubview:v];
+    v.backgroundColor = [UIColor redColor];
+    [v mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.mas_equalTo(self.view).offset(10);
+        make.right.bottom.mas_equalTo(self.view).offset(-10);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -51,6 +51,14 @@
         make.center.mas_equalTo(leftView);
     }];
     
+    UIView *v = [UIView new];
+    [self.view addSubview:v];
+    v.backgroundColor = [UIColor redColor];
+    [v mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.mas_equalTo(self.view).offset(10);
+        make.right.bottom.mas_equalTo(self.view).offset(-10);
+    }];
+    
     [self reloadDataAtPage:3];
 }
 

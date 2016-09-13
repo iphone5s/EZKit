@@ -67,6 +67,9 @@
 }
 
 - (CGFloat)width {
+    if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        return self.frame.size.height;
+    }
     return self.frame.size.width;
 }
 
@@ -77,6 +80,9 @@
 }
 
 - (CGFloat)height {
+    if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        return self.frame.size.width;
+    }
     return self.frame.size.height;
 }
 
