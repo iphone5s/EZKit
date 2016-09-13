@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'EZKit'
-  spec.version      = '0.0.8'
+  spec.version      = '0.0.9'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/iphone5s/EZKit'
   spec.authors      = { 'Ezreal' => '453742103@qq.com' }
@@ -12,9 +12,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'Masonry'
   spec.dependency 'FCUUID'
   spec.dependency 'pop'
-  spec.dependency 'YYCache'
   spec.dependency 'MBProgressHUD', '~> 0.9.2'
-  spec.dependency 'AFNetworking'
 
   spec.subspec 'SafeCore' do |specSub|
     specSub.source_files = 'EZKit/EZKit/SafeCore/SafeCore/*'
