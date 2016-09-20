@@ -8,6 +8,8 @@
 
 #import "TSViewController.h"
 #import "Masonry.h"
+#import "TestViewController.h"
+
 @interface TSViewController ()
 
 @end
@@ -17,13 +19,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIView *v = [UIView new];
-    [self.view addSubview:v];
-    v.backgroundColor = [UIColor redColor];
-    [v mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.mas_equalTo(self.view).offset(10);
-        make.right.bottom.mas_equalTo(self.view).offset(-10);
+//    UIView *v = [UIView new];
+//    [self.view addSubview:v];
+//    v.backgroundColor = [UIColor redColor];
+//    [v mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.top.mas_equalTo(self.view).offset(10);
+//        make.right.bottom.mas_equalTo(self.view).offset(-10);
+//    }];
+    UIButton *btn = [UIButton new];
+    [self.view addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(100, 100));
+        make.center.mas_equalTo(self.view);
     }];
+    btn.backgroundColor = [UIColor redColor];
+    [btn addTarget: self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)btnClicked:(UIButton *)sender
+{
+    TestViewController *vc = [TestViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

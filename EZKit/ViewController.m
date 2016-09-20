@@ -25,6 +25,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%f",self.view.width);
     // Do any additional setup after loading the view, typically from a nib.
 //    
 ////    self.view.errorPageDelegate = self;

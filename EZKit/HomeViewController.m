@@ -60,6 +60,10 @@
     }];
     
     [self reloadDataAtPage:3];
+
+//    NSArray *array = [[NSArray alloc]initWithObjects:@"0",@"1", @"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13", nil];
+//    NSArray *a = [array ez_objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(10, 5)]];
+//    NSLog(@"");
 }
 
 - (void)didReceiveMemoryWarning {

@@ -48,7 +48,8 @@
 
 -(void)dismissBtnClicked:(UIButton *)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)handleSingleTap:(UITapGestureRecognizer *)sender

@@ -10,4 +10,6 @@
 
 @interface NSArray (EZKit)
 
+- (NSArray *)ez_objectsAtIndexes:(NSIndexSet *)indexes;
+
 @end

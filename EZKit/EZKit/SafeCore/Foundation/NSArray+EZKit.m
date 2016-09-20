@@ -57,4 +57,17 @@
     });
 }
 
+-(NSArray *)ez_objectsAtIndexes:(NSIndexSet *)indexes
+{
+    if (self.count > indexes.firstIndex && self.count > indexes.lastIndex)
+    {
+        return [self objectsAtIndexes:indexes];
+    }
+    else
+    {
+        return [self objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(indexes.firstIndex, self.count - indexes.firstIndex)]];
+    }
+    return [NSArray array];
+}
+
 @end
