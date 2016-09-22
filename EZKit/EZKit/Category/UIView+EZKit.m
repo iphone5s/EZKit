@@ -10,108 +10,108 @@
 
 @implementation UIView (EZKit)
 
-- (CGFloat)left {
+- (CGFloat)ez_left {
     return self.frame.origin.x;
 }
 
-- (void)setLeft:(CGFloat)x {
+- (void)setEz_left:(CGFloat)x {
     CGRect frame = self.frame;
     frame.origin.x = x;
     self.frame = frame;
 }
 
-- (CGFloat)top {
+- (CGFloat)ez_top {
     return self.frame.origin.y;
 }
 
-- (void)setTop:(CGFloat)y {
+- (void)setEz_top:(CGFloat)y {
     CGRect frame = self.frame;
     frame.origin.y = y;
     self.frame = frame;
 }
 
-- (CGFloat)right {
+- (CGFloat)ez_right {
     return self.frame.origin.x + self.frame.size.width;
 }
 
-- (void)setRight:(CGFloat)right {
+- (void)setEz_right:(CGFloat)right {
     CGRect frame = self.frame;
     frame.origin.x = right - frame.size.width;
     self.frame = frame;
 }
 
-- (CGFloat)bottom {
+- (CGFloat)ez_bottom {
     return self.frame.origin.y + self.frame.size.height;
 }
 
-- (void)setBottom:(CGFloat)bottom {
+- (void)setEz_bottom:(CGFloat)bottom {
     CGRect frame = self.frame;
     frame.origin.y = bottom - frame.size.height;
     self.frame = frame;
 }
 
-- (CGFloat)centerX {
+- (CGFloat)ez_centerX {
     return self.center.x;
 }
 
-- (void)setCenterX:(CGFloat)centerX {
+- (void)setEz_CenterX:(CGFloat)centerX {
     self.center = CGPointMake(centerX, self.center.y);
 }
 
-- (CGFloat)centerY {
+- (CGFloat)ez_centerY {
     return self.center.y;
 }
 
-- (void)setCenterY:(CGFloat)centerY {
+- (void)setEz_centerY:(CGFloat)centerY {
     self.center = CGPointMake(self.center.x, centerY);
 }
 
-- (CGFloat)width {
+- (CGFloat)ez_width {
     if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
         return self.frame.size.height;
     }
     return self.frame.size.width;
 }
 
-- (void)setWidth:(CGFloat)width {
+- (void)setEz_width:(CGFloat)width {
     CGRect frame = self.frame;
     frame.size.width = width;
     self.frame = frame;
 }
 
-- (CGFloat)height {
+- (CGFloat)ez_height {
     if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
         return self.frame.size.width;
     }
     return self.frame.size.height;
 }
 
-- (void)setHeight:(CGFloat)height {
+- (void)setEz_height:(CGFloat)height {
     CGRect frame = self.frame;
     frame.size.height = height;
     self.frame = frame;
 }
 
-- (CGFloat)screenX {
+- (CGFloat)ez_screenX {
     CGFloat x = 0;
     for (UIView* view = self; view; view = view.superview) {
-        x += view.left;
+        x += view.ez_left;
     }
     return x;
 }
 
-- (CGFloat)screenY {
+- (CGFloat)ez_screenY {
     CGFloat y = 0;
     for (UIView* view = self; view; view = view.superview) {
-        y += view.top;
+        y += view.ez_top;
     }
     return y;
 }
 
-- (CGFloat)screenViewX {
+- (CGFloat)ez_screenViewX {
     CGFloat x = 0;
     for (UIView* view = self; view; view = view.superview) {
-        x += view.left;
+        x += view.ez_left;
         
         if ([view isKindOfClass:[UIScrollView class]]) {
             UIScrollView* scrollView = (UIScrollView*)view;
@@ -122,10 +122,10 @@
     return x;
 }
 
-- (CGFloat)screenViewY {
+- (CGFloat)ez_screenViewY {
     CGFloat y = 0;
     for (UIView* view = self; view; view = view.superview) {
-        y += view.top;
+        y += view.ez_top;
         
         if ([view isKindOfClass:[UIScrollView class]]) {
             UIScrollView* scrollView = (UIScrollView*)view;
@@ -135,25 +135,25 @@
     return y;
 }
 
-- (CGRect)screenFrame {
-    return CGRectMake(self.screenViewX, self.screenViewY, self.width, self.height);
+- (CGRect)ez_screenFrame {
+    return CGRectMake(self.ez_screenViewX, self.ez_screenViewY, self.ez_width, self.ez_height);
 }
 
-- (CGPoint)origin {
+- (CGPoint)ez_origin {
     return self.frame.origin;
 }
 
-- (void)setOrigin:(CGPoint)origin {
+- (void)setEz_origin:(CGPoint)origin {
     CGRect frame = self.frame;
     frame.origin = origin;
     self.frame = frame;
 }
 
-- (CGSize)size {
+- (CGSize)ez_size {
     return self.frame.size;
 }
 
-- (void)setSize:(CGSize)size {
+- (void)setEz_size:(CGSize)size {
     CGRect frame = self.frame;
     frame.size = size;
     self.frame = frame;

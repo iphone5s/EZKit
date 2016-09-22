@@ -214,8 +214,8 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     
     if (self.leftNavigatoinItem != nil)
     {
-        menuBar.frame = CGRectMake(self.leftNavigatoinItem.width, 0, self.view.frame.size.width - self.leftNavigatoinItem.width, self.navigationHeight);
-        [self.leftNavigatoinItem setFrame:CGRectMake(0, topY, self.leftNavigatoinItem.width, self.leftNavigatoinItem.height)];
+        menuBar.frame = CGRectMake(self.leftNavigatoinItem.ez_width, 0, self.view.frame.size.width - self.leftNavigatoinItem.ez_width, self.navigationHeight);
+        [self.leftNavigatoinItem setFrame:CGRectMake(0, topY, self.leftNavigatoinItem.ez_width, self.leftNavigatoinItem.ez_height)];
     }
     
     if (menuArray.count == 0) {
@@ -242,14 +242,14 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
                 break;
             case EZTabLayoutStyleCenter:
             {
-                CGFloat offSet = (self.view.width - menuArray.count * (self.itemSize.width + self.itemSpacing)) / 2.0;
+                CGFloat offSet = (self.view.ez_width - menuArray.count * (self.itemSize.width + self.itemSpacing)) / 2.0;
                 
                 menuItem.frame = CGRectMake(offSet + i * (self.itemSize.width + self.itemSpacing), (self.navigationHeight - self.itemSize.height) / 2.0, self.itemSize.width, self.itemSize.height);
             }
                 break;
             case EZTabLayoutStyleDivide:
             {
-                CGFloat width = self.view.width / menuArray.count;
+                CGFloat width = self.view.ez_width / menuArray.count;
                 menuItem.frame = CGRectMake(i * width, (self.navigationHeight - self.itemSize.height) / 2.0, width, self.itemSize.height);
             }
                 break;
@@ -336,11 +336,11 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     
     [self viewControllerDidAppear:pageIndex];
     
-    [contentView setContentSize:CGSizeMake(self.view.width * menuArray.count, 0)];
+    [contentView setContentSize:CGSizeMake(self.view.ez_width * menuArray.count, 0)];
     [menuBar setContentSize:CGSizeMake((self.itemSize.width + self.itemSpacing) * menuArray.count, self.itemSize.height)];
     
     isSkipUpdate = YES;
-    [contentView setContentOffset:CGPointMake(self.view.width * self.currentPage, 0) animated:NO];
+    [contentView setContentOffset:CGPointMake(self.view.ez_width * self.currentPage, 0) animated:NO];
     isSkipUpdate = NO;
 
 }
@@ -433,7 +433,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     
     float percent = offsetX / scrollWidth;
     
-    sliderView.left = percent * (sliderView.width + self.itemSpacing);
+    sliderView.ez_left = percent * (sliderView.ez_width + self.itemSpacing);
     
     percent = fabsf(percent - self.currentPage);
 
@@ -514,10 +514,10 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     [self viewControllerWillAppear:pageIndex];
     
     isSkipUpdate = YES;
-    [contentView setContentOffset:CGPointMake(contentView.width * pageIndex, 0) animated:NO];
+    [contentView setContentOffset:CGPointMake(contentView.ez_width * pageIndex, 0) animated:NO];
     isSkipUpdate = NO;
     
-    sliderView.left = pageIndex * (self.itemSize.width + self.itemSpacing);
+    sliderView.ez_left = pageIndex * (self.itemSize.width + self.itemSpacing);
     
     self.currentPage = pageIndex;
     
