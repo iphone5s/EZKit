@@ -46,10 +46,10 @@
 
 -(void)layoutSubviews
 {
-    imageView.ez_size = self.image.size;
-    imageView.center = CGPointMake(self.ez_width / 2.0, self.ez_height / 2.0);
-    descLab.ez_centerX = imageView.ez_centerX;
-    descLab.ez_top = imageView.ez_bottom + 10;
+    imageView.size = self.image.size;
+    imageView.center = CGPointMake(self.width / 2.0, self.height / 2.0);
+    descLab.centerX = imageView.centerX;
+    descLab.top = imageView.bottom + 10;
 }
 
 
@@ -57,7 +57,7 @@
 {
     _image = image;
     imageView.image = self.image;
-    imageView.ez_size = image.size;
+    imageView.size = image.size;
 }
 
 -(void)setStrDesc:(NSString *)strDesc
@@ -118,7 +118,7 @@ static char const * const kErrorPageDelegate ="errorPageDelegate";
     
     if (!self.errorView)
     {
-        self.errorView = [[EZErrorView alloc]initWithFrame:CGRectMake(0, 0, self.ez_width + 20, self.ez_height)];
+        self.errorView = [[EZErrorView alloc]initWithFrame:CGRectMake(0, 0, self.width + 20, self.height)];
         self.errorView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self addSubview:self.errorView];
         self.userInteractionEnabled = YES;

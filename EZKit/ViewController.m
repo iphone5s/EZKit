@@ -25,7 +25,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%f",self.view.ez_width);
+    NSLog(@"%f",self.view.width);
     // Do any additional setup after loading the view, typically from a nib.
 //    
 ////    self.view.errorPageDelegate = self;
@@ -55,7 +55,6 @@
     [mapTable setObject:@"key" forKey:@"3"];
     [mapTable setObject:@"key" forKey:@"4"];
     
-    NSLog(@"%lu",self.view.ez_width);
 //    NSMutableArray *ar = [NSMutableArray new];
 //    [ar addObject:@"1"];
 //    [ar addObject:@"2"];

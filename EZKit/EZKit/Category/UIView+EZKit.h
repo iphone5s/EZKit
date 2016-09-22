@@ -10,24 +10,24 @@
 
 @interface UIView (EZKit)
 
-@property(nonatomic) CGFloat ez_left;
-@property(nonatomic) CGFloat ez_top;
-@property(nonatomic) CGFloat ez_right;
-@property(nonatomic) CGFloat ez_bottom;
+@property(nonatomic) CGFloat left;
+@property(nonatomic) CGFloat top;
+@property(nonatomic) CGFloat right;
+@property(nonatomic) CGFloat bottom;
 
-@property(nonatomic) CGFloat ez_width;
-@property(nonatomic) CGFloat ez_height;
+@property(nonatomic) CGFloat width;
+@property(nonatomic) CGFloat height;
 
-@property(nonatomic) CGFloat ez_centerX;
-@property(nonatomic) CGFloat ez_centerY;
+@property(nonatomic) CGFloat centerX;
+@property(nonatomic) CGFloat centerY;
 
-@property(nonatomic,readonly) CGFloat ez_screenX;
-@property(nonatomic,readonly) CGFloat ez_screenY;
-@property(nonatomic,readonly) CGFloat ez_screenViewX;
-@property(nonatomic,readonly) CGFloat ez_screenViewY;
-@property(nonatomic,readonly) CGRect ez_screenFrame;
+@property(nonatomic,readonly) CGFloat screenX;
+@property(nonatomic,readonly) CGFloat screenY;
+@property(nonatomic,readonly) CGFloat screenViewX;
+@property(nonatomic,readonly) CGFloat screenViewY;
+@property(nonatomic,readonly) CGRect screenFrame;
 
-@property(nonatomic) CGPoint ez_origin;
-@property(nonatomic) CGSize ez_size;
+@property(nonatomic) CGPoint origin;
+@property(nonatomic) CGSize size;
 
 @end
