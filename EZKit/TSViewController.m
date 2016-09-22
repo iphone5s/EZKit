@@ -9,7 +9,7 @@
 #import "TSViewController.h"
 #import "Masonry.h"
 #import "TestViewController.h"
-
+#import "EZKit.h"
 @interface TSViewController ()
 
 @end
@@ -34,6 +34,7 @@
     }];
     btn.backgroundColor = [UIColor redColor];
     [btn addTarget: self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.view.backgroundColor = RGB_RANDOM;
 }
 
 -(void)btnClicked:(UIButton *)sender

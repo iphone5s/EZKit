@@ -206,8 +206,9 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
 -(void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    navigationView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.navigationHeight);
     
+    navigationView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.navigationHeight);
+ 
     contentView.frame = CGRectMake(0, self.navigationHeight, self.view.frame.size.width, self.view.frame.size.height - self.navigationHeight);
     
     CGFloat topY = _againstStatusBar ? 20 : 0;
@@ -215,7 +216,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     if (self.leftNavigatoinItem != nil)
     {
         menuBar.frame = CGRectMake(self.leftNavigatoinItem.width, 0, self.view.frame.size.width - self.leftNavigatoinItem.width, self.navigationHeight);
-        [self.leftNavigatoinItem setFrame:CGRectMake(0, topY, self.leftNavigatoinItem.width, self.leftNavigatoinItem.height)];
+        [self.leftNavigatoinItem setFrame:CGRectMake(0, topY, 100, 100)];
     }
     
     if (menuArray.count == 0) {
@@ -264,6 +265,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
         viewController.view.frame = CGRectMake(i * contentView.frame.size.width, 0, contentView.frame.size.width, contentView.frame.size.height);
     }
 
+    
 //    [contentView setContentSize:CGSizeMake(self.view.frame.size.width * menuArray.count, 0)];
 //    [menuBar setContentSize:CGSizeMake((self.itemSize.width + self.itemSpacing) * menuArray.count, self.itemSize.height)];
 //
@@ -433,12 +435,14 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     
     float percent = offsetX / scrollWidth;
     
-    sliderView.left = percent * (sliderView.width + self.itemSpacing);
-    
     percent = fabsf(percent - self.currentPage);
 
     UIButton *nextItem = [menuArray objectAtIndex:nextPageIndex];
     UIButton *currentItem = [menuArray objectAtIndex:self.currentPage];
+    
+    CGFloat x = currentItem.frame.origin.x + (nextItem.frame.origin.x - currentItem.frame.origin.x) * percent;
+    sliderView.left = x;
+    
     [nextItem setTitleColor:[UIColor colorPercent:(100 * percent) fromColor:self.itemNormalColor toColor:self.itemSelectedColor] forState:UIControlStateNormal];
     [currentItem setTitleColor:[UIColor colorPercent:(percent * 100) fromColor:self.itemSelectedColor toColor:self.itemNormalColor] forState:UIControlStateNormal];
 }
@@ -514,7 +518,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
     [self viewControllerWillAppear:pageIndex];
     
     isSkipUpdate = YES;
-    [contentView setContentOffset:CGPointMake(contentView.width * pageIndex, 0) animated:NO];
+    [contentView setContentOffset:CGPointMake(EZSharedDevice.screenWidth * pageIndex, 0) animated:NO];
     isSkipUpdate = NO;
     
     sliderView.left = pageIndex * (self.itemSize.width + self.itemSpacing);

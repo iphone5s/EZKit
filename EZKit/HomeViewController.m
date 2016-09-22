@@ -33,11 +33,11 @@
     self.itemNormalColor = HEX_RGB(0x4e5459);
     self.itemSelectedColor = [UIColor whiteColor];
     
-    UIView *leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 80)];
+    UIView *leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
     self.leftNavigatoinItem = leftView;
     leftView.backgroundColor = [UIColor clearColor];
     
-    headBtn = [[UIButton alloc]initWithFrame:CGRectMake(30, 40, 40, 40)];
+    headBtn = [[UIButton alloc]initWithFrame:CGRectMake(30, 0, 40, 40)];
     headBtn.backgroundColor = [UIColor grayColor];
     [headBtn setBackgroundImage:[UIImage imageNamed:@"default_userhead"] forState:UIControlStateNormal];
     headBtn.layer.masksToBounds = YES;
@@ -48,7 +48,8 @@
     [leftView addSubview:headBtn];
     [headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(40, 40));
-        make.center.mas_equalTo(leftView);
+        make.centerX.mas_equalTo(leftView);
+        make.centerY.mas_equalTo(leftView).offset(-10);
     }];
     
     UIView *v = [UIView new];
@@ -73,7 +74,7 @@
 
 - (NSInteger)numberOfTabIntabViewController:(EZTabViewController *)tabViewController
 {
-    return 50;
+    return 10;
 }
 
 - (UIButton *)tabViewController:(EZTabViewController *)tabViewController menuItemAtIndex:(NSUInteger)itemIndex
