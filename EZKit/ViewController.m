@@ -11,8 +11,7 @@
 #import "EZKit.h"
 #import "Masonry.h"
 #import "TestViewController.h"
-#import "TestApi.h"
-#import "Argument.h"
+
 #import "UIView+ErrorPage.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,EZErrorPageDelegate>

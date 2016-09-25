@@ -239,6 +239,7 @@ typedef NS_ENUM(NSUInteger, EZAppearanceState) {
             case EZTabLayoutStyleDefault:
             {
                 menuItem.frame = CGRectMake(i * (self.itemSize.width + self.itemSpacing), (self.navigationHeight - self.itemSize.height + topY) / 2.0, self.itemSize.width, self.itemSize.height);
+                
             }
                 break;
             case EZTabLayoutStyleCenter:
