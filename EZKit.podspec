@@ -12,6 +12,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'Masonry'
   spec.dependency 'FCUUID'
   spec.dependency 'pop'
+  spec.dependency 'Reachability'
   spec.dependency 'MBProgressHUD', '~> 0.9.2'
   spec.dependency 'YTKNetwork'
 
