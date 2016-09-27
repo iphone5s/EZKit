@@ -8,8 +8,12 @@
 
 #import "EZDeviceManager.h"
 #import "FCUUID.h"
+#import "Reachability.h"
 
 @implementation EZDeviceManager
+{
+    Reachability *reach;
+}
 DEF_SINGLETON_AUTOLOAD(EZDeviceManager)
 
 - (instancetype)init
@@ -18,10 +22,33 @@ DEF_SINGLETON_AUTOLOAD(EZDeviceManager)
     if (self) {
         self.strUDID = [FCUUID uuidForDevice];
         self.strDevice = [UIDevice currentDevice].model;
-        self.strNetState = @"Unknown";
+        
+        reach =  [Reachability reachabilityForInternetConnection];
+        [reach startNotifier];
+        
         self.strPathDoc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0];
     }
     return self;
+}
+
+-(NSString *)strNetState
+{
+    NetworkStatus status =  [reach currentReachabilityStatus];
+    switch (status)
+    {
+        case NotReachable:
+            return @"";
+            break;
+        case ReachableViaWiFi:
+            return @"WiFi";
+            break;
+        case ReachableViaWWAN:
+            return @"WWAN";
+        default:
+            return @"unknown";
+            break;
+    }
+    return @"unknown";
 }
 
 -(NSString *)strTimeZone
