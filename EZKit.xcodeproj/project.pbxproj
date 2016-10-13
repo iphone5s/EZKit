@@ -17,6 +17,7 @@
 		771F8BB71D3F5B6600DEB070 /* NSMutableArray+EZKitMRC.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8BB61D3F5B6600DEB070 /* NSMutableArray+EZKitMRC.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		771F8BBB1D3F697500DEB070 /* NSObject+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 771F8BBA1D3F697500DEB070 /* NSObject+EZKit.m */; };
 		7723D7531D125436006EEB11 /* NSMapTable+EZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */; };
+		77475E8C1DB00D1500552788 /* UIView+ExclusiveTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 77475E8B1DB00D1500552788 /* UIView+ExclusiveTouch.m */; };
 		7778B6DA1CE491DB006534A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6D91CE491DB006534A9 /* main.m */; };
 		7778B6DD1CE491DB006534A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6DC1CE491DB006534A9 /* AppDelegate.m */; };
 		7778B6E01CE491DB006534A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778B6DF1CE491DB006534A9 /* ViewController.m */; };
@@ -68,6 +69,8 @@
 		771F8BBA1D3F697500DEB070 /* NSObject+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EZKit.m"; sourceTree = "<group>"; };
 		7723D7511D125436006EEB11 /* NSMapTable+EZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+EZKit.h"; sourceTree = "<group>"; };
 		7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+EZKit.m"; sourceTree = "<group>"; };
+		77475E8A1DB00D1500552788 /* UIView+ExclusiveTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ExclusiveTouch.h"; sourceTree = "<group>"; };
+		77475E8B1DB00D1500552788 /* UIView+ExclusiveTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ExclusiveTouch.m"; sourceTree = "<group>"; };
 		7778B6D51CE491DB006534A9 /* EZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7778B6D91CE491DB006534A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7778B6DB1CE491DB006534A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 				7723D7521D125436006EEB11 /* NSMapTable+EZKit.m */,
 				770C46181D215D9000243A6D /* UIView+ErrorPage.h */,
 				770C46191D215D9000243A6D /* UIView+ErrorPage.m */,
+				77475E8A1DB00D1500552788 /* UIView+ExclusiveTouch.h */,
+				77475E8B1DB00D1500552788 /* UIView+ExclusiveTouch.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 				7778B6DA1CE491DB006534A9 /* main.m in Sources */,
 				7778B7231CE4922C006534A9 /* EZDeviceManager.m in Sources */,
 				778029511D81B7C700394E3E /* TSViewController.m in Sources */,
+				77475E8C1DB00D1500552788 /* UIView+ExclusiveTouch.m in Sources */,
 				77FDF2151CE6E91100B21E2E /* MJProperty.m in Sources */,
 				7778B7191CE4922C006534A9 /* EZPresentAlertAnimator.m in Sources */,
 				77F9F5071D4B4B38004EC89A /* EZTabViewController.m in Sources */,

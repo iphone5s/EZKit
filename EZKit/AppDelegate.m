@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    ViewController *vc = [ViewController new];
+//    ViewController *vc = [ViewController new];
     HomeViewController *rootVC = [HomeViewController new];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:rootVC];
     [nav setNavigationBarHidden:YES];
