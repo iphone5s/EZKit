@@ -39,8 +39,12 @@
 
 -(void)btnClicked:(UIButton *)sender
 {
-    TestViewController *vc = [TestViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+    TestViewController *viewController = [TestViewController new];
+    UINavigationController *navViewController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    navViewController.view.frame = CGRectMake(0,0,800,600);
+    [self ez_presentViewController:navViewController animatedType:EZPresentAnimationAlert dismissCompletion:nil];
+    
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

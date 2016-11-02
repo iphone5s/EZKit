@@ -41,8 +41,6 @@
         {
             UIViewController *vc = ((UINavigationController *)toViewController).topViewController;
             
-            toViewController.view.frame = vc.view.frame;
-            
             if ([vc respondsToSelector:@selector(handleSingleTap:)])
             {
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:vc action:@selector(handleSingleTap:)];

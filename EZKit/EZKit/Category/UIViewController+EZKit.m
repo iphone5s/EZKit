@@ -69,8 +69,6 @@ DEF_SINGLETON(EZModalVCManager)
             [weakSelf present];
         }];
     }
-
-    
 }
 
 -(void)present
@@ -79,7 +77,6 @@ DEF_SINGLETON(EZModalVCManager)
     
     UIViewController *presentVC = [modalViewControllers lastObject];
     
- 
     while (presentVC != nil && presentVC.ez_isPush == NO)
     {
         [modalViewControllers removeObject:presentVC];
