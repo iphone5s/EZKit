@@ -13,7 +13,7 @@
 
 -(void)viewDidLoad
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = RGB_RANDOM;
     self.view.frame = CGRectMake(0, 0, EZSharedDevice.screenWidth / 2.0, EZSharedDevice.screenHeight / 2.0);
     UIButton *pushBtn = [UIButton new];
     [self.view addSubview:pushBtn];
@@ -37,20 +37,45 @@
     [dismissBtn setTitle:@"dismiss" forState:UIControlStateNormal];
     [dismissBtn addTarget:self action:@selector(dismissBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+//    self.view.autoresizesSubviews = NO;
+//    self.view.autoresizingMask = UIViewAutoresizingNone;
+}
+
+//-(void)loadView
+//{
+//    self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 800, 600)];
+//    self.view.backgroundColor = RGB_RANDOM;
+//}
+
+//-(void)viewWillLayoutSubviews
+//{
+//    [super viewWillLayoutSubviews];
+//    self.view.frame = CGRectMake(0, 0, 800, 600);
+//}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    
 }
 
 -(void)pushBtnClicked:(UIButton *)sender
 {
 //    self.navigationController.view.frame = CGRectMake(0, 0, 100, 100);
     TestViewController *vc = [TestViewController new];
+    [self presentViewController:vc animated:YES completion:nil];
 //    [self.navigationController pushViewController:vc animated:YES];
-    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
+//    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
 }
 
 -(void)dismissBtnClicked:(UIButton *)sender
 {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)handleSingleTap:(UITapGestureRecognizer *)sender

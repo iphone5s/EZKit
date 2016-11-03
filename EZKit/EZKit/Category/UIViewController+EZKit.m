@@ -20,11 +20,19 @@ static const void *ez_isPushKey = &ez_isPushKey;
 
 static const void *ez_dissmissKey = &ez_dissmissKey;
 
+static const void *ez_isPresentedKey = &ez_isPresentedKey;
+
+static const void *ez_rectKey = &ez_rectKey;
+
 @interface UIViewController ()<UIViewControllerTransitioningDelegate,UIViewControllerTransitioningDelegate>
 
 @property(nonatomic,copy)EZPresentDissmissCompletionBlock dissmissComple;
 
 @property(nonatomic,assign)EZPresentAnimation animation;
+
+@property(nonatomic,assign)BOOL ez_isPresented;
+
+@property(nonatomic,assign)CGRect ez_rect;
 
 @end
 
@@ -115,6 +123,32 @@ DEF_SINGLETON(EZModalVCManager)
 
 @implementation UIViewController (EZKit)
 
++(void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self ez_hookMethod:@selector(viewWillLayoutSubviews) tarSel:@selector(ez_viewWillLayoutSubviews)];
+//                [self ez_hookMethod:@selector(viewDidLayoutSubviews) tarSel:@selector(ez_viewDidLayoutSubviews)];
+    });
+}
+
+//-(void)ez_viewDidLayoutSubviews
+//{
+//    [self ez_viewDidLayoutSubviews];
+//    if (self.ez_isPresented) {
+//        self.view.frame = CGRectMake(0, 0, 800, 600);
+//    }
+//}
+-(void)ez_viewWillLayoutSubviews
+{
+    [self ez_viewWillLayoutSubviews];
+    
+    if (self.ez_isPresented)
+    {
+        self.view.frame = self.ez_rect;
+    }
+}
+
 -(EZPresentDissmissCompletionBlock)dissmissComple
 {
     id obj = objc_getAssociatedObject(self, ez_dissmissKey);
@@ -151,9 +185,45 @@ DEF_SINGLETON(EZModalVCManager)
     
 }
 
+-(BOOL)ez_isPresented
+{
+    NSNumber *num = objc_getAssociatedObject(self, ez_isPresentedKey);
+    if (num != nil)
+    {
+        return num.integerValue;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
+-(CGRect)ez_rect
+{
+    NSValue *value = objc_getAssociatedObject(self, ez_rectKey);
+    if (value != nil)
+    {
+        return value.CGRectValue;
+    }
+    else
+    {
+        return [UIScreen mainScreen].bounds;
+    }
+}
+
 -(void)setEz_isPush:(BOOL)ez_isPush
 {
     objc_setAssociatedObject(self, ez_isPushKey, [NSNumber numberWithInteger:ez_isPush], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(void)setEz_isPresented:(BOOL)ez_isPresented
+{
+    objc_setAssociatedObject(self, ez_isPresentedKey, [NSNumber numberWithInteger:ez_isPresented], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(void)setEz_rect:(CGRect)ez_rect
+{
+    objc_setAssociatedObject(self, ez_rectKey, [NSValue valueWithCGRect:ez_rect], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)ez_presentViewController:(UIViewController *)viewController animatedType: (EZPresentAnimation)animation dismissCompletion:(EZPresentDissmissCompletionBlock)dissmiss;
@@ -161,7 +231,7 @@ DEF_SINGLETON(EZModalVCManager)
     self.animation = animation;
 
     viewController.dissmissComple = dissmiss;
-    
+    viewController.ez_isPresented = YES;
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
 
     switch (self.animation)
@@ -175,6 +245,8 @@ DEF_SINGLETON(EZModalVCManager)
         {
             viewController.modalPresentationStyle = UIModalPresentationCustom;
             viewController.transitioningDelegate = appRootVC;
+            
+            viewController.ez_rect = CGRectMake(([UIScreen mainScreen].bounds.size.width - viewController.view.frame.size.width) / 2.0, ([UIScreen mainScreen].bounds.size.height - viewController.view.frame.size.height) / 2.0, viewController.view.frame.size.width, viewController.view.frame.size.height);
         }
             break;
         default:

@@ -40,10 +40,10 @@
 -(void)btnClicked:(UIButton *)sender
 {
     TestViewController *viewController = [TestViewController new];
-    UINavigationController *navViewController = [[UINavigationController alloc]initWithRootViewController:viewController];
-    navViewController.view.frame = CGRectMake(0,0,800,600);
-    [self ez_presentViewController:navViewController animatedType:EZPresentAnimationAlert dismissCompletion:nil];
-    
+//    UINavigationController *navViewController = [[UINavigationController alloc]initWithRootViewController:viewController];
+//    navViewController.view.frame = CGRectMake(0,0,800,600);
+    [self ez_presentViewController:viewController animatedType:EZPresentAnimationAlert dismissCompletion:nil];
+//    [self presentViewController:viewController animated:YES completion:nil];
 //    [self.navigationController pushViewController:vc animated:YES];
 }
 
