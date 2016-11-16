@@ -15,6 +15,7 @@
 {
     UIImageView *imageView;
     UILabel *descLab;
+    UIActivityIndicatorView *activity;
 }
 
 @property (nonatomic, strong) UIImage *image;
@@ -40,6 +41,12 @@
         descLab.textAlignment = NSTextAlignmentCenter;
         descLab.font = [UIFont systemFontOfSize:14];
         descLab.frame = CGRectMake(0, 0, 300, 20);
+        
+        activity=[UIActivityIndicatorView new];
+        
+        activity.activityIndicatorViewStyle=UIActivityIndicatorViewStyleGray;
+        [self addSubview:activity];
+        activity.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
@@ -48,6 +55,7 @@
 {
     imageView.size = self.image.size;
     imageView.center = CGPointMake(self.width / 2.0, self.height / 2.0);
+    activity.frame = imageView.frame;
     descLab.centerX = imageView.centerX;
     descLab.top = imageView.bottom + 10;
 }
@@ -72,26 +80,18 @@
     
     if (isAnimation)
     {
-        [imageView.layer removeAllAnimations];
-        [imageView.layer addAnimation:[self loadingAnimation] forKey:@"loading"];
+        activity.hidden = NO;
+        [activity startAnimating];
+        imageView.hidden = YES;
         descLab.hidden = YES;
     }
     else
     {
+        [activity stopAnimating];
+        activity.hidden = YES;
         descLab.hidden = NO;
-        [imageView.layer removeAllAnimations];
+        imageView.hidden = NO;
     }
-}
-
--(CAAnimation *)loadingAnimation
-{
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
-    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
-    animation.toValue = [NSValue valueWithCATransform3D: CATransform3DMakeRotation(M_PI_2, 0.0, 0.0, 1.0) ];
-    animation.duration = 0.25;
-    animation.cumulative = YES;
-    animation.repeatCount = MAXFLOAT;
-    return animation;
 }
 
 @end
@@ -143,7 +143,6 @@ static char const * const kErrorPageDelegate ="errorPageDelegate";
         case EZErrorPageTypeLoading:
         {
             self.errorView.hidden = NO;
-            self.errorView.image = [self.errorPageDelegate imageForErrorPage];
             self.errorView.isAnimation = YES;
         }
             break;

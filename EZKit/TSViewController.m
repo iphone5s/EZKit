@@ -10,7 +10,7 @@
 #import "Masonry.h"
 #import "TestViewController.h"
 #import "EZKit.h"
-@interface TSViewController ()
+@interface TSViewController ()<EZErrorPageDelegate>
 
 @end
 
@@ -26,15 +26,17 @@
 //        make.left.top.mas_equalTo(self.view).offset(10);
 //        make.right.bottom.mas_equalTo(self.view).offset(-10);
 //    }];
-    UIButton *btn = [UIButton new];
-    [self.view addSubview:btn];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(100, 100));
-        make.center.mas_equalTo(self.view);
-    }];
-    btn.backgroundColor = [UIColor redColor];
-    [btn addTarget: self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton *btn = [UIButton new];
+//    [self.view addSubview:btn];
+//    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.size.mas_equalTo(CGSizeMake(100, 100));
+//        make.center.mas_equalTo(self.view);
+//    }];
+//    btn.backgroundColor = [UIColor redColor];
+//    [btn addTarget: self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.view.backgroundColor = RGB_RANDOM;
+    self.view.errorPageDelegate = self;
+    self.view.ez_pageType = EZErrorPageTypeLoading;
 }
 
 -(void)btnClicked:(UIButton *)sender
@@ -77,5 +79,39 @@
     NSLog(@"viewDidDisappear %lu",self.page);
 }
 
+
+
+-(NSString *)descForErrorPage
+{
+    return @"你的网络不给力，点击屏幕重新加载";
+}
+
+-(UIImage *)imageForErrorPage
+{
+    switch (self.view.ez_pageType)
+    {
+        case EZErrorPageTypeLoading:
+        {
+            return [UIImage imageNamed:@"loading_imgBlue_78x78"];
+        }
+            break;
+        case EZErrorPageTypeNetError:
+        {
+            return [UIImage imageNamed:@"default_network"];
+        }
+            
+        default:
+        {
+            return nil;
+        }
+            break;
+    }
+    
+}
+
+-(void)didTapView
+{
+
+}
 
 @end
