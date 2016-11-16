@@ -26,6 +26,17 @@
     [pushBtn setTitle:@"push" forState:UIControlStateNormal];
     [pushBtn addTarget:self action:@selector(pushBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    UIButton *pushBtn2 = [UIButton new];
+    [self.view addSubview:pushBtn2];
+    [pushBtn2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(80, 30));
+        make.centerY.mas_equalTo(self.view);
+        make.left.mas_equalTo(pushBtn.mas_right).offset(20);
+    }];
+    [pushBtn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [pushBtn2 setTitle:@"push" forState:UIControlStateNormal];
+    [pushBtn2 addTarget:self action:@selector(pushBtn2Clicked:) forControlEvents:UIControlEventTouchUpInside];
+    
     UIButton *dismissBtn = [UIButton new];
     [self.view addSubview:dismissBtn];
     [dismissBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,6 +81,15 @@
     [self presentViewController:vc animated:YES completion:nil];
 //    [self.navigationController pushViewController:vc animated:YES];
 //    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
+}
+
+-(void)pushBtn2Clicked:(UIButton *)sender
+{
+    //    self.navigationController.view.frame = CGRectMake(0, 0, 100, 100);
+    TestViewController *vc = [TestViewController new];
+//    [self presentViewController:vc animated:YES completion:nil];
+    //    [self.navigationController pushViewController:vc animated:YES];
+        [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
 }
 
 -(void)dismissBtnClicked:(UIButton *)sender

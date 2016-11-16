@@ -67,7 +67,14 @@ DEF_SINGLETON(EZModalVCManager)
         
         dispatch_async(dispatch_get_main_queue(), ^
         {
-            [appRootVC presentViewController:vc animated:YES completion:nil];
+            @try {
+                [appRootVC presentViewController:vc animated:YES completion:nil];
+            } @catch (NSException *exception) {
+
+            } @finally {
+                
+            }
+            
         });
     }
     else
@@ -128,24 +135,22 @@ DEF_SINGLETON(EZModalVCManager)
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self ez_hookMethod:@selector(viewWillLayoutSubviews) tarSel:@selector(ez_viewWillLayoutSubviews)];
-//                [self ez_hookMethod:@selector(viewDidLayoutSubviews) tarSel:@selector(ez_viewDidLayoutSubviews)];
     });
 }
 
-//-(void)ez_viewDidLayoutSubviews
-//{
-//    [self ez_viewDidLayoutSubviews];
-//    if (self.ez_isPresented) {
-//        self.view.frame = CGRectMake(0, 0, 800, 600);
-//    }
-//}
 -(void)ez_viewWillLayoutSubviews
 {
     [self ez_viewWillLayoutSubviews];
     
     if (self.ez_isPresented)
     {
-        self.view.frame = self.ez_rect;
+        if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
+        {
+            self.view.frame = CGRectMake(self.ez_rect.origin.x, self.ez_rect.origin.y, self.ez_rect.size.height, self.ez_rect.size.width);
+        }else{
+            self.view.frame = self.ez_rect;
+        }
+        
     }
 }
 
