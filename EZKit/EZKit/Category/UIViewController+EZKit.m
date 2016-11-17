@@ -144,13 +144,7 @@ DEF_SINGLETON(EZModalVCManager)
     
     if (self.ez_isPresented)
     {
-        if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
-        {
-            self.view.frame = CGRectMake(self.ez_rect.origin.x, self.ez_rect.origin.y, self.ez_rect.size.height, self.ez_rect.size.width);
-        }else{
-            self.view.frame = self.ez_rect;
-        }
-        
+        self.view.frame = self.ez_rect;
     }
 }
 
