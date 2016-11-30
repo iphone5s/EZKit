@@ -100,7 +100,13 @@ DEF_SINGLETON(EZModalVCManager)
     
     if (presentVC != nil)
     {
-        [appRootVC presentViewController:presentVC animated:YES completion:nil];
+        @try {
+            [appRootVC presentViewController:presentVC animated:YES completion:nil];
+        } @catch (NSException *exception) {
+            
+        } @finally {
+            
+        }
     }
     else
     {

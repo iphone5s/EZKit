@@ -58,25 +58,25 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSLog(@"viewWillAppear %lu",self.page);
+    NSLog(@"viewWillAppear %lu",(long)self.page);
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSLog(@"viewDidAppear %lu",self.page);
+    NSLog(@"viewDidAppear %lu",(long)self.page);
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    NSLog(@"viewWillDisappear %lu",self.page);
+    NSLog(@"viewWillDisappear %lu",(long)self.page);
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    NSLog(@"viewDidDisappear %lu",self.page);
+    NSLog(@"viewDidDisappear %lu",(long)self.page);
 }
 
 
