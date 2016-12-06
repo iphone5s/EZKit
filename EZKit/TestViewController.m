@@ -9,6 +9,8 @@
 #import "TestViewController.h"
 #import "EZKit.h"
 #import "Masonry.h"
+#import "SCLAlertView.h"
+
 @implementation TestViewController
 
 -(void)viewDidLoad
@@ -48,6 +50,7 @@
     [dismissBtn setTitle:@"dismiss" forState:UIControlStateNormal];
     [dismissBtn addTarget:self action:@selector(dismissBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    
 //    self.view.autoresizesSubviews = NO;
 //    self.view.autoresizingMask = UIViewAutoresizingNone;
 }
@@ -78,15 +81,27 @@
 {
 //    self.navigationController.view.frame = CGRectMake(0, 0, 100, 100);
     TestViewController *vc = [TestViewController new];
-    [self presentViewController:vc animated:YES completion:nil];
+//    [self presentViewController:vc animated:YES completion:nil];
 //    [self.navigationController pushViewController:vc animated:YES];
-//    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
+    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
 }
 
 -(void)pushBtn2Clicked:(UIButton *)sender
 {
-    //    self.navigationController.view.frame = CGRectMake(0, 0, 100, 100);
+    
+//    SCLAlertView *alert = [[SCLAlertView alloc]initWithNewWindow];
+//    if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+//        alert.showAnimationType = SCLAlertViewShowAnimationSlideInFromLeft;
+//    }
+//    alert.showAnimationType = SCLAlertViewShowAnimationFadeIn;
+//    [alert showCustom:self image:[UIImage imageNamed:@"git"] color:[UIColor redColor] title:@"Custom" subTitle:@"Add a custom icon and color for your own type of alert!" closeButtonTitle:@"OK" duration:0.0f]; // Custom
+    
+//    //    self.navigationController.view.frame = CGRectMake(0, 0, 100, 100);
     TestViewController *vc = [TestViewController new];
+    
+    vc.ez_isModal = NO;
+    
+    vc.view.frame = CGRectMake(0, 0, 200, 400);
 //    [self presentViewController:vc animated:YES completion:nil];
     //    [self.navigationController pushViewController:vc animated:YES];
         [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];

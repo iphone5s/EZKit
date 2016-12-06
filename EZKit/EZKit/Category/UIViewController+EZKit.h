@@ -19,6 +19,8 @@ typedef NS_ENUM(NSInteger, EZPresentAnimation) {
 
 @property(nonatomic,assign)BOOL ez_isPush;
 
+@property(nonatomic,assign)BOOL ez_isModal;
+
 - (void)ez_presentViewController:(UIViewController *)viewController animatedType: (EZPresentAnimation)animation dismissCompletion:(EZPresentDissmissCompletionBlock)dissmiss;
 
 - (void)ez_dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion;
