@@ -18,8 +18,6 @@ static const void *ez_animationKey = &ez_animationKey;
 
 static const void *ez_isPushKey = &ez_isPushKey;
 
-static const void *ez_isModalKey = &ez_isModalKey;
-
 static const void *ez_dissmissKey = &ez_dissmissKey;
 
 static const void *ez_isPresentedKey = &ez_isPresentedKey;
@@ -62,39 +60,30 @@ DEF_SINGLETON(EZModalVCManager)
 {
     UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-    if (vc.ez_isModal)
+    [modalViewControllers addObject:vc];
+    
+    if (appRootVC.presentedViewController == nil)
     {
-        [modalViewControllers addObject:vc];
         
-        if (appRootVC.presentedViewController == nil)
+        dispatch_async(dispatch_get_main_queue(), ^
         {
+            @try {
+                [appRootVC presentViewController:vc animated:YES completion:nil];
+            } @catch (NSException *exception) {
+
+            } @finally {
+                
+            }
             
-            dispatch_async(dispatch_get_main_queue(), ^
-                           {
-                               @try {
-                                   [appRootVC presentViewController:vc animated:YES completion:nil];
-                               } @catch (NSException *exception) {
-                                   
-                               } @finally {
-                                   
-                               }
-                               
-                           });
-        }
-        else
-        {
-            __weak EZModalVCManager *weakSelf = self;
-            [appRootVC dismissViewControllerAnimated:YES completion:^{
-                [weakSelf present];
-            }];
-        }
+        });
     }
     else
     {
-        UIViewController *viewController = [modalViewControllers lastObject];
-        [viewController presentViewController:vc animated:YES completion:nil];
+        __weak EZModalVCManager *weakSelf = self;
+        [appRootVC dismissViewControllerAnimated:YES completion:^{
+            [weakSelf present];
+        }];
     }
-
 }
 
 -(void)present
@@ -133,22 +122,12 @@ DEF_SINGLETON(EZModalVCManager)
     
     __weak EZModalVCManager *weakSelf = self;
     __weak EZPresentDissmissCompletionBlock dissmissblock = vc.dissmissComple;
-    
-    if (appRootVC.presentedViewController.presentedViewController != nil && !appRootVC.presentedViewController.presentedViewController.ez_isModal)
-    {
-        [appRootVC.presentedViewController dismissViewControllerAnimated:YES completion:nil];
-
-    }
-    else
-    {
-        [appRootVC dismissViewControllerAnimated:YES completion:^{
-            [weakSelf present];
-            if (dissmissblock != nil) {
-                dissmissblock();
-            }
-        }];
-    }
-
+    [appRootVC dismissViewControllerAnimated:YES completion:^{
+        [weakSelf present];
+        if (dissmissblock != nil) {
+            dissmissblock();
+        }
+    }];
 
 }
 
@@ -211,20 +190,6 @@ DEF_SINGLETON(EZModalVCManager)
     
 }
 
--(BOOL)ez_isModal
-{
-    NSNumber *num = objc_getAssociatedObject(self, ez_isModalKey);
-    if (num != nil)
-    {
-        return num.integerValue;
-    }
-    else
-    {
-        return YES;
-    }
-    
-}
-
 -(BOOL)ez_isPresented
 {
     NSNumber *num = objc_getAssociatedObject(self, ez_isPresentedKey);
@@ -254,11 +219,6 @@ DEF_SINGLETON(EZModalVCManager)
 -(void)setEz_isPush:(BOOL)ez_isPush
 {
     objc_setAssociatedObject(self, ez_isPushKey, [NSNumber numberWithInteger:ez_isPush], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
--(void)setEz_isModal:(BOOL)ez_isModal
-{
-    objc_setAssociatedObject(self, ez_isModalKey, [NSNumber numberWithInteger:ez_isModal], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 -(void)setEz_isPresented:(BOOL)ez_isPresented
