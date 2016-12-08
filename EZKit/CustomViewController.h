@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EZAlertController.h"
 
-@interface CustomViewController : UIViewController
+@interface CustomViewController : EZAlertController
 
 @end

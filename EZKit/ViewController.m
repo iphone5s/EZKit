@@ -65,7 +65,8 @@
 
 -(void)test{
     CustomViewController *vc = [CustomViewController new];
-    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
+    [vc ez_showAlert];
+//    [self ez_presentViewController:vc animatedType:EZPresentAnimationAlert dismissCompletion:nil];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
