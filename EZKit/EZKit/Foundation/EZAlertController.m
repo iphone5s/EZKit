@@ -198,7 +198,7 @@
     [m_maskView.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
 }
 
--(void)ez_hideView
+-(void)ez_hideAlert:(void (^ __nullable)(void))completion
 {
     m_alertWindow.userInteractionEnabled = NO;
     
@@ -207,19 +207,20 @@
         [m_previousWindow makeKeyWindow];
         m_previousWindow.userInteractionEnabled = YES;
         
+        
         m_alertWindow = nil;
         m_previousWindow = nil;
+        
+        if (completion != nil)
+        {
+            completion();
+        }
     }];
-}
-
--(void)btnClicked:(UIButton *)sender
-{
-    [self ez_hideView];
 }
 
 -(void)dealloc
 {
-    NSLog(@"dealloc");
+
 }
 
 @end

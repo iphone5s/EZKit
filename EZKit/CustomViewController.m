@@ -12,7 +12,9 @@
 #import "TestViewController.h"
 
 @implementation CustomViewController
-
+{
+    completionBlock m_compleBlock;
+}
 
 -(void)viewDidLoad
 {
@@ -29,9 +31,24 @@
     [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void)btnClicked:(UIButton *)sender
+-(void)showAlert:(nullable completionBlock)compleBlock;
 {
-    [self ez_hideView];
+    m_compleBlock = compleBlock;
+    [self ez_showAlert];
 }
 
+-(void)btnClicked:(UIButton *)sender
+{
+    [self ez_hideAlert:^{
+        if (m_compleBlock != nil)
+        {
+            m_compleBlock(123);
+        }
+    }];
+}
+
+-(void)dealloc
+{
+    
+}
 @end

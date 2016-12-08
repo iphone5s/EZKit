@@ -12,6 +12,6 @@
 
 -(void)ez_showAlert;
 
--(void)ez_hideView;
+-(void)ez_hideAlert:(void (^ __nullable)(void))completion;
 
 @end

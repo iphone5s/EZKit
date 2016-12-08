@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "EZAlertController.h"
 
+typedef void(^completionBlock)(NSInteger tag);
+
 @interface CustomViewController : EZAlertController
+
+-(void)showAlert:(nullable completionBlock)compleBlock;
 
 @end
