@@ -26,17 +26,17 @@
 //        make.left.top.mas_equalTo(self.view).offset(10);
 //        make.right.bottom.mas_equalTo(self.view).offset(-10);
 //    }];
-//    UIButton *btn = [UIButton new];
-//    [self.view addSubview:btn];
-//    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(100, 100));
-//        make.center.mas_equalTo(self.view);
-//    }];
-//    btn.backgroundColor = [UIColor redColor];
-//    [btn addTarget: self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *btn = [UIButton new];
+    [self.view addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(100, 100));
+        make.center.mas_equalTo(self.view);
+    }];
+    btn.backgroundColor = [UIColor redColor];
+    [btn addTarget: self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.view.backgroundColor = RGB_RANDOM;
-    self.view.errorPageDelegate = self;
-    self.view.ez_pageType = EZErrorPageTypeLoading;
+//    self.view.errorPageDelegate = self;
+//    self.view.ez_pageType = EZErrorPageTypeLoading;
 }
 
 -(void)btnClicked:(UIButton *)sender
@@ -44,7 +44,7 @@
     TestViewController *viewController = [TestViewController new];
 //    UINavigationController *navViewController = [[UINavigationController alloc]initWithRootViewController:viewController];
 //    navViewController.view.frame = CGRectMake(0,0,800,600);
-    [self ez_presentViewController:self animatedType:EZPresentAnimationAlert dismissCompletion:nil];
+    [self ez_presentViewController:viewController animatedType:EZPresentAnimationAlert dismissCompletion:nil];
 //    [self presentViewController:viewController animated:YES completion:nil];
 //    [self.navigationController pushViewController:vc animated:YES];
 }

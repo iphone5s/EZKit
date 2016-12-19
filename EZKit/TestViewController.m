@@ -94,7 +94,8 @@
 
 -(void)dismissBtnClicked:(UIButton *)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self ez_dismissAllViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
 //    [self.navigationController popViewControllerAnimated:YES];
 }
 

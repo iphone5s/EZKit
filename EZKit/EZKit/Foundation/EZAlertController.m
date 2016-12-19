@@ -70,6 +70,7 @@
     [m_alertWindow makeKeyAndVisible];
     
     [self showAnimation];
+//    [self showAnimationBounce];
 }
 
 -(void)showAnimation
@@ -137,6 +138,76 @@
     opacityAnimation.toValue = @(0.5);
     
     [self.view.layer pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
+    [m_maskView.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
+    [self.view.layer pop_addAnimation:positionAnimation forKey:@"positionAnimation"];
+}
+
+-(void)showAnimationBounce
+{
+    POPSpringAnimation *positionAnimation = [POPSpringAnimation animationWithPropertyNamed:(ISIOS7LANDSCAPE ? kPOPLayerPositionX : kPOPLayerPositionY)];
+    id positionFromValue;
+    id positionToValue;
+    
+    if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1)
+    {
+        if([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationPortrait)
+        {
+            positionFromValue = @(-self.view.frame.size.height);
+            positionToValue = @(m_alertWindow.center.y);
+        }
+        else if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)
+        {
+            positionFromValue = @([UIScreen mainScreen].bounds.size.height + self.view.frame.size.height / 2.0);
+            positionToValue = @(m_alertWindow.center.y);
+        }
+        else if ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeLeft)
+        {
+            positionFromValue = @([UIScreen mainScreen].bounds.size.width + self.view.frame.size.width / 2.0);
+            positionToValue = @(m_alertWindow.center.x);
+        }
+        else if ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeRight)
+        {
+            positionFromValue = @(- self.view.frame.size.width / 2.0);
+            positionToValue = @(m_alertWindow.center.x);
+        }
+        else
+        {
+            if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
+            {
+                positionFromValue = @(m_alertWindow.center.x);
+                positionToValue = @(m_alertWindow.center.x);
+            }
+            else
+            {
+                positionFromValue = @(m_alertWindow.center.y);
+                positionToValue = @(m_alertWindow.center.y);
+            }
+        }
+        
+    }
+    else
+    {
+        positionFromValue = @(-self.view.frame.size.height);
+        positionToValue = @(m_alertWindow.center.y);
+    }
+    
+    positionAnimation.fromValue = positionFromValue;
+    positionAnimation.toValue = positionToValue;
+    positionAnimation.springBounciness = 13;
+    positionAnimation.springSpeed = 20;
+    [positionAnimation setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+        m_alertWindow.userInteractionEnabled = YES;
+    }];
+    
+//    POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+//    scaleAnimation.springBounciness = 20;
+//    scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.4)];
+//    
+    POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+    opacityAnimation.fromValue = @(0.0);
+    opacityAnimation.toValue = @(0.5);
+    
+//    [self.view.layer pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
     [m_maskView.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
     [self.view.layer pop_addAnimation:positionAnimation forKey:@"positionAnimation"];
 }

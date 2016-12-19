@@ -23,4 +23,6 @@ typedef NS_ENUM(NSInteger, EZPresentAnimation) {
 
 - (void)ez_dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion;
 
+- (void)ez_dismissAllViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion;
+
 @end

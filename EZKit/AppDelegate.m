@@ -21,12 +21,12 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     ViewController *vc = [ViewController new];
-//    HomeViewController *rootVC = [HomeViewController new];
-//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:rootVC];
-//    [nav setNavigationBarHidden:YES];
+    HomeViewController *rootVC = [HomeViewController new];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:rootVC];
+    [nav setNavigationBarHidden:YES];
     
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = vc;
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
     

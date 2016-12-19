@@ -114,20 +114,28 @@ DEF_SINGLETON(EZModalVCManager)
     }
 }
 
--(void)popVC
+-(void)popVC:(BOOL)isAll
 {
-    UIViewController *vc = [modalViewControllers lastObject];
-    [modalViewControllers removeLastObject];
-    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
-    __weak EZModalVCManager *weakSelf = self;
-    __weak EZPresentDissmissCompletionBlock dissmissblock = vc.dissmissComple;
-    [appRootVC dismissViewControllerAnimated:YES completion:^{
-        [weakSelf present];
-        if (dissmissblock != nil) {
-            dissmissblock();
-        }
-    }];
+    if (isAll) {
+        [modalViewControllers removeAllObjects];
+        UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [appRootVC dismissViewControllerAnimated:YES completion:nil];
+
+    }else{
+        UIViewController *vc = [modalViewControllers lastObject];
+        [modalViewControllers removeLastObject];
+        UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        
+        __weak EZModalVCManager *weakSelf = self;
+        __weak EZPresentDissmissCompletionBlock dissmissblock = vc.dissmissComple;
+        [appRootVC dismissViewControllerAnimated:YES completion:^{
+            [weakSelf present];
+            if (dissmissblock != nil) {
+                dissmissblock();
+            }
+        }];
+
+    }
 
 }
 
@@ -264,8 +272,14 @@ DEF_SINGLETON(EZModalVCManager)
 
 - (void)ez_dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion
 {
-    [[EZModalVCManager sharedInstance]popVC];
+    [[EZModalVCManager sharedInstance]popVC:NO];
 }
+
+- (void)ez_dismissAllViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion
+{
+    [[EZModalVCManager sharedInstance]popVC:YES];
+}
+
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented

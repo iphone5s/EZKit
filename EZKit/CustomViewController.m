@@ -19,7 +19,7 @@
 -(void)viewDidLoad
 {
     self.view.backgroundColor = [UIColor redColor];
-    self.view.frame = CGRectMake(0, 0, 500, 600);
+    self.view.frame = CGRectMake(0, 0, 400, 380);
     UIButton *btn = [UIButton new];
     [self.view addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
