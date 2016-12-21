@@ -13,7 +13,7 @@
 
 @interface EZHudManager ()
 {
-    MBProgressHUD *hud;
+    MBProgressHUD *m_hud;
 }
 @end
 
@@ -24,47 +24,79 @@ DEF_SINGLETON(EZHudManager)
 {
     self = [super init];
     if (self) {
-        hud = [[MBProgressHUD alloc]initWithWindow:[UIApplication sharedApplication].keyWindow];
-        [[[UIApplication sharedApplication].delegate window] addSubview:hud];
-        hud.dimBackground = YES;
+//        hud = [[MBProgressHUD alloc]initWithWindow:[UIApplication sharedApplication].keyWindow];
+//        [[[UIApplication sharedApplication].delegate window] addSubview:hud];
+//        hud.dimBackground = YES;
     }
     return self;
 }
 
 - (void)hide
 {
-    [hud hide:YES];
+    [m_hud hide:YES];
 }
 
 - (void)showMsg:(NSString *)msg
 {
-    hud.mode = MBProgressHUDModeText;
-    hud.labelText = msg;
-    [hud show:YES];
-    [hud hide:YES afterDelay:delay];
-    //    [self showMsg:msg completionBlock:nil];
+    if (m_hud)
+    {
+        [m_hud hide:YES];
+        m_hud = nil;
+    }
+    
+    m_hud = [[MBProgressHUD alloc]initWithWindow:[UIApplication sharedApplication].keyWindow];
+    [[[UIApplication sharedApplication].delegate window] addSubview:m_hud];
+    m_hud.removeFromSuperViewOnHide = YES;
+    m_hud.dimBackground = YES;
+    m_hud.mode = MBProgressHUDModeText;
+    m_hud.labelText = msg;
+    [m_hud show:YES];
+    [m_hud hide:YES afterDelay:delay];
 }
 
 - (void)showMsg:(NSString *)msg completionBlock:(void (^)())completion
 {
-    hud.mode = MBProgressHUDModeText;
-    hud.labelText = msg;
+    if (m_hud)
+    {
+        [m_hud hide:YES];
+        m_hud.removeFromSuperViewOnHide = YES;
+        m_hud = nil;
+    }
     
-    [hud showAnimated:YES whileExecutingBlock:^{
+    m_hud = [[MBProgressHUD alloc]initWithWindow:[UIApplication sharedApplication].keyWindow];
+    [[[UIApplication sharedApplication].delegate window] addSubview:m_hud];
+    m_hud.removeFromSuperViewOnHide = YES;
+    m_hud.dimBackground = YES;
+    m_hud.mode = MBProgressHUDModeText;
+    m_hud.labelText = msg;
+    
+    [m_hud showAnimated:YES whileExecutingBlock:^{
         sleep(delay);
     } completionBlock:completion];
 }
 
 - (void)showIndicatorMsg:(NSString *)msg
 {
-    hud.mode = MBProgressHUDModeIndeterminate;
-    hud.labelText = msg;
-    [hud show:YES];
+    if (m_hud)
+    {
+        [m_hud hide:YES];
+        m_hud.removeFromSuperViewOnHide = YES;
+        m_hud = nil;
+    }
+    
+    m_hud = [[MBProgressHUD alloc]initWithWindow:[UIApplication sharedApplication].keyWindow];
+    [[[UIApplication sharedApplication].delegate window] addSubview:m_hud];
+    m_hud.removeFromSuperViewOnHide = YES;
+    m_hud.dimBackground = YES;
+    m_hud.mode = MBProgressHUDModeIndeterminate;
+    m_hud.labelText = msg;
+    [m_hud show:YES];
 }
 
 - (void)dealloc
 {
-    [hud removeFromSuperview];
+    [m_hud hide:YES];
+    m_hud = nil;
 }
 
 @end
