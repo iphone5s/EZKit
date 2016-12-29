@@ -10,8 +10,13 @@
 
 @interface EZAlertController : UIViewController
 
+-(void)ez_showAlertNoAnnimation;
+
 -(void)ez_showAlert;
 
 -(void)ez_hideAlert:(void (^ __nullable)(void))completion;
+
+-(void)ez_hideAlertNoAnnimation:(void (^ __nullable)(void))completion;
+
 
 @end

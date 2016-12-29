@@ -26,7 +26,7 @@
 {
     self = [super init];
     if (self) {
-     
+        
     }
     return self;
 }
@@ -70,8 +70,52 @@
     [m_alertWindow makeKeyAndVisible];
     
     [self showAnimation];
-//    [self showAnimationBounce];
+    //    [self showAnimationBounce];
 }
+
+-(void)ez_showAlertNoAnnimation
+{
+    m_previousWindow = [UIApplication sharedApplication].keyWindow;
+    //    m_previousWindow.userInteractionEnabled =NO;
+    
+    m_alertWindow = [[UIWindow alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds];
+    m_alertWindow.windowLevel = UIWindowLevelAlert;
+    m_alertWindow.backgroundColor = [UIColor clearColor];
+    m_alertWindow.rootViewController = self;
+    //    m_alertWindow.userInteractionEnabled = NO;
+    
+    m_maskView = [UIView new];
+    [m_alertWindow addSubview:m_maskView];
+    m_maskView.backgroundColor = [UIColor blackColor];
+    m_maskView.layer.opacity = 0.0;
+    [m_maskView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(m_alertWindow);
+    }];
+    [m_alertWindow addSubview:self.view];
+    
+    [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(self.view.frame.size);
+        make.center.mas_equalTo(m_alertWindow);
+    }];
+    
+    [m_alertWindow makeKeyAndVisible];
+    
+}
+
+-(void)ez_hideAlertNoAnnimation:(void (^ __nullable)(void))completion
+{
+    [self.view removeFromSuperview];
+    [m_previousWindow makeKeyWindow];
+    m_alertWindow = nil;
+    m_previousWindow = nil;
+    if (completion != nil)
+    {
+        completion();
+    }
+}
+
+
+
 
 -(void)showAnimation
 {
@@ -199,15 +243,15 @@
         m_alertWindow.userInteractionEnabled = YES;
     }];
     
-//    POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
-//    scaleAnimation.springBounciness = 20;
-//    scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.4)];
-//    
+    //    POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+    //    scaleAnimation.springBounciness = 20;
+    //    scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.4)];
+    //
     POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
     opacityAnimation.fromValue = @(0.0);
     opacityAnimation.toValue = @(0.5);
     
-//    [self.view.layer pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
+    //    [self.view.layer pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
     [m_maskView.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
     [self.view.layer pop_addAnimation:positionAnimation forKey:@"positionAnimation"];
 }
@@ -291,7 +335,7 @@
 
 -(void)dealloc
 {
-
+    
 }
 
 @end
