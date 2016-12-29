@@ -58,83 +58,119 @@ DEF_SINGLETON(EZModalVCManager)
 
 -(void)presentVC:(UIViewController *)vc
 {
-    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
-    [modalViewControllers addObject:vc];
-    
-    if (appRootVC.presentedViewController == nil)
+    id delegate = [UIApplication sharedApplication].delegate;
+    UIWindow *window = [delegate valueForKey:@"window"];
+    if (window != nil && [window isKindOfClass:[UIWindow class]])
     {
+        UIViewController *appRootVC = window.rootViewController;
         
-        dispatch_async(dispatch_get_main_queue(), ^
+        if (appRootVC != nil && [appRootVC isKindOfClass:[UIViewController class]])
         {
-            @try {
-                [appRootVC presentViewController:vc animated:YES completion:nil];
-            } @catch (NSException *exception) {
-
-            } @finally {
-                
-            }
+            [modalViewControllers addObject:vc];
             
-        });
-    }
-    else
-    {
-        __weak EZModalVCManager *weakSelf = self;
-        [appRootVC dismissViewControllerAnimated:YES completion:^{
-            [weakSelf present];
-        }];
+            if (appRootVC.presentedViewController == nil)
+            {
+                
+                dispatch_async(dispatch_get_main_queue(), ^
+                               {
+                                   @try {
+                                       [appRootVC presentViewController:vc animated:YES completion:nil];
+                                   } @catch (NSException *exception) {
+                                       
+                                   } @finally {
+                                       
+                                   }
+                                   
+                               });
+            }
+            else
+            {
+                __weak EZModalVCManager *weakSelf = self;
+                [appRootVC dismissViewControllerAnimated:YES completion:^{
+                    [weakSelf present];
+                }];
+            }
+        }
     }
 }
 
 -(void)present
 {
-    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
-    UIViewController *presentVC = [modalViewControllers lastObject];
-    
-    while (presentVC != nil && presentVC.ez_isPush == NO)
+    id delegate = [UIApplication sharedApplication].delegate;
+    UIWindow *window = [delegate valueForKey:@"window"];
+    if (window != nil && [window isKindOfClass:[UIWindow class]])
     {
-        [modalViewControllers removeObject:presentVC];
-        presentVC = [modalViewControllers lastObject];
-    }
-    
-    if (presentVC != nil)
-    {
-        @try {
-            [appRootVC presentViewController:presentVC animated:YES completion:nil];
-        } @catch (NSException *exception) {
-            
-        } @finally {
-            
-        }
-    }
-    else
-    {
+        UIViewController *appRootVC = window.rootViewController;
         
+        if (appRootVC != nil && [appRootVC isKindOfClass:[UIViewController class]])
+        {
+            UIViewController *presentVC = [modalViewControllers lastObject];
+            
+            while (presentVC != nil && presentVC.ez_isPush == NO)
+            {
+                [modalViewControllers removeObject:presentVC];
+                presentVC = [modalViewControllers lastObject];
+            }
+            
+            if (presentVC != nil)
+            {
+                @try {
+                    [appRootVC presentViewController:presentVC animated:YES completion:nil];
+                } @catch (NSException *exception) {
+                    
+                } @finally {
+                    
+                }
+            }
+            else
+            {
+                
+            }
+
+        }
     }
 }
 
 -(void)popVC:(BOOL)isAll
 {
     if (isAll) {
-        [modalViewControllers removeAllObjects];
-        UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [appRootVC dismissViewControllerAnimated:YES completion:nil];
+        id delegate = [UIApplication sharedApplication].delegate;
+        UIWindow *window = [delegate valueForKey:@"window"];
+        if (window != nil && [window isKindOfClass:[UIWindow class]])
+        {
+            [modalViewControllers removeAllObjects];
+            
+            UIViewController *appRootVC = window.rootViewController;
+            
+            if (appRootVC != nil && [appRootVC isKindOfClass:[UIViewController class]])
+            {
+                [appRootVC dismissViewControllerAnimated:YES completion:nil];
+            }
+        }
 
     }else{
-        UIViewController *vc = [modalViewControllers lastObject];
-        [modalViewControllers removeLastObject];
-        UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
         
-        __weak EZModalVCManager *weakSelf = self;
-        __weak EZPresentDissmissCompletionBlock dissmissblock = vc.dissmissComple;
-        [appRootVC dismissViewControllerAnimated:YES completion:^{
-            [weakSelf present];
-            if (dissmissblock != nil) {
-                dissmissblock();
+        id delegate = [UIApplication sharedApplication].delegate;
+        UIWindow *window = [delegate valueForKey:@"window"];
+        if (window != nil && [window isKindOfClass:[UIWindow class]])
+        {
+            UIViewController *appRootVC = window.rootViewController;
+            
+            if (appRootVC != nil && [appRootVC isKindOfClass:[UIViewController class]])
+            {
+                UIViewController *vc = [modalViewControllers lastObject];
+                [modalViewControllers removeLastObject];
+                
+                __weak EZModalVCManager *weakSelf = self;
+                __weak EZPresentDissmissCompletionBlock dissmissblock = vc.dissmissComple;
+                [appRootVC dismissViewControllerAnimated:YES completion:^{
+                    [weakSelf present];
+                    if (dissmissblock != nil) {
+                        dissmissblock();
+                    }
+                }];
             }
-        }];
-
+        }
     }
 
 }
@@ -241,32 +277,41 @@ DEF_SINGLETON(EZModalVCManager)
 
 - (void)ez_presentViewController:(UIViewController *)viewController animatedType: (EZPresentAnimation)animation dismissCompletion:(EZPresentDissmissCompletionBlock)dissmiss;
 {
-    self.animation = animation;
-
-    viewController.dissmissComple = dissmiss;
-    viewController.ez_isPresented = YES;
-    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-
-    switch (self.animation)
+    id delegate = [UIApplication sharedApplication].delegate;
+    UIWindow *window = [delegate valueForKey:@"window"];
+    if (window != nil && [window isKindOfClass:[UIWindow class]])
     {
-        case EZPresentAnimationNone:
+        UIViewController *appRootVC = window.rootViewController;
+        
+        self.animation = animation;
+        
+        viewController.dissmissComple = dissmiss;
+        viewController.ez_isPresented = YES;
+        
+        if (appRootVC != nil && [appRootVC isKindOfClass:[UIViewController class]])
         {
+            switch (self.animation)
+            {
+                case EZPresentAnimationNone:
+                {
+                    
+                }
+                    break;
+                case EZPresentAnimationAlert:
+                {
+                    viewController.modalPresentationStyle = UIModalPresentationCustom;
+                    viewController.transitioningDelegate = appRootVC;
+                    
+                    viewController.ez_rect = CGRectMake(([UIScreen mainScreen].bounds.size.width - viewController.view.frame.size.width) / 2.0, ([UIScreen mainScreen].bounds.size.height - viewController.view.frame.size.height) / 2.0, viewController.view.frame.size.width, viewController.view.frame.size.height);
+                }
+                    break;
+                default:
+                    break;
+            }
             
+            [[EZModalVCManager sharedInstance]presentVC:viewController];
         }
-            break;
-        case EZPresentAnimationAlert:
-        {
-            viewController.modalPresentationStyle = UIModalPresentationCustom;
-            viewController.transitioningDelegate = appRootVC;
-            
-            viewController.ez_rect = CGRectMake(([UIScreen mainScreen].bounds.size.width - viewController.view.frame.size.width) / 2.0, ([UIScreen mainScreen].bounds.size.height - viewController.view.frame.size.height) / 2.0, viewController.view.frame.size.width, viewController.view.frame.size.height);
-        }
-            break;
-        default:
-            break;
     }
-    
-    [[EZModalVCManager sharedInstance]presentVC:viewController];
     
 }
 
