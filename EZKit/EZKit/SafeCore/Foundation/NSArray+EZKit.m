@@ -39,6 +39,18 @@
     return [self ez_objectAtIndex:index];
 }
 
+- (id)ez0_objectAtIndex:(NSUInteger)index
+{
+    if (index >= [self count])
+    {
+#ifdef DEBUG
+        ez_debug_msg(@"数组越界");
+#endif
+        return nil;
+    }
+    return [self ez_objectAtIndex:index];
+}
+
 - (NSArray *)ez_arrayByAddingObject:(id)anObject
 {
     if (!anObject) {
@@ -53,6 +65,7 @@
     dispatch_once(&onceToken, ^{
         [self ez_hookMethod:@selector(initWithObjects_ez:count:) tarClass:@"__NSPlaceholderArray" tarSel:@selector(initWithObjects:count:)];
         [self ez_hookMethod:@selector(ez_objectAtIndex:) tarClass:@"__NSArrayI" tarSel:@selector(objectAtIndex:)];
+        [self ez_hookMethod:@selector(ez0_objectAtIndex:) tarClass:@"__NSArray0" tarSel:@selector(objectAtIndex:)];
         [self ez_hookMethod:@selector(ez_arrayByAddingObject:) tarClass:@"__NSArrayI" tarSel:@selector(arrayByAddingObject:)];
     });
 }
